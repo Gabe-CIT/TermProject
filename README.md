@@ -3,3 +3,4 @@ Group 8's Term Project Repository\
 Nick\
 Eric\
 Gabe\
+Kristine\
