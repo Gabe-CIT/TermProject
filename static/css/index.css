@@ -147,6 +147,9 @@ svg.logo {
 /* Appointments */
 main {
     margin-top: 140px;
+    width: 92%; /* Makes a max width of 60% of screen */
+    margin-left: auto; /* Centers main body */
+    margin-right: auto;
 }
 
 #appointments {
@@ -154,7 +157,7 @@ main {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid black; /* Temp border */
 }
 
 #appointments a {
@@ -212,6 +215,8 @@ span.btn-text {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .details li {
@@ -219,7 +224,7 @@ span.btn-text {
     margin: 10px;
     border: 0.5px solid rgb(203, 210, 222);
     background-color: var(--bcit-white);
-    width: 10rem;
+    width: 20rem;
     text-align: center;
 }
 
@@ -232,15 +237,32 @@ span.btn-text {
 /* Footer */
 .site-footer {
     display: flex;
+    color: var(--bcit-darkblue);
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .site-footer section {
     padding: 20px;
     width: 25%;
     height: 60vh;
-    border: 1px solid black;
+    border: 1px solid black; /* Temp border */
+}
+
+.site-footer h3 {
+    text-transform: uppercase;
 }
 
 .site-footer ul {
     list-style-type: none;
+}
+
+.site-footer a {
+    color: var(--bcit-blue);
+}
+
+.site-footer a:hover {
+    color: var(--bcit-darkblue);
+    transition: 0.3s ease-in-out;
 }
