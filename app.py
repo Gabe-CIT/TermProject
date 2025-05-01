@@ -13,8 +13,8 @@ db.init_app(app)
 
 @app.route("/")
 def homepage():
-    return render_template("index.html")
+    return render_template("services.html")
 
 PORT = 8888
 if __name__ == "__main__":
-    app.run(debut=True, port=PORT)
+    app.run(debug=True, port=8888)
