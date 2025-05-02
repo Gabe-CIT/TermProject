@@ -17,4 +17,4 @@ def homepage():
 
 PORT = 8888
 if __name__ == "__main__":
-    app.run(debut=True, port=PORT)
+    app.run(debug=True, port=PORT)
