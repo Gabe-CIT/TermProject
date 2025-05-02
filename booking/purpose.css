@@ -137,3 +137,19 @@ svg.logo {
     border-bottom: 2px solid var(--bcit-yellow);
     color: var(--link-color);
 }
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f9f9f9; /* Optional background */
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* space between items */
+}
