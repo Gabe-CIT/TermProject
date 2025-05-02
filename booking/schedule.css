@@ -144,16 +144,10 @@ h1 {
 }
 
 .type {
-    display: flex;
+    display: center;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
-}
-
-.type-option {
-    display: flex;
-    gap: 25px;
-
 }
 
 main {
@@ -171,3 +165,22 @@ main {
     background-color: var(--bcit-blue);
     color: white;
 }
+
+.type-options {
+    border: 1px solid white;
+    background-color: white;
+    padding: 100px 100px;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.type-options {
+    width: 500px;
+}
+
+.option {
+    font-size: 15px;
+    padding: 20px;
+    cursor: pointer;
+}
+

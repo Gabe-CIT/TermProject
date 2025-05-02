@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health Services - BCIT</title>
-    <link rel="stylesheet" href="../styles/services.css">
+    <link rel="stylesheet" href="confirmation.css">
 </head>
 <body>
     <header class="default">
@@ -32,17 +32,23 @@
         </ul>
     </header>
     <main>
-        <h1>
-            Confirmation
-        </h1>
-            <p>BCIT ID: </p>
-            <p>First Name: </p>
-            <p>Last Name: </p>
-            <p>Date of Birth: </p>
-            <p>Sex: </p>
-            <p>Phone number: </p>
-            <p>Email: </p>
+        <h1>Confirmation</h1>
+            <form class="receipt">
+                <label for="bcit-id">BCIT ID:</label><br>
+                <input type="text" id="bcit-id" name="bcit-id"><br><br>
+                <label for="first-name">First Name:</label><br>
+                <input type="text" id="first-name" name="first-name"><br><br>
+                <label for="last-name">Last Name:</label><br>
+                <input type="text" id="last-name" name="last-name"><br><br>
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email"><br><br>
+
+            </form>
+        </div>
         <button>Submit</button>
     </main>
+    <footer>
+        <p>The confirmation will be sent to you shortly.</p>
+    </footer>
 </body>
 </html>
