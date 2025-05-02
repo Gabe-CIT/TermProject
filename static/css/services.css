@@ -155,7 +155,7 @@ svg.logo {
     margin-left: var(--margin);
     border-right: var(--divider);
     padding-right: 50px;
-    height: 70vh;
+    height: 75vh;
 }
 
 .cat-list {
@@ -169,10 +169,13 @@ svg.logo {
     cursor: pointer;
     width: fit-content;
     font-size: 1.1rem;
+    border-bottom: 2px solid transparent;
+    line-height: 1.3rem;
+    transition: .1s ease all;
 }
 
 .cat-list li:hover {
-    opacity: .7;
+    border-bottom: 2px solid var(--bcit-blue);
 }
 
 .service-cat {
@@ -183,11 +186,11 @@ svg.logo {
     color: var(--bcit-blue);
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .advisor {
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
 .advisor p {
@@ -197,6 +200,33 @@ svg.logo {
 
 .advisor a:hover {
     color: var(--link-color);
+}
+
+.book-btn {
+    width: fit-content;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--bcit-blue);
+    border: none;
+    border-radius: 3px;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+
+.book-btn a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.book-btn:hover {
+    background-color: var(--link-color);
+}
+
+.book-btn:hover a {
+    color: #fff;
 }
 
 .counseling {
