@@ -16,7 +16,7 @@ we can access a user (for now) using the email as a key, implement SQL later
 """
 
 def read_db():
-    with open("./data/user_database.json", "r") as file:
+    with open("./app/models/user_database.json", "r") as file:
         users = json.load(file)
         return users
 
