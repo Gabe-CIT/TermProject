@@ -137,3 +137,9 @@ svg.logo {
     border-bottom: 2px solid var(--bcit-yellow);
     color: var(--link-color);
 }
+
+.dropdown {
+    background-color: white;
+    max-width: 50%;
+ 
+}
