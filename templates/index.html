@@ -40,11 +40,11 @@
              <p>
                  Welcome to BCIT's student advisory services, lorem ipsum...
              </p>
-             <a id="book" href="">
+             <a id="book" href="{{ url_for('login_page') }}">
                  <span class="btn-text">Book an Appointment</span>
                  <span class="material-symbols-outlined"></span>
              </a>
-             <a id="cancel" href="">
+             <a id="cancel" href="{{ url_for('cancel_page')}}">
                  <span class="btn-text">Cancel an Appointment</span>
                  <span class="material-symbols-outlined"></span>
              </a>

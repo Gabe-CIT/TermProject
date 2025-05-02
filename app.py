@@ -13,7 +13,31 @@ db.init_app(app)
 
 @app.route("/")
 def homepage():
-    return render_template("services.html")
+    return render_template("index.html")
+
+@app.route("/login")
+def login_page():
+    return render_template("login.html")
+
+@app.route("/user_login", methods=["GET", "POST"])
+def user_login():
+    data = "this will be the data for our dashboard"
+    return render_template("", data=data) # dashboard page
+
+
+@app.route("/advisor_login")
+def advisor_login():
+    return render_template("")
+    
+
+@app.route("/try_advisor_login", methods=["GET", "POST"])
+def logging_advisor():
+    return redirect("")
+
+@app.route("/cancel")
+def cancel_page():
+    return render_template("")
+
 
 PORT = 8888
 if __name__ == "__main__":
