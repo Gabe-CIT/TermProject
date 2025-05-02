@@ -141,7 +141,7 @@ svg.logo {
 }
 
 
-.login-container {
+.input-container {
     padding-top: 260px;
     text-align: center;
     max-width: 400px;
@@ -149,25 +149,25 @@ svg.logo {
     font-family: "DM Sans", Arial, sans-serif;
 }
 
-.login-container h2 {
+.input-container h2 {
     font-size: 24px;
     margin-bottom: 10px;
     color: var(--bcit-blue);
 }
 
-.login-container p {
+.input-container p {
     font-size: 16px;
     margin-bottom: 20px;
-    color: #003c71;
+    color: #333;
 }
 
-.login-container form {
+.input-container form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login-container label {
+.input-container label {
     align-self: flex-start;
     margin: 10px 0 5px;
     font-weight: bold;
@@ -175,8 +175,8 @@ svg.logo {
     color: #003c71;
 }
 
-.login-container input[type="email"],
-.login-container input[type="password"] {
+.input-container input[type="email"],
+.input-container input[type="password"] {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -185,7 +185,7 @@ svg.logo {
     border-radius: 4px;
 }
 
-.login-container button {
+.input-container button {
     padding: 10px 20px;
     background-color: var(--bcit-blue);
     color: #fff;
@@ -196,7 +196,7 @@ svg.logo {
     transition: background-color 0.2s ease;
 }
 
-.login-container button:hover {
+.input-container button:hover {
     background-color: #296cf6;
 }
 
