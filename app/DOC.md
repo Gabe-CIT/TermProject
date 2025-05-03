@@ -87,3 +87,15 @@ def view_calendar():
 ```
 
 ### Please read flask documentation to learn more about creating routes, or look through the controller modules to get an idea of what is going on.
+
+#### Add blueprint to __init__.py
+```py
+from .controllers.modules.dashboard_routes import dashboard_bp
+```
+
+#### Import NEW blueprint and register blueprint in app.py
+```py
+from app import dashboard_bp # there will probably be many imports from app :)
+
+app.register_blueprint(dashboard_bp)
+```
