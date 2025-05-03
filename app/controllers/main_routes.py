@@ -17,7 +17,7 @@ def homepage():
 # BOOKING ROUTE > http://127.0.0.1:8888/schedule
 @main_bp.route("/schedule")
 def schedule():
-    pass
+    return render_template("schedule.html")
 
 # SERVICES ROUTE > http://127.0.0.1:8888/services
 @main_bp.route("/services")
