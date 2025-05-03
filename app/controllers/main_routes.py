@@ -3,14 +3,20 @@ from flask_login import login_required, current_user
 
 main_bp = Blueprint("main", __name__)
 
+"""
+These routes are for pages that don't technically fall under any category of page. 
+
+For example, /login page fall under auth_routes, however, /homepage page wouldn't fall under any category, so we place /homepage here.
+"""
+
 # INDEX/HOME ROUTE > http://127.0.0.1:8888/
 @main_bp.route("/")
 def homepage():
-    pass
+    return render_template("index.html")
 
-# BOOKING ROUTE > http://127.0.0.1:8888/booking
-@main_bp.route("/booking")
-def booking():
+# BOOKING ROUTE > http://127.0.0.1:8888/schedule
+@main_bp.route("/schedule")
+def schedule():
     pass
 
 # SERVICES ROUTE > http://127.0.0.1:8888/services

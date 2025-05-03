@@ -35,6 +35,15 @@
     --grey-border: 1px solid #f2f2f2;
 }
 
+
+@media (max-width: 800px) {
+    body {
+        height: 350vh;
+        overflow: hidden;
+        width: 100%;
+    }
+}
+
 * {
     box-sizing: border-box;
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
@@ -44,12 +53,13 @@
 
 /* Main Body */
 body {
-    height: 150vh;
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
 }
 
-a {
+a, 
+ul li {
     text-decoration: none;
+    list-style-type: none;
 }
 
 /* Navigation bar */
@@ -59,6 +69,7 @@ a {
     width: 100vw;
     border-bottom: var(--grey-border);
     background-color: white;
+    z-index: 1;
 }
 
 .default li {
@@ -79,7 +90,6 @@ a {
 
 .portalnav ul {
     display: flex;
-    list-style: none;
     position: absolute;
     right: 150px;
     height: 100%;
@@ -146,8 +156,12 @@ svg.logo {
 
 /* Appointments */
 main {
-    margin-top: 140px;
-    width: 92%; /* Makes a max width of 60% of screen */
+    margin-top: 140px; /* Gives enough space to not overlap nav bar */
+}
+
+main,
+footer {
+    min-width: 92%;
     margin-left: auto; /* Centers main body */
     margin-right: auto;
 }
@@ -157,7 +171,16 @@ main {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    border: 1px solid black; /* Temp border */
+    border: var(--grey-border); /* Temp border */
+}
+
+#appointments h1 {
+    margin-bottom: 23px;
+}
+
+#appointments .im-lazy {
+    display: inline;
+    margin-bottom: 23px;
 }
 
 #appointments a {
@@ -196,33 +219,57 @@ span.btn-text {
 }
 
 /* Pictures */
-
-/* Services */
-#services {
-    display: flex;
-    flex: 1 1 auto;
+#pictures {
+    border: var(--grey-border);
     color: var(--bcit-darkblue);
     padding: 20px;
 }
 
-.txt-img {
+#pictures h2 {
+    margin-bottom: 23px;
+}
+
+#pictures ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
+}
+
+#pictures li {
+    border: 1px solid black; /* Placeholder, can remove after adding images */
+    border-radius: 10px;
+    padding: 12rem 5px 12rem;
+    text-align: center;
+}
+
+/* Services */
+#services {
+    color: var(--bcit-darkblue);
+    padding: 20px;
+    border: var(--grey-border);
     display: flex;
-    flex-direction: column;
+}
+
+.txt-img {
     margin: auto;
 }
 
+.txt-img h1 {
+    border-bottom: 3px solid var(--bcit-yellow);
+}
 .details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
     list-style-type: none;
 }
 
 .details li {
-    padding: 50px;
-    margin: 10px;
     border: 0.5px solid rgb(203, 210, 222);
     background-color: var(--bcit-white);
-    width: 20rem;
+    padding: 5rem 10rem 5rem;
     text-align: center;
 }
 
@@ -236,24 +283,32 @@ span.btn-text {
 .site-footer {
     display: flex;
     color: var(--bcit-darkblue);
-    width: 92%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .site-footer section {
-    padding: 20px;
+    padding: 46px 39px 34px;
     width: 25%;
-    height: 60vh;
-    border: 1px solid black; /* Temp border */
+    border: var(--grey-border);
+    display: inline;
+    line-height: 2em;
 }
 
 .site-footer h3 {
     text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 23px;
+    letter-spacing: 2.21px;
+    padding-left: 50px;
+    position: relative;
 }
 
 .site-footer ul {
     list-style-type: none;
+    font-size: 18px;
+}
+
+.site-footer li {
+    margin-bottom: 2px;
 }
 
 .site-footer a {
@@ -263,4 +318,25 @@ span.btn-text {
 .site-footer a:hover {
     color: var(--bcit-darkblue);
     transition: 0.3s ease-in-out;
+}
+
+.site-footer .bar:before {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    left: 0;
+    width: 32px;
+    margin-top: 15px;  
+    background-color: var(--bcit-darkblue);
+    position: absolute;
+}
+
+.site-footer .campuses {
+    margin-bottom: 23px;   
+}
+
+.site-footer .legal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 13px;
 }

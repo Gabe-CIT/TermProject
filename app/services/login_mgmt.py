@@ -30,7 +30,7 @@ class User(UserMixin):
 # type hint that we want the app to a Flask instance (app: Flask)
 def init_login_mgr(app: Flask):
     login_manager.init_app(app)
-    login_manager.login_view = "auth.login" 
+    login_manager.login_view = "auth.student_login" 
     
 # we must return User object or None
 @login_manager.user_loader 

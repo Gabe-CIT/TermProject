@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 app.secret_key = "1234"
 
+# ADD ROUTES FROM ./app/controllers/<>_routes.py HERE!!!
 app.register_blueprint(auth_bp)
 app.register_blueprint(main_bp)
 

@@ -5,7 +5,7 @@
         "role": "student"
     },
 
-    "advisor@my.bcit.ca": {
+    "advisor@bcit.ca": {
         "password": "1234",
         "name": "Advisor",
         "role": "advisor"
