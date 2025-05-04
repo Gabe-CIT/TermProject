@@ -35,15 +35,6 @@
     --grey-border: 1px solid #f2f2f2;
 }
 
-
-@media (max-width: 800px) {
-    body {
-        height: 350vh;
-        overflow: hidden;
-        width: 100%;
-    }
-}
-
 * {
     box-sizing: border-box;
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
@@ -54,6 +45,13 @@
 /* Main Body */
 body {
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+}
+
+main,
+footer {
+    max-width: 1448px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a, 
@@ -81,7 +79,6 @@ ul li {
 .portalnav {
     position: relative;
     height: 40px;
-    width: 100%;
     display: flex;
     align-items: center;
     background-color: var(--bcit-darkblue);
@@ -154,18 +151,12 @@ svg.logo {
     color: var(--bcit-blue);
 }
 
-/* Appointments */
+/* Main section of body */
 main {
-    margin-top: 140px; /* Gives enough space to not overlap nav bar */
+    margin-top: 138px; /* Gives enough space to not overlap with nav bar */
 }
 
-main,
-footer {
-    min-width: 92%;
-    margin-left: auto; /* Centers main body */
-    margin-right: auto;
-}
-
+/* Main section appointments */
 #appointments {
     color: var(--bcit-darkblue);
     display: flex;
@@ -218,9 +209,10 @@ span.btn-text {
     transition: all 0.2s ease 0.3s;
 }
 
-/* Pictures */
+/* Main Section Pictures */
 #pictures {
     border: var(--grey-border);
+    border-top: 0;
     color: var(--bcit-darkblue);
     padding: 20px;
 }
@@ -236,18 +228,18 @@ span.btn-text {
     grid-row-gap: 1.25rem;
 }
 
-#pictures li {
-    border: 1px solid black; /* Placeholder, can remove after adding images */
+#pictures img {
     border-radius: 10px;
-    padding: 12rem 5px 12rem;
+    max-width: 500px;
     text-align: center;
 }
 
-/* Services */
+/* Main Section Services */
 #services {
     color: var(--bcit-darkblue);
     padding: 20px;
     border: var(--grey-border);
+    border-top: 0;
     display: flex;
 }
 
@@ -258,6 +250,7 @@ span.btn-text {
 .txt-img h1 {
     border-bottom: 3px solid var(--bcit-yellow);
 }
+
 .details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -279,7 +272,7 @@ span.btn-text {
     transition: 0.3s ease-in-out; 
 }
 
-/* Footer */
+/* Footer section */
 .site-footer {
     display: flex;
     color: var(--bcit-darkblue);
@@ -289,6 +282,7 @@ span.btn-text {
     padding: 46px 39px 34px;
     width: 25%;
     border: var(--grey-border);
+    border-top: 0;
     display: inline;
     line-height: 2em;
 }
@@ -302,7 +296,8 @@ span.btn-text {
     position: relative;
 }
 
-.site-footer ul {
+.site-footer ul,
+.site-footer ol {
     list-style-type: none;
     font-size: 18px;
 }
@@ -331,12 +326,73 @@ span.btn-text {
     position: absolute;
 }
 
+#contact,
+#visit,
+#news {
+    border-right: 0;
+}
+
+.site-footer .tel {
+    margin-top: 23px;
+}
+
+.site-footer .info {
+    margin-bottom: 50px;
+    font-size: 14px;
+}
+
+.site-footer .socialmedia {
+    display: flex;
+    gap: 20px;
+    font-size: 28px;
+}
+
+.site-footer .socialmedia a {
+    color: var(--bcit-darkblue);
+}
+
+.site-footer .socialmedia a:hover {
+    color: var(--bcit-blue);
+}
+
 .site-footer .campuses {
-    margin-bottom: 23px;   
+    margin-bottom: 60px;   
 }
 
 .site-footer .legal {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    gap: 1.5rem;
     font-size: 13px;
+}
+
+/* Responsive screen sizing for Footer section */
+@media screen and (max-width: 1000px) {
+    .site-footer .legal {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .site-footer {
+        flex-direction: column-reverse;
+    }
+
+    .site-footer section {
+        width: 100%;
+    }
+
+    #visit,
+    #news {
+        display: none;
+    }
+
+    #contact {
+        border: var(--grey-border);
+        border-top: 0;
+    }
+    .site-footer .legal {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
 }

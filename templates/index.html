@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&icon_names=chevron_right" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&icon_names=chevron_right"/> 
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'> <!-- For icons in footer -->
     <title>Home</title>
 </head>
 <body>
@@ -37,7 +38,7 @@
         <!-- Main part of the home page -->
         <section id="appointments">
             <h1>Appointments</h1>
-            <p>Welcome to BCIT's student advisory services, here you can book an appointment with any of our advisors</p>
+            <p>Welcome to BCIT's student advisory services, here you can book an appointment with our health advisors.</p>
             </br>
             <p class="im-lazy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque blandit finibus felis et varius. Pellentesque luctus cursus 
                 sollicitudin. Vivamus fermentum ex consectetur diam euismod bibendum. Praesent sed ex eget leo elementum malesuada.Maecenas tempus diam vitae 
@@ -60,7 +61,7 @@
         <section id="pictures">
             <h2>Health & Wellness</h2>
             <ul>
-                <li>Placeholder1</li>
+                <li><img src="../static/images/index/students.jpg"></li>
                 <li>Placeholder2</li>
                 <li>Placeholder3</li>
                 <li>Placeholder4</li>
@@ -87,13 +88,22 @@
        <!-- Footer goes here -->
         <section id="contact">
             <h3 class="bar">Contact</h3>
-            <p>3700 Willingdon Ave.</p>
-            <p>Burnaby, British Columbia</p>
-            <p>Canada V5G 3H2</p>
-            <p><a href="https://www.bcit.ca"><strong>bcit.ca</strong></a></p>
-            </br>
-            <p>Telephone: <a href="tel:604-434-5734">604-434-5734</a></br>Toll-free (Can/US): <a href="tel:1-866-434-1610">1-866-434-1610</a></p>
-            <p><a href="https://www.bcit.ca/contacts/"><strong>More Contact Numbers</strong></a></p>
+            <div class="info">
+                <p>3700 Willingdon Ave.</p>
+                <p>Burnaby, British Columbia</p>
+                <p>Canada V5G 3H2</p>
+                <p><a href="https://www.bcit.ca"><strong>bcit.ca</strong></a></p>
+                <div class="tel">
+                    <p>Telephone: <a href="tel:604-434-5734">604-434-5734</a></br>Toll-free (Can/US): <a href="tel:1-866-434-1610">1-866-434-1610</a></p>
+                    <p><a href="https://www.bcit.ca/contacts/"><strong>More Contact Numbers</strong></a></p>
+                </div>
+            </div>
+            <ul class="socialmedia">
+                <li><a href="https://www.facebook.com/bcit.ca" alt="BCIT Facebook" title="Like us on Facebook"><i class="fi fi-brands-facebook"></i></a></li>
+                <li><a href="https://twitter.com/bcit" alt="BCIT Twitter" title="Follow us on Twitter"><i class="fi fi-brands-twitter-alt"></i></a></li>
+                <li><a href="https://www.linkedin.com/school/bcit/" alt="BCIT Linkedin" title="Add us on Linkedin"><i class="fi fi-brands-linkedin"></i></a></li>
+            </ul>
+            <p>Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a></p>
         </section>
         <section id="visit">
             <ul class="visitinfo">
@@ -118,11 +128,11 @@
                 <li><a href="https://www.bcit.ca/about/visit/campuses-directions/aerospace/">Aerospace Technology Campus</a></li>
                 <li><a href="https://www.bcit.ca/about/visit/campuses-directions/annacis-island/">Annacis Island Campus</a></li>
             </ul>
-            <ul class="legal">
+            <ol class="legal">
                 <li><a href="https://www.bcit.ca/contacts/?from=https://www.bcit.ca/#website-feedback">Feedback</a></li>
                 <li><a href="https://www.bcit.ca/copyright/">Copyright</a></li>
                 <li><a href="https://www.bcit.ca/privacy/">Privacy</a></li>
-            </ul>
+            </ol>
         </section>
     </footer>
 </body>
