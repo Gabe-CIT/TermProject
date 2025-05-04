@@ -60,6 +60,12 @@ ul li {
     list-style-type: none;
 }
 
+@media screen and (max-width: 900px) {
+    body {
+        width: 100%;
+    }
+}
+
 /* Navigation bar */
 .default {
     top: 0;
@@ -174,7 +180,9 @@ main {
     margin-bottom: 23px;
 }
 
-#appointments a {
+
+/* Animated booking buttons */
+.booking-btn a {
     display: flex;
     justify-content: flex-end;
     font-size: 15px;
@@ -188,28 +196,28 @@ main {
     text-transform: uppercase;
 }
 
-#appointments a:hover {
+.booking-btn a:hover {
     transition: 0.3s ease-in-out;
     background-color: var(--bcit-blue);
     color: var(--bcit-white);
 }
 
-span.btn-text {
+.booking-btn span.btn-text {
     padding-top: 4px;
     margin-right: auto;
 }
 
-#appointments a .material-symbols-outlined:after {
+.booking-btn a .material-symbols-outlined:after {
     content: "\e5cc";
     font-size: 1.2rem;
 }
 
-#appointments a:hover .material-symbols-outlined {
+.booking-btn a:hover .material-symbols-outlined {
     transform: translateX(4px);
     transition: all 0.2s ease 0.3s;
 }
 
-/* Main Section Pictures */
+/* Main section pictures */
 #pictures {
     border: var(--grey-border);
     border-top: 0;
@@ -228,13 +236,21 @@ span.btn-text {
     grid-row-gap: 1.25rem;
 }
 
-#pictures img {
+#pictures img,
+#pictures li {
     border-radius: 10px;
-    max-width: 500px;
-    text-align: center;
+    max-width: 425px;
+    min-height: 16rem;
 }
 
-/* Main Section Services */
+/* Main section pictures responsive screen sizing */
+@media screen and (max-width: 1200px) {
+    #pictures ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Main section services */
 #services {
     color: var(--bcit-darkblue);
     padding: 20px;
@@ -247,8 +263,9 @@ span.btn-text {
     margin: auto;
 }
 
-.txt-img h1 {
+.txt-img h3 {
     border-bottom: 3px solid var(--bcit-yellow);
+    font-size: 2em;
 }
 
 .details {
@@ -262,14 +279,27 @@ span.btn-text {
 .details li {
     border: 0.5px solid rgb(203, 210, 222);
     background-color: var(--bcit-white);
-    padding: 5rem 10rem 5rem;
-    text-align: center;
+    padding: 1.67em;
+    min-width: 300px;
+    min-height: 10em;
 }
 
 .details li:hover {
     background-color: var(--bcit-darkblue);
     color: var(--bcit-white);
     transition: 0.3s ease-in-out; 
+}
+
+/* Main section services responsive screen sizing */
+@media screen and (max-width: 1200px) {
+    #services {
+        flex-direction: column;
+        gap: 500px;
+    }
+
+    .details li {
+        max-width: 600px;
+    }
 }
 
 /* Footer section */
@@ -372,7 +402,7 @@ span.btn-text {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .site-footer {
         flex-direction: column-reverse;
     }
