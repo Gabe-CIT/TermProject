@@ -35,6 +35,15 @@
     --grey-border: 1px solid #f2f2f2;
 }
 
+
+@media (max-width: 800px) {
+    body {
+        height: 350vh;
+        overflow: hidden;
+        width: 100%;
+    }
+}
+
 * {
     box-sizing: border-box;
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
@@ -154,6 +163,7 @@ main {
 main,
 footer {
     width: 74%; /* Makes a max width of 74% of screen */
+    min-width: 92%;
     margin-left: auto; /* Centers main body */
     margin-right: auto;
 }
@@ -181,7 +191,10 @@ footer {
     bottom: 0;
     left: 0;
     padding: 20px;
+    display: inline;
+    margin-bottom: 23px;
 }
+
 #appointments a {
     display: flex;
     justify-content: flex-end;
@@ -259,15 +272,33 @@ span.btn-text {
 .details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    color: var(--bcit-darkblue);
+    padding: 20px;
+    border: var(--grey-border);
+    display: flex;
+}
+
+.txt-img {
+    margin: auto;
+}
+
+.txt-img h1 {
+    border-bottom: 3px solid var(--bcit-yellow);
+}
+.details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
     list-style-type: none;
 }
 
 .details li {
-    padding: 50px;
     margin: 10px;
     border: 0.5px solid rgb(203, 210, 222);
     background-color: var(--bcit-white);
     width: 20rem;
+    padding: 5rem 10rem 5rem;
     text-align: center;
 }
 
@@ -289,6 +320,8 @@ span.btn-text {
     height: 60vh;
     border: var(--grey-border);
     white-space: pre-line;
+    display: inline;
+    line-height: 2em;
 }
 
 .site-footer h3 {
@@ -324,7 +357,17 @@ span.btn-text {
     height: 1px;
     left: 0;
     width: 32px;
-    margin-top: 7px;    
+    margin-top: 15px;  
     background-color: var(--bcit-darkblue);
     position: absolute;
+}
+
+.site-footer .campuses {
+    margin-bottom: 23px;   
+}
+
+.site-footer .legal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 13px;
 }

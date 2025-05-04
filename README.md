@@ -30,3 +30,8 @@ Run the following command
 ```
 deactivate
 ```
+
+## Run app in terminal/cmd prompt using:
+```py
+py app.py
+```

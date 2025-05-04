@@ -1,0 +1,13 @@
+{
+    "ncao5@my.bcit.ca": {
+        "password": "1234",
+        "name": "Nick Cao",
+        "role": "student"
+    },
+
+    "advisor@bcit.ca": {
+        "password": "1234",
+        "name": "Advisor",
+        "role": "advisor"
+    }
+}
