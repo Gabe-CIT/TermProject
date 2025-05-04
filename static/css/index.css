@@ -243,11 +243,9 @@ main {
     min-height: 16rem;
 }
 
-/* Main section pictures responsive screen sizing */
-@media screen and (max-width: 1200px) {
-    #pictures ul {
-        grid-template-columns: repeat(2, 1fr);
-    }
+#pictures .img1 {
+    background-image: url("../images/index/students.jpg");
+    background-size: cover;
 }
 
 /* Main section services */
@@ -292,14 +290,27 @@ main {
 
 /* Main section services responsive screen sizing */
 @media screen and (max-width: 1200px) {
+    #pictures ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     #services {
         flex-direction: column;
         gap: 500px;
     }
+}
 
-    .details li {
-        max-width: 600px;
+@media screen and (max-width: 900px) {
+    #pictures ul,
+    #services .details {
+        display: flex;
+        flex-direction: column;
     }
+    
+    #pictures img {
+        max-width: 400px;
+    }
+
 }
 
 /* Footer section */
@@ -389,6 +400,10 @@ main {
     margin-bottom: 60px;   
 }
 
+.site-footer #contact .legal {
+    display: none;
+}
+
 .site-footer .legal {
     display: flex;
     gap: 1.5rem;
@@ -420,7 +435,12 @@ main {
         border: var(--grey-border);
         border-top: 0;
     }
-    .site-footer .legal {
+
+    .site-footer #campusinfo .legal {
+        display: none;
+    }
+
+    .site-footer #contact .legal {
         display: flex;
         justify-content: center;
         flex-direction: row;
