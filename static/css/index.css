@@ -45,6 +45,9 @@
 /* Main Body */
 body {
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    min-width: 320px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 main,
@@ -52,18 +55,14 @@ footer {
     max-width: 1448px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 a, 
 ul li {
     text-decoration: none;
     list-style-type: none;
-}
-
-@media screen and (max-width: 900px) {
-    body {
-        width: 100%;
-    }
 }
 
 /* Navigation bar */
@@ -168,7 +167,7 @@ main {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    border: var(--grey-border); /* Temp border */
+    border: var(--grey-border);
 }
 
 #appointments h1 {
@@ -188,12 +187,13 @@ main {
     font-size: 15px;
     text-decoration: none;
     color: var(--bcit-blue);
-    width: 15rem;
+    max-width: 15rem;
     padding: 10px;
     margin-bottom: 10px;
     background-color: var(--white-color);
     border: 1px solid var(--bcit-blue);
     text-transform: uppercase;
+    max-height: 5rem;
 }
 
 .booking-btn a:hover {
@@ -229,18 +229,21 @@ main {
     margin-bottom: 23px;
 }
 
-#pictures ul {
+#pictures .healthgrids {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 1.25rem;
     grid-row-gap: 1.25rem;
 }
 
-#pictures img,
-#pictures li {
+#pictures .img {
     border-radius: 10px;
     max-width: 425px;
     min-height: 16rem;
+}
+
+#pictures .showpoint li {
+    list-style-type: disc;
 }
 
 #pictures .img1 {
@@ -288,7 +291,7 @@ main {
     transition: 0.3s ease-in-out; 
 }
 
-/* Main section services responsive screen sizing */
+/* Main section responsive screen sizing */
 @media screen and (max-width: 1200px) {
     #pictures ul {
         grid-template-columns: repeat(2, 1fr);
@@ -300,11 +303,19 @@ main {
     }
 }
 
-@media screen and (max-width: 900px) {
-    #pictures ul,
+@media screen and (max-width: 960px) {
+    main, footer {
+        padding: 0;
+    }
+
+    #pictures .healthgrids,
     #services .details {
         display: flex;
         flex-direction: column;
+    }
+    
+    #services .details li {
+        min-width: 0;
     }
     
     #pictures img {
@@ -414,12 +425,17 @@ main {
 @media screen and (max-width: 1000px) {
     .site-footer .legal {
         flex-direction: column;
+        gap: 5px;
     }
 }
 
 @media screen and (max-width: 900px) {
     .site-footer {
         flex-direction: column-reverse;
+    }
+
+    .site-footer .legal {
+        gap: 10px;
     }
 
     .site-footer section {
