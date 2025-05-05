@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Health Services - BCIT</title>
-  <link rel="stylesheet" href="booking.css" />
+  <link rel="stylesheet" href="example.css" />
 </head>
 <body>
   <header class="default">
@@ -51,6 +51,13 @@
       <h1>Schedule</h1>
       <label for="calendar">Choose a date</label><br><br>
       <input type="date" id="calendar" name="calendar">
+    </div>
+    <div class="time">
+        <form action="/action_page.php">
+            <label for="appt">Select a time:</label>
+            <input type="time" id="appt" name="appt">
+            <input type="submit" value="Submit">
+        </form>
     </div>
     <a href="confirmation.html">
       <button>Continue</button>
