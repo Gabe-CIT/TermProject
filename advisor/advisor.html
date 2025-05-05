@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Health Services - BCIT</title>
-  <link rel="stylesheet" href="booking.css" />
+  <link rel="stylesheet" href="advisor.css" />
 </head>
 <body>
   <header class="default">
@@ -35,29 +35,26 @@
       </ul>
     </div>
   </header>
-  <main> 
-    <div class="purpose">
-      <h1>Visit Details</h1>
-      <textarea id="purpose" name="purpose" rows="15" placeholder="State the purpose of your visit here..."></textarea>
+  <main>
+    <div class=advisor-profile>
+      <ul>
+        <li><button>&#128100;</button></li>
+        <li><button>&#xf0f3;</button></li>
+      </ul>
     </div>
-
-    <div class="type">
-      <h1>Services</h1>
-      <div class="type-option">
-        <div class="option">🧍 In Person</div>
-        <div class="option">&#x260E; Phone Call</div>
-      </div>
+    <div class="upcoming">
+        <h1>Upcoming Appointment</h1>
+        <ul>
+            <li>Date: </li>
+            <li>Time: </li>
+            <li>Name: </li>
+            <li>Visit Details: </li>
+        </ul>
+        <div class="option-button">
+            <button>Cancel</button>
+            <button>Continue</button>
+        </div>
     </div>
-
-    <div class="schedule">
-      <h1>Schedule</h1>
-      <label for="calendar">Choose a date</label><br><br>
-      <input type="date" id="calendar" name="calendar">
-    </div>
-
-    <a href="confirmation.html">
-      <button>Continue</button>
-    </a>
   </main>
 </body>
 </html>
