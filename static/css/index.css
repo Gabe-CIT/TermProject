@@ -357,9 +357,9 @@ span.btn-text {
     height: 1px;
     left: 0;
     width: 32px;
-    margin-top: 15px;  
     background-color: var(--bcit-darkblue);
     position: absolute;
+    margin-top: 15px;  
 }
 
 .site-footer .campuses {

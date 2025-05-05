@@ -159,7 +159,11 @@ svg.logo {
     height: 75vh;
 =======
     height: 70vh;
+<<<<<<< Updated upstream
 >>>>>>> ec334cdbe5fd3244bb6eaface329db3b7e55752f
+=======
+>>>>>>> Nick
+>>>>>>> Stashed changes
 }
 
 .cat-list {
@@ -186,7 +190,11 @@ svg.logo {
 
 .cat-list li:hover {
     opacity: .7;
+<<<<<<< Updated upstream
 >>>>>>> ec334cdbe5fd3244bb6eaface329db3b7e55752f
+=======
+>>>>>>> Nick
+>>>>>>> Stashed changes
 }
 
 .service-cat {
@@ -209,7 +217,11 @@ svg.logo {
 
 .advisor {
     margin-bottom: 30px;
+<<<<<<< Updated upstream
 >>>>>>> ec334cdbe5fd3244bb6eaface329db3b7e55752f
+=======
+>>>>>>> Nick
+>>>>>>> Stashed changes
 }
 
 .advisor p {
@@ -250,7 +262,11 @@ svg.logo {
 }
 
 =======
+<<<<<<< Updated upstream
 >>>>>>> ec334cdbe5fd3244bb6eaface329db3b7e55752f
+=======
+>>>>>>> Nick
+>>>>>>> Stashed changes
 .counseling {
     display: none;
 }

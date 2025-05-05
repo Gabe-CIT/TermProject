@@ -26,3 +26,8 @@ def services():
     # we can access current_user attributes using current_user from flask_login
     print(current_user)
     return render_template("services.html")
+
+@main_bp.route("/cancel")
+@login_required
+def cancel_booking():
+    return render_template() # cancellation page

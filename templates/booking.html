@@ -31,7 +31,7 @@
             <li><a href="https://www.bcit.ca/about/">About BCIT</a></li>
         </ul>
     </header>
-    <main> 
+    <form action="/booking/confirm" method="post"></form>
         <div class="purpose">
             <h1>Purpose of your Visit</h1>
             <textarea id="purpose" name="purpose" rows="25" cols="94" placeholder="State the purpose of your visit here..."></textarea><br><br>
@@ -48,9 +48,8 @@
             <label for="calendar">Choose a date</label>
             <input type="date" id="calendar" name="calendar" onchange="handleDateClick(this.value)">
         </div>
-        <a href="confirmation.html">
-            <button>Continue</button>
+            <button>Confirm Booking</button>
         </a>
-    </main>
+    </form>
 </body>
 </html>

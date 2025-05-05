@@ -12,4 +12,4 @@ app.register_blueprint(book_bp)
 init_login_mgr(app)
 
 if __name__ == "__main__":
-    app.run(port=8888, use_reloader=False)
+    app.run(debug=True, port=8888)

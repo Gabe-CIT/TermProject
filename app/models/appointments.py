@@ -13,9 +13,10 @@ class Appointments(db.Model):
     advisor_id = db.mapped_column(db.Integer, db.ForeignKey("Advisors.id"), nullable=False)
     advisor = db.relationship("Advisors", back_populates="advisor_appointments")
 
-    # 
+    # appointment attributes 
     day = db.mapped_column(db.Date, nullable=False)
     start_time = db.mapped_column(db.Time, nullable=False)
     end_time = db.mapped_column(db.Time, nullable=False)
     confirmed = db.mapped_column(db.Boolean, nullable=False, default=False)
     completed = db.mapped_column(db.Boolean, nullable=False, default=False)
+    meeting_type = db.mapped_column(db.String, nullable=False)
