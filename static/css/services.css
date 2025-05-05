@@ -88,7 +88,7 @@ a {
     font-family: "jpAlva", Arial, Helvetica, sans-serif;
     font-size: 15px;
     text-transform: uppercase;
-    transition: all .15s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
 .portalnav a {
@@ -156,7 +156,6 @@ svg.logo {
 
 .cat-list-container {
     margin-left: var(--margin);
-    border-right: var(--divider);
     padding-right: 50px;
     height: 75vh;
 }
@@ -165,6 +164,7 @@ svg.logo {
     color: var(--bcit-blue);
     font-weight: 600;
     margin-top: 10px;
+    text-wrap: nowrap;
 }
 
 .cat-list li {
@@ -182,14 +182,35 @@ svg.logo {
 }
 
 .service-cat {
-    margin: 5px 0 0 50px;
+    padding: 5px 0 0 50px;
+    border-left: var(--divider);
+}
+
+.service-cat h1 {
+    color: var(--bcit-blue);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.blurb {
+    margin-bottom: 40px;
+}
+
+.blurb p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    width: 70%;
+}
+
+.directory {
+    margin-bottom: 50px;
 }
 
 .cat-name {
     color: var(--bcit-blue);
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
 }
 
 .advisor {
@@ -207,35 +228,27 @@ svg.logo {
 
 .book-btn {
     width: fit-content;
-    margin-top: 10px;
+    margin: 10px 0;
     padding: 10px;
-    background-color: var(--bcit-blue);
-    border: none;
-    border-radius: 3px;
+    background-color: transparent;
+    border: 1px solid var(--bcit-blue);
     transition: all .1s ease-in-out;
     cursor: pointer;
-}
-
-.book-btn a {
+    text-transform: uppercase;
     text-decoration: none;
     color: #fff;
-    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
-    font-size: .9rem;
-    font-weight: 700;
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--bcit-blue);
 }
 
 .book-btn:hover {
     background-color: var(--link-color);
-}
-
-.book-btn:hover a {
+    border-color: var(--link-color);
     color: #fff;
 }
 
-.counseling {
-    display: none;
+.book-btn:visited {
+    color: var(--bcit-blue);
 }
-
-/* .group-therapy {
-    display: none;
-} */
