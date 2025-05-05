@@ -138,35 +138,76 @@ svg.logo {
     color: var(--link-color);
 }
 
+textarea {
+    resize: none;
+}
+
 main {
-    align-items: center;
     display: flex;
-    padding-top: 140px;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 114px);
+    padding-top: 114px;
+    padding: 140px 0 0 150px;
+    background-color: #f9f9f9;
+    text-align: left;
     flex-direction: column;
 }
 
-h1 {
-    color: var(--bcit-blue);
-    font-size: 36px;
+.type-option {
+    border: 1px solid white;
+    background-color: white;
+    padding: 20px;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.type-option {
+    width: 500px;
+}
+
+.option {
+    font-size: 15px;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid;
+}
+
+.option:last-child {
+    border-bottom: none;
+}
+
+.option:hover, .option.selected {
+    background-color: var(--bcit-blue);
+    color: white;
+}
+
+.purpose {
+    align-items: center;
+    text-align: flex-start;
+}
+
+.type {
+    text-align: flex-start;
+    align-items: center;
+}
+
+.schedule {
     margin-top: 12px;
 }
 
-.receipt {
-    text-align: center;
-    border: 1px solid;
-    padding: 40px 40px;
-    text-align: left;
-    margin: 35px;
-    max-width: 1500px;
-    width: 50%;
+main h1 {
+    margin-bottom: 15px;
+}
+
+.purpose, .type, .schedule {
+    margin-bottom: 35px;
+}
+
+.purpose h1 {
+    margin-top: 10px;
 }
 
 button {
-    background-color: var(--bcit-blue);
-    color: white;
-    padding: 15px 28px;
-    font-size: 16px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
+    padding: 12px 30px;
 }

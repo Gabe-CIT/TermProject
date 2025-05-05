@@ -138,76 +138,81 @@ svg.logo {
     color: var(--link-color);
 }
 
+:root {
+    --bcit-blue: #003c71;
+    --bcit-yellow: #fff400;
+    --link-color: #296cf6;
+    --grey-border: 1px solid #f2f2f2;
+}
+  
+body {
+    margin: 0;
+} 
+  
+h1 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+  
+textarea {
+    padding: 10px;
+    border: 1px solid white;
+    font-size: 15px;
+    width: 100%;
+}
+  
+.purpose,
+.type,
+.schedule {
+    align-items: center;
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 10px rgba(1, 1, 1, 0.5);
+    width: 755px;
+}
+  
+.type-option {
+    display: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+  
+.option {
+    background: white;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+  
+.option:hover,
+.option.selected {
+    background-color: var(--bcit-blue);
+    color: white;
+}
+  
+button {
+    background-color: var(--bcit-blue);
+    color: white;
+    padding: 15px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+  
+button:hover {
+    background-color: #002b53;
+}
+
 textarea {
     resize: none;
 }
 
 main {
-    display: flex;
+    padding: 160px 0 60px 150px;
+    max-width: 700px;
     justify-content: center;
-    align-items: flex-start;
-    min-height: calc(100vh - 114px);
-    padding-top: 114px;
-    padding: 140px 0 0 150px;
-    background-color: #f9f9f9;
-    text-align: left;
-    flex-direction: column;
-}
-
-.type-option {
-    border: 1px solid white;
-    background-color: white;
-    padding: 20px;
-    gap: 20px;
-    flex-direction: column;
-}
-
-.type-option {
-    width: 500px;
-}
-
-.option {
-    font-size: 15px;
-    padding: 20px;
-    cursor: pointer;
-    border-bottom: 1px solid;
-}
-
-.option:last-child {
-    border-bottom: none;
-}
-
-.option:hover, .option.selected {
-    background-color: var(--bcit-blue);
-    color: white;
-}
-
-.purpose {
-    align-items: center;
-    text-align: flex-start;
-}
-
-.type {
-    text-align: flex-start;
-    align-items: center;
-}
-
-.schedule {
-    margin-top: 12px;
-}
-
-main h1 {
-    margin-bottom: 15px;
-}
-
-.purpose, .type, .schedule {
-    margin-bottom: 35px;
-}
-
-.purpose h1 {
-    margin-top: 10px;
-}
-
-button {
-    padding: 12px 30px;
 }
