@@ -184,6 +184,7 @@ svg.logo {
 .service-cat {
     padding: 5px 0 0 50px;
     border-left: var(--divider);
+    margin-bottom: 50px;
 }
 
 .service-cat h1 {
@@ -220,6 +221,11 @@ svg.logo {
 .advisor p {
     font-size: 1rem;
     line-height: 1.6;
+}
+
+.advisor a {
+    display: block;
+    width: fit-content;
 }
 
 .advisor a:hover {
