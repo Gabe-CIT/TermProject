@@ -242,12 +242,39 @@ main {
     min-height: 16rem;
 }
 
+#pictures .booknow {
+    position: relative;
+    min-height: 14rem;
+}
+
 #pictures .showpoint li {
     list-style-type: disc;
+    margin-bottom: 25px;
+    position: relative;
+}
+#pictures .showpoint .booking-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 #pictures .img1 {
     background-image: url("../images/index/students.jpg");
+    background-size: cover;
+}
+
+#pictures .img2 {
+    background-image: url("../images/index/people-therapy.jpg");
+    background-size: cover;
+}
+
+#pictures .img3 {
+    background-image: url("../images/index/psychologist-office.jpg");
+    background-size: cover;
+}
+
+#pictures .img4 {
+    background-image: url("../images/index/man-drinking-juice.jpg");
     background-size: cover;
 }
 
@@ -264,17 +291,23 @@ main {
     margin: auto;
 }
 
+#services .txt-img img {
+    width: 500px;
+}
+
 .txt-img h3 {
-    border-bottom: 3px solid var(--bcit-yellow);
+    text-align: center;
     font-size: 2em;
+    margin-bottom: 20px;
 }
 
 .details {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 1.25rem;
     grid-row-gap: 1.25rem;
     list-style-type: none;
+    font-weight: bold;
 }
 
 .details li {
@@ -291,6 +324,10 @@ main {
     transition: 0.3s ease-in-out; 
 }
 
+.details img {
+    width: 50px;
+}
+
 /* Main section responsive screen sizing */
 @media screen and (max-width: 1200px) {
     #pictures ul {
@@ -299,7 +336,7 @@ main {
 
     #services {
         flex-direction: column;
-        gap: 500px;
+        gap: 50px;
     }
 }
 
