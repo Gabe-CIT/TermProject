@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Services - BCIT</title>
-    <link rel="stylesheet" href="schedule.css">
+    <title>Health Services</title>
+    <link rel="stylesheet" href="confirmation.css">
 </head>
 <body>
     <header class="default">
@@ -32,13 +32,20 @@
         </ul>
     </header>
     <main>
-        <div class="type">
-            <h1>Select the type of Service</h1>
-            <div class="type-options">
-                <div class="option">In Person</div>
-                <div class="option">Phone Call</div>
-            </div>
+        <div class="conf">
+            <h1>Confirmation</h1>
+                <form class="receipt">
+                    <label for="bcit-id">BCIT ID:</label><br>
+                    <input type="text" id="bcit-id" name="bcit-id"><br><br>
+                    <label for="first-name">First Name:</label><br>
+                    <input type="text" id="first-name" name="first-name"><br><br>
+                    <label for="last-name">Last Name:</label><br>
+                    <input type="text" id="last-name" name="last-name"><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email"><br><br>
+                </form>
         </div>
+        <button>Submit</button>
     </main>
 </body>
 </html>

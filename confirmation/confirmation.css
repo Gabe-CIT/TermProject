@@ -138,27 +138,42 @@ svg.logo {
     color: var(--link-color);
 }
 
+body {
+    margin: 0;
+}
+
 main {
-    align-items: center;
-    display: flex;
-    padding-top: 140px;
-    flex-direction: column;
+    display: block; 
+    padding: 140px 0 0 150px; 
 }
 
 h1 {
-    color: var(--bcit-blue);
-    font-size: 36px;
-    margin-top: 12px;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.conf {
+    align-items: center;
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 10px rgba(1, 1, 1, 0.5);
+    width: 755px;
 }
 
 .receipt {
-    text-align: center;
-    border: 1px solid;
-    padding: 40px 40px;
-    text-align: left;
-    margin: 35px;
-    max-width: 1500px;
-    width: 50%;
+    align-items: center;
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.receipt input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid black;
+    width: 100%;
 }
 
 button {
