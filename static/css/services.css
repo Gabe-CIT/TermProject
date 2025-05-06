@@ -234,19 +234,21 @@ svg.logo {
 
 .book-btn {
     width: fit-content;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 7px 0;
+    padding: 8px;
     background-color: transparent;
+    /* background-color: var(--bcit-blue); */
     border: 1px solid var(--bcit-blue);
     transition: all .1s ease-in-out;
     cursor: pointer;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-decoration: none;
-    color: #fff;
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
-    font-size: .9em;
+    font-size: 1em;
     font-weight: 500;
+    /* color: #fff; */
     color: var(--bcit-blue);
+    border-radius: 3px;
 }
 
 .book-btn:hover {
