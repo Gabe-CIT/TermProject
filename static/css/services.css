@@ -151,7 +151,7 @@ svg.logo {
 .to-top {
     position: fixed;
     bottom: 20px;
-    right: 25px;
+    right: 35px;
     fill: var(--bcit-blue);
     cursor: pointer;
     opacity: .5;
@@ -263,7 +263,7 @@ svg.logo {
     cursor: pointer;
     text-decoration: none;
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
-    font-size: 1em;
+    font-size: .95em;
     font-weight: 500;
     color: #fff;
     border-radius: 3px;
