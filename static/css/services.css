@@ -42,8 +42,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    cursor: default;
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
@@ -57,6 +60,7 @@ a {
     width: 100vw;
     border-bottom: var(--grey-border);
     z-index: 1;
+    cursor: default;
 }
 
 .default li {
@@ -205,6 +209,7 @@ svg.logo {
 
 .directory {
     margin-bottom: 50px;
+    scroll-margin: calc(var(--header-height) + 15px);
 }
 
 .cat-name {
@@ -236,18 +241,15 @@ svg.logo {
     width: fit-content;
     margin: 7px 0;
     padding: 8px;
-    background-color: transparent;
-    /* background-color: var(--bcit-blue); */
+    background-color: var(--bcit-blue);
     border: 1px solid var(--bcit-blue);
     transition: all .1s ease-in-out;
     cursor: pointer;
-    /* text-transform: uppercase; */
     text-decoration: none;
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
     font-size: 1em;
     font-weight: 500;
-    /* color: #fff; */
-    color: var(--bcit-blue);
+    color: #fff;
     border-radius: 3px;
 }
 
@@ -259,4 +261,18 @@ svg.logo {
 
 .book-btn:visited {
     color: var(--bcit-blue);
+}
+
+.advisor a, .advisor a:visited {
+    color: var(--link-color);
+    border-bottom: 1px solid transparent;
+    transition: .1s ease all;
+}
+
+.helpline a:hover {
+    border-bottom: 1px solid var(--link-color) !important;
+}
+
+.number {
+    font-weight: 600;
 }
