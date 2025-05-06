@@ -87,3 +87,9 @@ def advisor_login():
 def logout():
     logout_user()
     return redirect(url_for("auth.student_login"))
+
+#  FORGOT PASSWORD ROUTE > 127.0.0.1:8888/auth/forgot
+@auth_bp.route("/logout")
+@auth_bp.route('/forgot')
+def forgot_pass():
+    return render_template('forgot.html')

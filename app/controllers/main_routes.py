@@ -14,11 +14,6 @@ For example, /login page fall under auth_routes, however, /homepage page wouldn'
 def homepage():
     return render_template("index.html")
 
-# BOOKING ROUTE > http://127.0.0.1:8888/schedule
-@main_bp.route("/schedule")
-def schedule():
-    return render_template("schedule.html")
-
 # SERVICES ROUTE > http://127.0.0.1:8888/services
 @main_bp.route("/services")
 @login_required # make a route have the requirement of a user being auth'ed !!!TEMP BECAUSE GUEST USER SHOULD BE ABLE TO ACCESS SERVICES, PROMPT THEM TO LOGIN TO BOOK SERVICE
@@ -31,3 +26,7 @@ def services():
 @login_required
 def cancel_booking():
     return render_template() # cancellation page
+
+@main_bp.route('/advisor')
+def advisor_log_page():
+    return render_template('advisor.html')

@@ -49,7 +49,7 @@
             
             <button type="submit">Login</button>
             <br>
-            <p><a href="forgot.html">Forgot Password?</a> 
+            <p><a href="{{ url_for('auth.forgot_pass') }}">Forgot Password?</a> 
         </form>
         <p class="advisorlogin-text">
         <b> For Advisors:</b> <a href="{{ url_for('auth.advisor_login', next=request.args.get('next')) }}"">Advisor Login Portal</a>

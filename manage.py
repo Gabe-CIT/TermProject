@@ -1,6 +1,6 @@
 from db import db
-import models
-from app import app
+from app import models
+from application import application
 import csv
 
 def create():
@@ -19,9 +19,11 @@ def import_users():
                 name_data = row['name']
                 surname_data = row["surname"]
                 email_data = row['email']
+                phone = row.get('phone', None)
+                role = row['role']
 
                 # creates a new user with columns filled
-                user = models.Users(name=name_data, surname=surname_data, email=email_data)
+                user = models.Users(name=name_data, surname=surname_data, email=email_data, phone=phone, role=role)
 
                 db.session.add(user)
 
@@ -75,7 +77,7 @@ def drop():
     print("Dropped Database")
 
 if __name__ == "__main__":
-    with app.app_context():
+    with application.app_context():
         drop()
         create()
         import_users()
