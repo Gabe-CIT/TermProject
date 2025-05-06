@@ -6,3 +6,8 @@ Gabe\
 Kristine\
 Janek\
 Klint
+
+Run app in terminal/cmd prompt using:
+```py
+py app.py
+```

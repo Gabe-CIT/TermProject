@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Services - BCIT</title>
-    <link rel="stylesheet" href="../static/css/booking.css">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <title>Student Login Portal — BCIT </title>
 </head>
 <body>
     <header class="default">
@@ -31,26 +31,9 @@
             <li><a href="https://www.bcit.ca/about/">About BCIT</a></li>
         </ul>
     </header>
-    <main> 
-        <div class="purpose">
-            <h1>Purpose of your Visit</h1>
-            <textarea id="purpose" name="purpose" rows="25" cols="94" placeholder="State the purpose of your visit here..."></textarea><br><br>
-        </div>
-        <div class="type">
-            <h1>Services</h1>
-            <div class="type-option">
-                <div class="option">In Person</div>
-                <div class="option">Phone Call</div>
-            </div>
-        </div>
-        <div class="schedule">
-            <h1>Schedule</h1>
-            <label for="calendar">Choose a date</label>
-            <input type="date" id="calendar" name="calendar" onchange="handleDateClick(this.value)">
-        </div>
-        <a href="confirmation.html">
-            <button>Continue</button>
-        </a>
-    </main>
+    <div class="login-container">
+        <h2>Error {{ err_code }}</h2>
+        <p>{{ err_msg }}</p>
+    </div>     
 </body>
 </html>

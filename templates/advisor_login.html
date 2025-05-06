@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/login.css">
-    <title>Student Login Portal — BCIT </title>
+    <link rel="stylesheet" href="../static/css/advisor.css">
+    <title>Advisor Login Portal — BCIT </title>
 </head>
 <body>
     <header class="default">
@@ -33,20 +33,24 @@
     </header>
     <div class="login-container">
         <h2>Welcome to BCIT Advisor Booking</h2>
-        <p>Student Login Portal</p>
-        <form>
+        <p>Advisor Login Portal</p>
+        <form method="post" action="{{ url_for('auth.advisor_login') }}">
+
+            <!-- THIS IS TO CATCH THE NEXT PARAM IN POST REQUEST. READ DOC.md FOR MORE INFORMATION -->
+            {% if request.args.get('next') %}
+                <input type="hidden" name="next" value="{{ request.args.get('next') }}">
+            {% endif %}
+
             <label>Email:</label>
-            <input type="email" placeholder="name@my.bcit.ca" required>
+            <input type="email" placeholder="name@my.bcit.ca" name="email_address_data" required>
 
             <label>Password:</label>
-            <input type="password" placeholder="••••••••" required>
-            
+            <input type="password" placeholder="••••••••" name="password_data" required>
+
             <button type="submit">Login</button>
-            <br>
-            <p><a href="forgot.html">Forgot Password?</a> 
         </form>
         <p class="advisorlogin-text">
-        <b> Advisors:</b> <a href="advisor.html">Advisor Login Portal</a>
+        <a href="forgot.html">Forgot Password?</a>
         </p>
     </div>     
 </body>

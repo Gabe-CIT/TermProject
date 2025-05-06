@@ -35,6 +35,18 @@
     --grey-border: 1px solid #f2f2f2;
 }
 
+<<<<<<< HEAD
+=======
+
+@media (max-width: 800px) {
+    body {
+        height: 350vh;
+        overflow: hidden;
+        width: 100%;
+    }
+}
+
+>>>>>>> Nick
 * {
     box-sizing: border-box;
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
@@ -44,7 +56,10 @@
 
 /* Main Body */
 body {
+<<<<<<< HEAD
     height: 150vh; /* Placeholder height */
+=======
+>>>>>>> Nick
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
 }
 
@@ -153,19 +168,29 @@ main {
 
 main,
 footer {
+<<<<<<< HEAD
     width: 74%; /* Makes a max width of 74% of screen */
+=======
+    min-width: 92%;
+>>>>>>> Nick
     margin-left: auto; /* Centers main body */
     margin-right: auto;
 }
 
 #appointments {
+<<<<<<< HEAD
     height: 50vh; /* Placeholder */
+=======
+>>>>>>> Nick
     color: var(--bcit-darkblue);
     display: flex;
     flex-direction: column;
     padding: 20px;
     border: var(--grey-border); /* Temp border */
+<<<<<<< HEAD
     position: relative;
+=======
+>>>>>>> Nick
 }
 
 #appointments h1 {
@@ -173,6 +198,7 @@ footer {
 }
 
 #appointments .im-lazy {
+<<<<<<< HEAD
     white-space: pre-line;
 }
 
@@ -182,6 +208,12 @@ footer {
     left: 0;
     padding: 20px;
 }
+=======
+    display: inline;
+    margin-bottom: 23px;
+}
+
+>>>>>>> Nick
 #appointments a {
     display: flex;
     justify-content: flex-end;
@@ -244,6 +276,7 @@ span.btn-text {
 
 /* Services */
 #services {
+<<<<<<< HEAD
     display: flex;
     color: var(--bcit-darkblue);
     padding: 20px;
@@ -259,15 +292,41 @@ span.btn-text {
 .details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+=======
+    color: var(--bcit-darkblue);
+    padding: 20px;
+    border: var(--grey-border);
+    display: flex;
+}
+
+.txt-img {
+    margin: auto;
+}
+
+.txt-img h1 {
+    border-bottom: 3px solid var(--bcit-yellow);
+}
+.details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
+>>>>>>> Nick
     list-style-type: none;
 }
 
 .details li {
+<<<<<<< HEAD
     padding: 50px;
     margin: 10px;
     border: 0.5px solid rgb(203, 210, 222);
     background-color: var(--bcit-white);
     width: 20rem;
+=======
+    border: 0.5px solid rgb(203, 210, 222);
+    background-color: var(--bcit-white);
+    padding: 5rem 10rem 5rem;
+>>>>>>> Nick
     text-align: center;
 }
 
@@ -286,9 +345,15 @@ span.btn-text {
 .site-footer section {
     padding: 46px 39px 34px;
     width: 25%;
+<<<<<<< HEAD
     height: 60vh;
     border: var(--grey-border);
     white-space: pre-line;
+=======
+    border: var(--grey-border);
+    display: inline;
+    line-height: 2em;
+>>>>>>> Nick
 }
 
 .site-footer h3 {
@@ -324,7 +389,23 @@ span.btn-text {
     height: 1px;
     left: 0;
     width: 32px;
+<<<<<<< HEAD
     margin-top: 7px;    
     background-color: var(--bcit-darkblue);
     position: absolute;
+=======
+    margin-top: 15px;  
+    background-color: var(--bcit-darkblue);
+    position: absolute;
+}
+
+.site-footer .campuses {
+    margin-bottom: 23px;   
+}
+
+.site-footer .legal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 13px;
+>>>>>>> Nick
 }
