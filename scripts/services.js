@@ -7,7 +7,12 @@ function clickScroll(eventObj) {
     let clicked = eventObj.target;
     let i = cats.indexOf(clicked);
     dirs[i].scrollIntoView(true);
-    console.log(i, 'hi');
 }
 
 catList.addEventListener("click", clickScroll);
+
+const toTop = document.querySelector(".to-top");
+
+toTop.addEventListener("click", function () {
+    window.scrollTo(0, 0);
+});

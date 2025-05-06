@@ -57,7 +57,7 @@ a {
 
 .default {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     border-bottom: var(--grey-border);
     z-index: 1;
     cursor: default;
@@ -147,11 +147,26 @@ svg.logo {
     color: var(--link-color);
 }
 
+.to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    fill: var(--bcit-blue);
+    cursor: pointer;
+    opacity: .5;
+    z-index: 1;
+    transition: .2s ease all;
+}
+
+.to-top:hover {
+    opacity: 1;
+}
+
 .services-container {
     position: absolute;
     top: calc(var(--header-height) + 30px);
     display: flex;
-    width: 100vw;
+    width: 100%;
 }
 
 .services-container ul {
