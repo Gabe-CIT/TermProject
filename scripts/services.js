@@ -17,17 +17,3 @@ const toTop = document.querySelector(".to-top");
 toTop.addEventListener("click", function () {
     window.scrollTo(0, 0);
 });
-
-const root = document.querySelector(':root');
-const contTop = window.getComputedStyle(root).getPropertyValue('--cont-top');
-const bcitBlue = window.getComputedStyle(root).getPropertyValue('--bcit-blue');
-
-dirs.forEach((dir) => {
-    let topVal = dir.getBoundingClientRect().top;
-    let i = dirs.indexOf(dir);
-    console.log(topVal, i);
-    let styleCat = window.getComputedStyle(cats[i]);
-    if (topVal < contTop) {
-        cats[i].style.borderBottomColor = bcitBlue;
-    }
-});
