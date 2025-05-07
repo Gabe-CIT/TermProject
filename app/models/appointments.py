@@ -1,4 +1,6 @@
 from db import db
+from datetime import time, timedelta
+from flask import request
 
 class Appointments(db.Model):
     __tablename__ = "Appointments"
@@ -20,3 +22,4 @@ class Appointments(db.Model):
     confirmed = db.mapped_column(db.Boolean, nullable=False, default=False)
     completed = db.mapped_column(db.Boolean, nullable=False, default=False)
     meeting_type = db.mapped_column(db.String, nullable=False)
+    comment = db.mapped_column(db.String, nullable=True)

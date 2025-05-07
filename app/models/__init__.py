@@ -1,6 +1,6 @@
-__all__ = ["Users, Advisors, Services"]
+__all__ = ["Users, Advisors, Services, Appointments"]
 
-from .user import Users
+from .users import Users
 from .advisor import Advisors
 from .services import Services
 from .appointments import Appointments

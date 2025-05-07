@@ -19,11 +19,9 @@ def import_users():
                 name_data = row['name']
                 surname_data = row["surname"]
                 email_data = row['email']
-                phone = row.get('phone', None)
-                role = row['role']
 
                 # creates a new user with columns filled
-                user = models.Users(name=name_data, surname=surname_data, email=email_data, phone=phone, role=role)
+                user = models.Users(name=name_data, surname=surname_data, email=email_data)
 
                 db.session.add(user)
 

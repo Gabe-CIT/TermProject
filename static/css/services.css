@@ -155,15 +155,7 @@ svg.logo {
     margin-left: var(--margin);
     border-right: var(--divider);
     padding-right: 50px;
-<<<<<<< HEAD
     height: 75vh;
-=======
-    height: 70vh;
-<<<<<<< Updated upstream
->>>>>>> ec334cdbe5fd3244bb6eaface329db3b7e55752f
-=======
->>>>>>> Nick
->>>>>>> Stashed changes
 }
 
 .cat-list {
@@ -177,7 +169,6 @@ svg.logo {
     cursor: pointer;
     width: fit-content;
     font-size: 1.1rem;
-<<<<<<< HEAD
     border-bottom: 2px solid transparent;
     line-height: 1.3rem;
     transition: .1s ease all;
@@ -185,16 +176,10 @@ svg.logo {
 
 .cat-list li:hover {
     border-bottom: 2px solid var(--bcit-blue);
-=======
 }
 
 .cat-list li:hover {
     opacity: .7;
-<<<<<<< Updated upstream
->>>>>>> ec334cdbe5fd3244bb6eaface329db3b7e55752f
-=======
->>>>>>> Nick
->>>>>>> Stashed changes
 }
 
 .service-cat {
@@ -205,23 +190,15 @@ svg.logo {
     color: var(--bcit-blue);
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
-<<<<<<< HEAD
     margin-bottom: 2rem;
 }
 
 .advisor {
     margin-bottom: 2rem;
-=======
-    margin-bottom: 1.5rem;
 }
 
 .advisor {
     margin-bottom: 30px;
-<<<<<<< Updated upstream
->>>>>>> ec334cdbe5fd3244bb6eaface329db3b7e55752f
-=======
->>>>>>> Nick
->>>>>>> Stashed changes
 }
 
 .advisor p {
@@ -233,7 +210,6 @@ svg.logo {
     color: var(--link-color);
 }
 
-<<<<<<< HEAD
 .book-btn {
     width: fit-content;
     margin-top: 10px;
@@ -261,12 +237,7 @@ svg.logo {
     color: #fff;
 }
 
-=======
-<<<<<<< Updated upstream
->>>>>>> ec334cdbe5fd3244bb6eaface329db3b7e55752f
-=======
->>>>>>> Nick
->>>>>>> Stashed changes
+
 .counseling {
     display: none;
 }

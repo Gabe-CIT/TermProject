@@ -1,7 +1,7 @@
-name,surname,email,phone,role
-Kristine,Prez,kpaez1@my.bcit.ca,,student
-Janek,Basi,jbasi15@my.bcit.ca,,student
-Yee Ling (Eric),Yau,yyau8@my.bcit.ca,,student
-Nicholas,Cao,ncao5@my.bcit.ca,,student
-Gabriel,Junio,gjunio@my.bcit.ca,,student
-Klint,Taaca,ktaaca@my.bcit.ca,,student
+name,surname,email
+Kristine,Prez,kpaez1@my.bcit.ca
+Janek,Basi,jbasi15@my.bcit.ca,
+Yee Ling (Eric),Yau,yyau8@my.bcit.ca,
+Nicholas,Cao,ncao5@my.bcit.ca,
+Gabriel,Junio,gjunio@my.bcit.ca,
+Klint,Taaca,ktaaca@my.bcit.ca,
