@@ -1,0 +1,6 @@
+main {
+    position: absolute;
+    margin-top: var(--cont-top);
+    margin-left: var(--margin);
+}
+
