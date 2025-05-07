@@ -54,10 +54,6 @@ body {
 }
 
 /* Header section */
-header {
-    position: relative;
-}
-
 .default {
     position: fixed;
     width: 100%;
@@ -73,7 +69,7 @@ header {
 }
 
 .portalnav {
-    /* position: relative; */
+    position: relative;
     height: 40px;
     width: 100%;
     display: flex;
@@ -85,7 +81,7 @@ header {
 .portalnav ul {
     display: flex;
     list-style: none;
-    /* position: absolute; */
+    position: absolute;
     right: var(--margin);
     height: 100%;
 }
@@ -160,7 +156,6 @@ svg.logo {
     padding: 46px 39px 34px;
     width: 25%;
     border: var(--grey-border);
-    border-top: 0;
     display: inline;
     line-height: 2em;
 }
