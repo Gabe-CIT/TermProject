@@ -1,3 +1,5 @@
+/* start template */
+
 :root {
     --bcit-blue: #003c71;
     --bcit-yellow: #fff400;
@@ -148,6 +150,8 @@ svg.logo {
     border-bottom: 2px solid var(--bcit-yellow);
     color: var(--link-color);
 }
+
+/* end template */
 
 .to-top {
     position: fixed;
