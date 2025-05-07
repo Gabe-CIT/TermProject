@@ -195,7 +195,9 @@ svg.logo {
     cursor: pointer;
     width: fit-content;
     font-size: 1.25rem;
-    border-bottom: 2px solid transparent;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
     line-height: 1.3rem;
     transition: .1s ease all;
 }
@@ -253,8 +255,13 @@ svg.logo {
     width: fit-content;
 }
 
-.advisor a:hover {
+.email, .email:visited {
     color: var(--link-color);
+    transition: .1s ease all;
+}
+
+.email:hover {
+    opacity: .7;
 }
 
 .book-btn {
@@ -283,7 +290,7 @@ svg.logo {
     color: var(--bcit-blue);
 }
 
-.advisor a, .advisor a:visited {
+.helpline a, .helpline a:visited {
     color: var(--link-color);
     border-bottom: 1px solid transparent;
     transition: .1s ease all;
