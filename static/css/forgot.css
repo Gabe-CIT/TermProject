@@ -219,7 +219,8 @@ svg.logo {
     text-decoration: underline;
 }
 
-.forgotPassword :hover {
+.contact-service-link :hover {
     color: var(--link-color);
     text-decoration: underline;
 }
+
