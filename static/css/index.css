@@ -27,11 +27,11 @@
 }
 
 :root {
-    --bcit-darkblue: #003c71;
-    --bcit-yellow: #fff400;
-    --bcit-blue: #296cf6;
-    --bcit-lightblue: #1e88e5;
-    --bcit-white: #f2f2f2;
+    --bcit-index-darkblue: #003c71;
+    --bcit-index-yellow: #fff400; /* Only used for nav bar so no need */
+    --bcit-index-blue: #296cf6;
+    --bcit-index-lightblue: #1e88e5;
+    --bcit-index-white: #f2f2f2;
     --grey-border: 1px solid #f2f2f2;
 }
 
@@ -86,7 +86,7 @@ ul li {
     height: 40px;
     display: flex;
     align-items: center;
-    background-color: var(--bcit-darkblue);
+    background-color: var(--bcit-index-darkblue);
     border-bottom: var(--grey-border);
 }
 
@@ -110,11 +110,11 @@ ul li {
 }
 
 .portalnav li:hover {
-    background-color: var(--bcit-yellow);
+    background-color: var(--bcit-index-yellow);
 }
 
 .portalnav li:hover a {
-    color: var(--bcit-darkblue);
+    color: var(--bcit-index-darkblue);
 }
 
 div.logo {
@@ -147,13 +147,13 @@ svg.logo {
 }
 
 .sitenav a {
-    color: var(--bcit-darkblue);
+    color: var(--bcit-index-darkblue);
     border-bottom: 2px solid transparent;
 }
 
 .sitenav li:hover a {
-    border-bottom: 2px solid var(--bcit-yellow);
-    color: var(--bcit-blue);
+    border-bottom: 2px solid var(--bcit-index-yellow);
+    color: var(--bcit-index-blue);
 }
 
 /* Main section of body */
@@ -163,7 +163,7 @@ main {
 
 /* Main section appointments */
 #appointments {
-    color: var(--bcit-darkblue);
+    color: var(--bcit-index-darkblue);
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -186,20 +186,20 @@ main {
     justify-content: flex-end;
     font-size: 15px;
     text-decoration: none;
-    color: var(--bcit-blue);
+    color: var(--bcit-index-blue);
     max-width: 15rem;
     padding: 10px;
     margin-bottom: 10px;
     background-color: var(--white-color);
-    border: 1px solid var(--bcit-blue);
+    border: 1px solid var(--bcit-index-blue);
     text-transform: uppercase;
     max-height: 5rem;
 }
 
 .booking-btn a:hover {
     transition: 0.3s ease-in-out;
-    background-color: var(--bcit-blue);
-    color: var(--bcit-white);
+    background-color: var(--bcit-index-blue);
+    color: var(--bcit-index-white);
 }
 
 .booking-btn span.btn-text {
@@ -221,7 +221,7 @@ main {
 #pictures {
     border: var(--grey-border);
     border-top: 0;
-    color: var(--bcit-darkblue);
+    color: var(--bcit-index-darkblue);
     padding: 20px;
 }
 
@@ -280,7 +280,7 @@ main {
 
 /* Main section services */
 #services {
-    color: var(--bcit-darkblue);
+    color: var(--bcit-index-darkblue);
     padding: 20px;
     border: var(--grey-border);
     border-top: 0;
@@ -312,15 +312,15 @@ main {
 
 .details li {
     border: 0.5px solid rgb(203, 210, 222);
-    background-color: var(--bcit-white);
+    background-color: var(--bcit-index-white);
     padding: 1.67em;
     min-width: 300px;
     min-height: 10em;
 }
 
 .details li:hover {
-    background-color: var(--bcit-darkblue);
-    color: var(--bcit-white);
+    background-color: var(--bcit-index-darkblue);
+    color: var(--bcit-index-white);
     transition: 0.3s ease-in-out; 
 }
 
@@ -364,7 +364,7 @@ main {
 /* Footer section */
 .site-footer {
     display: flex;
-    color: var(--bcit-darkblue);
+    color: var(--bcit-index-darkblue);
 }
 
 .site-footer section {
@@ -396,11 +396,11 @@ main {
 }
 
 .site-footer a {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-blue);
 }
 
 .site-footer a:hover {
-    color: var(--bcit-darkblue);
+    color: var(--bcit-index-darkblue);
     transition: 0.3s ease-in-out;
 }
 
@@ -411,7 +411,7 @@ main {
     left: 0;
     width: 32px;
     margin-top: 15px;  
-    background-color: var(--bcit-darkblue);
+    background-color: var(--bcit-index-darkblue);
     position: absolute;
 }
 
@@ -437,11 +437,11 @@ main {
 }
 
 .site-footer .socialmedia a {
-    color: var(--bcit-darkblue);
+    color: var(--bcit-index-darkblue);
 }
 
 .site-footer .socialmedia a:hover {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-blue);
 }
 
 .site-footer .campuses {
