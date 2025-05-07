@@ -1,7 +1,6 @@
 const catCol = document.getElementsByClassName("cat");
 const cats = Array.from(catCol);
-const dirCol = document.getElementsByClassName("directory");
-const dirs = Array.from(dirCol);
+const dirs = document.getElementsByClassName("directory");
 const catList = document.querySelector(".cat-list");
 
 function clickScroll(eventObj) {
