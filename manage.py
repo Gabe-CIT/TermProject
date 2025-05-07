@@ -19,9 +19,10 @@ def import_users():
                 name_data = row['name']
                 surname_data = row["surname"]
                 email_data = row['email']
+                password_data = row['password']
 
                 # creates a new user with columns filled
-                user = models.Users(name=name_data, surname=surname_data, email=email_data)
+                user = models.Users(name=name_data, surname=surname_data, email=email_data, password=password_data)
 
                 db.session.add(user)
 

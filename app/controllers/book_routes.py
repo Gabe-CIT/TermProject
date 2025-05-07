@@ -33,7 +33,13 @@ def confirm_booking():
     appt_end_time = (datetime.strptime(request.form["appt_time"], "%H:%M") + timedelta(hours=1)).time()  # 1-hour-long appointment
     user_id = current_user.id
     # create a new appointment object
-    appt_comment = request.form.get("appt_comment", None)  # optional comment
+    
+    # optional comment
+    if request.form['appt_purpose']:
+        appt_comment = request.form['appt_purpose']
+    else:
+        appt_comment = None
+    # create new apponitment object
     new_appt = Appointments(
         user_id=user_id,
         advisor_id=advisor_id,

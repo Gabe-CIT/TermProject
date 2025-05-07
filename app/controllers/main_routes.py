@@ -25,7 +25,7 @@ def services():
 @main_bp.route("/cancel")
 @login_required
 def cancel_booking():
-    return render_template() # cancellation page
+    return render_template('cancel.html') # cancellation page
 
 @main_bp.route('/advisor')
 def advisor_log_page():
