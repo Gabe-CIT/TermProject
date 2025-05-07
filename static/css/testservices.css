@@ -1,0 +1,162 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Arrow to top */
+.to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    fill: var(--bcit-blue);
+    cursor: pointer;
+    opacity: .5;
+    z-index: 1;
+    transition: .2s ease all;
+}
+
+.to-top:hover {
+    opacity: 1;
+}
+
+/* Main section */
+main {
+    margin-top: var(--cont-top);
+}
+
+.services-container {
+    /* position: absolute; Conflicts with footer */
+    display: flex;
+    width: 100%;
+}
+
+.services-container ul {
+    list-style: none;
+}
+
+.cat-list-container {
+    margin-left: var(--margin);
+    padding-right: 50px;
+    height: 75vh;
+}
+
+.cat-list {
+    color: var(--bcit-blue);
+    font-weight: 600;
+    margin-top: 10px;
+    text-wrap: nowrap;
+}
+
+.cat-list li {
+    margin-bottom: 15px;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 1.1rem;
+    border-bottom: 2px solid transparent;
+    line-height: 1.3rem;
+    transition: .1s ease all;
+}
+
+.cat-list li:hover {
+    border-bottom: 2px solid var(--bcit-blue);
+}
+
+.service-cat {
+    padding: 5px 0 0 50px;
+    border-left: var(--divider);
+    margin-bottom: 50px;
+}
+
+.service-cat h1 {
+    color: var(--bcit-blue);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.blurb {
+    margin-bottom: 40px;
+}
+
+.blurb p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    width: 70%;
+}
+
+.directory {
+    margin-bottom: 50px;
+    scroll-margin: var(--cont-top);
+}
+
+.cat-name {
+    color: var(--bcit-blue);
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.advisor {
+    margin-bottom: 2rem;
+}
+
+.advisor p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.advisor a {
+    display: block;
+    width: fit-content;
+}
+
+.advisor a:hover {
+    color: var(--link-color);
+}
+
+.book-btn {
+    width: fit-content;
+    margin: 7px 0;
+    padding: 8px;
+    background-color: var(--bcit-blue);
+    border: 1px solid var(--bcit-blue);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.book-btn:hover {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+    color: #fff;
+}
+
+.book-btn:visited {
+    color: var(--bcit-blue);
+}
+
+.advisor a, .advisor a:visited {
+    color: var(--link-color);
+    border-bottom: 1px solid transparent;
+    transition: .1s ease all;
+}
+
+.helpline a:hover {
+    border-bottom: 1px solid var(--link-color) !important;
+}
+
+.number {
+    font-weight: 600;
+}
