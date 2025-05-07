@@ -10,8 +10,11 @@
     <header class="default">
         <nav class="portalnav">
             <ul>
-                <li>🔔</li>
-                <li>👤</li>
+                <li><a href="http://learn.bcit.ca/">Learning Hub</a></li>
+                <li><a href="https://my.bcit.ca/">myBCIT</a></li>
+                <li><a href="https://www.bcit.ca/current-students/">Students</a></li>
+                <li><a href="https://www.bcit.ca/faculty-staff/">Staff</a></li>
+                <li><a href="https://www.bcit.ca/events/">Events</a></li>
             </ul>
         </nav>
         <div class="sitenav">
@@ -30,18 +33,24 @@
     </header>
     <main> 
         <div class="purpose">
-            <h1>Upcoming Appointments</h1>
+            <h1>Purpose of Visit</h1>
+            <textarea id="purpose" name="purpose" rows="25" cols="94" placeholder="State the purpose of your visit here..."></textarea><br><br>
         </div>
         <div class="type">
+            <h1>Services</h1>
             <div class="type-option">
-                <p><strong>Date:</strong></p>
-                <p><strong>Time:</strong></p>
-                <p><strong>Name:</strong></p>
-                <p><strong>Details:</strong></p>
-                <button>Cancel</button>
-                <button>Continue</button>
+                <div class="option">In Person</div>
+                <div class="option">Phone Call</div>
             </div>
         </div>
+        <div class="schedule">
+            <h1>Schedule</h1>
+            <label for="calendar">Choose a date</label>
+            <input type="date" id="calendar" name="calendar" onchange="handleDateClick(this.value)">
+        </div>
+        <a href="confirmation.html">
+            <button>Continue</button>
+        </a>
     </main>
 </body>
 </html>
