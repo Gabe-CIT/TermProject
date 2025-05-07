@@ -33,28 +33,27 @@
       </ul>
   </header>
   <main>
-    <div class="details">
-      <h1>Booking appointment with:</h1>
+    <div class="detail-cont name">
+      <h2>Booking appointment with:</h2>
       <p>Valerie Frizzle</p>
     </div>
-    <div class="purpose">
-      <h2>Appointment purpose:</h2>
-      <textarea id="purpose" name="purpose" rows="15" placeholder="State the purpose of your visit here..."></textarea>
+    <div class="detail-cont purpose">
+      <h3>Appointment purpose:</h3>
+      <textarea id="purpose-field" name="purpose" rows="5" placeholder="State the purpose of your visit here..."></textarea>
     </div>
-    <div class="type">
-      <h2>Appointment type:</h2>
+    <div class="detail-cont type">
+      <h3>Appointment type:</h3>
       <div class="type-option">
         <div class="option">In Person</div>
         <div class="option">Phone Call</div>
       </div>
     </div>
-    <div class="schedule">
-      <h2>Available dates:</h2>
-      <label for="calendar">Choose a date</label><br><br>
+    <div class="detail-cont schedule">
+      <h3>Available dates:</h3>
       <input type="date" id="calendar" name="calendar">
     </div>
-    <div class="time">
-      <h2>Available times:</h2>
+    <div class="detail-cont time">
+      <h3>Available times:</h3>
       <select name="time" id="time">
         <option value="08:00">08:00</option>
         <option value="09:00">09:00</option>
@@ -67,7 +66,7 @@
       </select>
     </div>
     <a href="confirmation.html">
-      <button>Continue</button>
+      <button class="continue-btn">Continue</button>
     </a>
   </main>  
 </body>
