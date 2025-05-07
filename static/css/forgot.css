@@ -214,3 +214,12 @@ svg.logo {
     text-decoration: underline;
 }
 
+.contact-service-link :visited {
+    color: var(--bcit-blue);
+    text-decoration: underline;
+}
+
+.contact-service-link :hover {
+    color: var(--link-color);
+    text-decoration: underline;
+}

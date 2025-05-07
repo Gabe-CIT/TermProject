@@ -172,7 +172,7 @@ svg.logo {
     margin: 10px 0 5px;
     font-weight: bold;
     font-size: 14px;
-    color: #003c71;
+    color: var(--bcit-blue);
 }
 
 .login-container input[type="email"],
@@ -197,7 +197,7 @@ svg.logo {
 }
 
 .login-container button:hover {
-    background-color: #296cf6;
+    background-color: var(--link-color);
 }
 
 .advisorlogin-text  {
@@ -210,7 +210,21 @@ svg.logo {
 }
 
 .advisorlogin-text a {
+    color: var(--bcit-blue);
+    text-decoration: underline;
+}
+
+.advisorlogin-text a:hover {
     color: var(--link-color);
     text-decoration: underline;
 }
 
+.forgotPassword :visited {
+    color: var(--bcit-blue);
+    text-decoration: underline;
+}
+
+.forgotPassword :hover {
+    color: var(--link-color);
+    text-decoration: underline;
+}
