@@ -197,7 +197,7 @@ svg.logo {
 }
 
 .input-container button:hover {
-    background-color: #296cf6;
+    background-color: var(--link-color);
 }
 
 .advisorlogin-text  {
@@ -219,7 +219,7 @@ svg.logo {
     text-decoration: underline;
 }
 
-.contact-service-link :hover {
+.forgotPassword :hover {
     color: var(--link-color);
     text-decoration: underline;
 }
