@@ -1,56 +1,17 @@
-li {
-    list-style-type: none;
-}
-
 .puffy {
+    font-size: 30px;
     position: fixed;
-    width: 100vw;
 }
 
-.puffy li {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 12px;
-    font-size: 15px;
-    text-transform: uppercase;
-    transition: all .15s ease-in-out;
-
-}
-
-.puffy ul {
-    display: flex;
+.puffy ul li {
     list-style: none;
-    position: absolute;
-    right: 150px;
-    height: 100%;
 }
 
-.puffy a {
-    color: #fff;
-    font-size: 40px;
-    padding: 0 8px;
-}
-
-h1 {
-    margin-bottom: 15px;
-}
-
-.upcoming {
-    align-items: center;
-    background: white;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 16px;
-    box-shadow: 0 5px 10px rgba(1, 1, 1, 0.5);
-    width: 755px;
-    font-size: 15px;
+.upcoming ul li {
+    list-style: none;
 }
 
 main {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: flex-start; /* Vertically center the content */
-    align-items: flex-start; /* Horizontally center the content */
-}
 
+}
