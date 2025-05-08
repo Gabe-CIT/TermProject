@@ -291,8 +291,11 @@ main {
     margin: auto;
 }
 
-#services .txt-img img {
-    width: 500px;
+.service-img {
+    background-image: url("../images/index/happy-people.jpg");
+    max-width: 420px;
+    min-height: 20em;
+    background-size: cover;
 }
 
 .txt-img h3 {

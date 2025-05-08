@@ -44,22 +44,39 @@
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Default font */
+/* Defaults */
 body {
-    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+main,
+footer {
+    max-width: 1448px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Header section */
 .default {
+    top: 0;
     position: fixed;
     width: 100%;
     border-bottom: var(--grey-border);
+    background-color: white;
     z-index: 1;
-    cursor: default;
 }
 
 .default li {
@@ -71,18 +88,16 @@ body {
 .portalnav {
     position: relative;
     height: 40px;
-    width: 100%;
     display: flex;
     align-items: center;
-    background-color: var(--bcit-blue);
+    background-color: var(--bcit-index-darkblue);
     border-bottom: var(--grey-border);
 }
 
 .portalnav ul {
     display: flex;
-    list-style: none;
     position: absolute;
-    right: var(--margin);
+    right: 150px;
     height: 100%;
 }
 
@@ -91,7 +106,7 @@ body {
     font-family: "jpAlva", Arial, Helvetica, sans-serif;
     font-size: 15px;
     text-transform: uppercase;
-    transition: all .1s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 
 .portalnav a {
@@ -99,11 +114,11 @@ body {
 }
 
 .portalnav li:hover {
-    background-color: var(--bcit-yellow);
+    background-color: var(--bcit-index-yellow);
 }
 
 .portalnav li:hover a {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-darkblue);
 }
 
 div.logo {
@@ -112,8 +127,7 @@ div.logo {
 
 .sitenav {
     display: flex;
-    padding: 10px 97px 10px var(--margin);
-    background-color: #fff;
+    padding: 10px 97px 10px 150px;
 }
 
 svg.logo {
@@ -137,13 +151,13 @@ svg.logo {
 }
 
 .sitenav a {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-darkblue);
     border-bottom: 2px solid transparent;
 }
 
 .sitenav li:hover a {
-    border-bottom: 2px solid var(--bcit-yellow);
-    color: var(--link-color);
+    border-bottom: 2px solid var(--bcit-index-yellow);
+    color: var(--bcit-index-blue);
 }
 
 /* Footer section */
@@ -260,7 +274,7 @@ svg.logo {
     }
 
     .site-footer section {
-        width: 100%;
+        min-width: 100%;
     }
 
     #visit,
