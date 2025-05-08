@@ -2,6 +2,8 @@
     --cat-width: 200px;
 }
 
+/* scroll to top button */
+
 .to-top {
     position: fixed;
     bottom: 20px;
@@ -17,6 +19,8 @@
     opacity: 1;
 }
 
+/* main section */
+
 .services-container {
     position: absolute;
     top: var(--cont-top);
@@ -27,6 +31,8 @@
 .services-container ul {
     list-style: none;
 }
+
+/* left sidebar */
 
 .cat-list-container {
     margin-left: var(--margin);
@@ -59,12 +65,16 @@
     border-bottom: 2px solid var(--bcit-blue);
 }
 
+/* directory container */
+
 .service-cat {
     padding: 5px 0 0 50px;
     border-left: var(--divider);
     margin-bottom: 50px;
     margin-left: var(--cat-width);
 }
+
+/* title and page summary */
 
 .service-cat h1 {
     color: var(--bcit-blue);
@@ -82,6 +92,8 @@
     width: 70%;
 }
 
+/* for each category in directory */
+
 .directory {
     margin-bottom: 50px;
     scroll-margin: var(--cont-top);
@@ -93,6 +105,8 @@
     font-size: 1.8rem;
     margin-bottom: 1.2rem;
 }
+
+/* for each advisor listed in directory */
 
 .advisor {
     margin-bottom: 2rem;
@@ -116,6 +130,8 @@
 .email:hover {
     opacity: .7;
 }
+
+/* book appointment button */
 
 .book-btn {
     width: fit-content;
@@ -142,6 +158,8 @@
 .book-btn:visited {
     color: var(--bcit-blue);
 }
+
+/* helplines */
 
 .helpline a, .helpline a:visited {
     color: var(--link-color);
