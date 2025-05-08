@@ -150,18 +150,8 @@ main {
 }
 
 .type-option {
-    border: 1px solid white;
-    background-color: white;
-    padding: 30px;
-    gap: 30px;
-    flex-direction: column;
-    font-size: 10px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.type-option {
-    width: 700px;
-    height: 100%;
+    width: 75%;
+    border: 1px solid rgba(0, 0, 0, 0.6);
 }
 
 .option {
@@ -234,4 +224,9 @@ button {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+}
+
+h2 {
+    color: var(--bcit-blue);
+    font-size: 2rem;
 }

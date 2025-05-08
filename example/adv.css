@@ -13,5 +13,9 @@
 
 main {
     display: flex;
+}
 
+h2 {
+    color: var(--bcit-blue);
+    font-size: 2rem;
 }
