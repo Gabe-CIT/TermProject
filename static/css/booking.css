@@ -38,22 +38,20 @@ h2, .name h3, .purpose h3, .type h3 {
 }
 
 #purpose-field {
-    width: 100%;
+    min-width: 100%;
+    min-height: 80px;
 }
 
-.type-option {
-    width: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.6);
-    border-radius: 1px;
+.appt-type {
+    overflow-y: auto;
 }
 
-.option {
-    cursor: pointer;
-    padding: 5px 0 5px 10px;
-    transition: .05s ease all;
+.appt-type option {
+    font-size: .9rem;
+    padding: 10px 60px 10px 10px;
 }
 
-.option:hover {
+.appt-type option:checked {
     background-color: var(--link-color);
     color: #fff;
 }
@@ -62,10 +60,25 @@ label {
     margin-right: .8rem;
 }
 
+textarea, #calendar, #time {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    padding: 0 5px;
+}
+
+.schedule, .time {
+    display: flex;
+    align-items: center;
+}
+
+#calendar, #time {
+    margin-left: 1rem;
+}
+
 .continue-btn {
     width: fit-content;
     margin: 7px 0;
-    padding: 10px 15px;
+    padding: 5px 10px;
     background-color: var(--bcit-blue);
     border: 1px solid var(--bcit-blue);
     transition: all .1s ease-in-out;
@@ -82,19 +95,4 @@ label {
     background-color: var(--link-color);
     border-color: var(--link-color);
     color: #fff;
-}
-
-textarea, #calendar, #time {
-    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
-    font-size: 1.1rem;
-    padding: 0 5px;
-}
-
-.schedule, .time {
-    display: flex;
-    align-items: center;
-}
-
-#calendar, #time {
-    margin-left: 1rem;
 }
