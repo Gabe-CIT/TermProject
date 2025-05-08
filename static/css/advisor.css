@@ -1,3 +1,4 @@
+/* Header Styling  */
 @font-face {
     font-family: "jpAlva";
     src: url("../fonts/jpalva/jpalva-regular-webfont.woff") format("woff");
@@ -139,8 +140,9 @@ svg.logo {
     border-bottom: 2px solid var(--bcit-yellow);
     color: var(--link-color);
 }
+/* --- End of Header Styling --- */
 
-
+/* Login Container Styling  */
 .login-container {
     padding-top: 260px;
     text-align: center;
@@ -199,7 +201,9 @@ svg.logo {
 .login-container button:hover {
     background-color: var(--link-color);
 }
+/* --- End of Login Container Styling --- */
 
+/* Advisor Text Styling  */
 .advisorlogin-text  {
     margin-top: 20px;
     font-size: 14px;
@@ -213,7 +217,9 @@ svg.logo {
     color: var(--link-color);
     text-decoration: underline;
 }
+/* --- End of Advisor Text Styling --- */
 
+/* Forgot Password Text Styling  */
 .forgotPassword :visited {
     color: var(--bcit-blue);
     text-decoration: underline;
@@ -223,3 +229,4 @@ svg.logo {
     color: var(--link-color);
     text-decoration: underline;
 }
+/* --- End of Forgot Text Styling --- */
