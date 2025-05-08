@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request
 from flask_login import login_required, current_user
 from db import db
-from app.models import Advisors, Appointments, Users
+from app.models import Appointments, Users
 from app.services.user_mgmt import is_student
 from datetime import datetime, timedelta
 
@@ -11,7 +11,7 @@ book_bp = Blueprint("booking", __name__, url_prefix="/booking")
 @login_required
 # BOOKING ROUTE
 def create_booking():
-    advisors = db.session.execute(db.select(Advisors)).scalars()
+    advisors = db.session.execute(db.select(Users).where(Users.role == "advisor")).scalars()
     return render_template("booking.html", advisors=advisors)
 
 # form method to post appointment data to datatbase
@@ -27,11 +27,14 @@ def confirm_booking():
     # convert the string to a time object
     
     appt_type = request.form["appt_type"]
-    advisor_id = request.form["appt_advisor"]
-    # get the advisor id from the form
+    advisor_id = request.form["appt_advisor"] # output advisor id from the form
+
+
     # get the user id from the current user
     appt_end_time = (datetime.strptime(request.form["appt_time"], "%H:%M") + timedelta(hours=1)).time()  # 1-hour-long appointment
-    user_id = current_user.id
+
+    user = db.session.execute(db.select(Users).where(Users.email == current_user.id)).scalar()
+    user_email = user.email  # get the user id from the current user
     # create a new appointment object
     
     # optional comment
@@ -41,7 +44,7 @@ def confirm_booking():
         appt_comment = None
     # create new apponitment object
     new_appt = Appointments(
-        user_id=user_id,
+        user_id=user_email,
         advisor_id=advisor_id,
         day=appt_date,
         start_time=appt_start_time,

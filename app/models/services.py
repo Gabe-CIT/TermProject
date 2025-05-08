@@ -6,4 +6,4 @@ class Services(db.Model):
     id = db.mapped_column(db.Integer, nullable=False, primary_key=True)
     name = db.mapped_column(db.String(50), nullable=False)
     description = db.mapped_column(db.String, nullable=True)
-    advisors = db.relationship("Advisors", back_populates="service")
+    advisors = db.relationship("Users", back_populates="service")

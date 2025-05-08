@@ -1,6 +1,5 @@
 # Group 8 TermProject
 Group 8's Term Project Repository\
-<<<<<<< Updated upstream
 **Nick**\
 **Eric**\
 **Gabe**\
@@ -33,16 +32,6 @@ deactivate
 ```
 
 ## Run app in terminal/cmd prompt using:
-=======
-Nick\
-Eric\
-Gabe\
-Kristine\
-Janek\
-Klint
-
-Run app in terminal/cmd prompt using:
->>>>>>> Stashed changes
 ```py
 py app.py
 ```

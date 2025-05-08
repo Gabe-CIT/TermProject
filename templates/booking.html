@@ -39,7 +39,7 @@
     <h1>Select Advisor:</h1>
     <select name="appt_advisor" id="appt_advisor" style="height: 80px; width: 120px;">
         {% for advisor in advisors %}
-        <option value="{{ advisor.name }}">{{ advisor.name }}</option>
+        <option value="{{ advisor.id }}">{{ advisor.name }} {{ advisor.surname }}</option>
         {% endfor %}
     </select>
     <h1>Appointment Details</h1>

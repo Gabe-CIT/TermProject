@@ -12,8 +12,8 @@ class Appointments(db.Model):
     user = db.relationship("Users", back_populates="appointments")
 
     # relationship between appointments and advisors
-    advisor_id = db.mapped_column(db.Integer, db.ForeignKey("Advisors.id"), nullable=False)
-    advisor = db.relationship("Advisors", back_populates="advisor_appointments")
+    advisor_id= db.mapped_column(db.Integer, nullable=False, unique=True)
+    # advisor = db.relationship("Users", back_populates="advisor_appointments")
 
     # appointment attributes 
     day = db.mapped_column(db.Date, nullable=False)

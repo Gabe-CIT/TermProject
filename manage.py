@@ -20,9 +20,11 @@ def import_users():
                 surname_data = row["surname"]
                 email_data = row['email']
                 password_data = row['password']
+                role_data = row['role']
+                service_data = row['service_id']
 
                 # creates a new user with columns filled
-                user = models.Users(name=name_data, surname=surname_data, email=email_data, password=password_data)
+                user = models.Users(name=name_data, surname=surname_data, email=email_data, password=password_data, role=role_data, service_id=service_data)
 
                 db.session.add(user)
 
@@ -53,23 +55,6 @@ def import_services():
         print(f"Error importing services: {e}")
 
 # this function is used to import pre-made csv data to populate the database with advisor data
-def import_advisors():
-    try:
-        with open("./data/advisors.csv", 'r') as file:
-            data = csv.DictReader(file)
-
-            for row in data:
-                name_data = row['name']
-                surname_data = row['surname']
-                service_id = row['service_id']
-
-                advisor = models.Advisors(name=name_data, surname=surname_data, service_id=service_id)
-
-                db.session.add(advisor)
-            db.session.commit()
-        print("Imported Advisors")
-    except Exception as e:
-        print(f"Error importing advisors: {e}")
 
 def drop():
     db.drop_all()
@@ -81,4 +66,3 @@ if __name__ == "__main__":
         create()
         import_users()
         import_services()
-        import_advisors()
