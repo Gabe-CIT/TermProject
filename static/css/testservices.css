@@ -8,11 +8,27 @@ body {
     position: fixed;
     bottom: 20px;
     right: 35px;
-    fill: var(--bcit-blue);
+    color: var(--bcit-blue);
     cursor: pointer;
     opacity: .5;
     z-index: 1;
     transition: .2s ease all;
+    display: flex;
+    flex-direction: column;
+}
+
+.to-top p {
+    display: none;
+    color: var(--bcit-blue) !important;
+}
+
+.to-top:hover p {
+    display: block;
+}
+
+.to-top svg {
+    fill: var(--bcit-blue);
+    margin-right: 40px;
 }
 
 .to-top:hover {
@@ -41,8 +57,9 @@ body {
     font-weight: 600;
     margin-top: 10px;
     text-wrap: nowrap;
-    position: fixed;
+    position: sticky;
     padding: 20px;
+    top: 150px;
 }
 
 .cat-list li {
@@ -54,6 +71,11 @@ body {
     border-bottom-color: transparent;
     line-height: 1.3rem;
     transition: .1s ease all;
+    z-index: 1;
+}
+
+.cat-list ul {
+    z-index: 1;
 }
 
 .cat-list a {

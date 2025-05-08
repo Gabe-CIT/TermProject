@@ -10,14 +10,19 @@ Mental Health Services - BCIT
 
 {% block content %}
 <main>
-    <svg class="to-top" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M160-760v-80h640v80H160Zm280 640v-408L336-424l-56-56 200-200 200 200-56 56-104-104v408h-80Z"/></svg>
+    <div class="to-top">
+        <a href="#top">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M160-760v-80h640v80H160Zm280 640v-408L336-424l-56-56 200-200 200 200-56 56-104-104v408h-80Z"/></svg>
+            <p>Back to Top</p>
+        </a>
+    </div>
     <div class="services-container">
         <div class="cat-list-container">
             <ul class="cat-list">
                 <a href="#counseling"><li class="cat"><span>Counseling</span></li></a>
-                <a href="#therapy"><li class="cat"><span>Group therapy</span></li></a>
+                <a href="#therapy"><li class="cat"><span>Group Therapy</span></li></a>
                 <a href="#psychiatry"><li class="cat"><span>Psychiatry</span></li></a>
-                <a href="#specialized"><li class="cat"><span>Specialized services</span></li></a>
+                <a href="#specialized"><li class="cat"><span>Specialized Services</span></li></a>
                 <a href="#helplines"><li class="cat"><span>Helplines</span></li></a>
             </ul>
         </div>
@@ -175,7 +180,8 @@ Mental Health Services - BCIT
                 </ul>
             </div> 
         </div>
-    <script src="../scripts/services.js"></script>
+    <!-- Not sure if this can be run with Jinja templates. -->
+    <script src="../scripts/services.js"></script> 
     </div>
 </main>
 {% endblock %}

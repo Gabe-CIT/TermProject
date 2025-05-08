@@ -164,6 +164,7 @@ svg.logo {
 .site-footer {
     display: flex;
     color: var(--bcit-index-darkblue);
+    background-color: #fff;
 }
 
 .site-footer section {
