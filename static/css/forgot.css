@@ -143,7 +143,7 @@ svg.logo {
 /* --- End of Header Styling --- */
 
 /* Login Container Styling  */
-.login-container {
+.input-container {
     padding-top: 260px;
     text-align: center;
     max-width: 400px;
@@ -151,34 +151,34 @@ svg.logo {
     font-family: "DM Sans", Arial, sans-serif;
 }
 
-.login-container h2 {
+.input-container h2 {
     font-size: 24px;
     margin-bottom: 10px;
     color: var(--bcit-blue);
 }
 
-.login-container p {
+.input-container p {
     font-size: 16px;
     margin-bottom: 20px;
-    color: var(--bcit-blue);
+    color: #333;
 }
 
-.login-container form {
+.input-container form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login-container label {
+.input-container label {
     align-self: flex-start;
     margin: 10px 0 5px;
     font-weight: bold;
     font-size: 14px;
-    color: var(--bcit-blue);
+    color: #003c71;
 }
 
-.login-container input[type="email"],
-.login-container input[type="password"] {
+.input-container input[type="email"],
+.input-container input[type="password"] {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -187,7 +187,7 @@ svg.logo {
     border-radius: 4px;
 }
 
-.login-container button {
+.input-container button {
     padding: 10px 20px;
     background-color: var(--bcit-blue);
     color: #fff;
@@ -198,7 +198,7 @@ svg.logo {
     transition: background-color 0.2s ease;
 }
 
-.login-container button:hover {
+.input-container button:hover {
     background-color: var(--link-color);
 }
 /* --- End of Login Container Styling --- */
@@ -214,23 +214,18 @@ svg.logo {
 }
 
 .advisorlogin-text a {
-    color: var(--bcit-blue);
-    text-decoration: underline;
-}
-
-.advisorlogin-text a:hover {
     color: var(--link-color);
     text-decoration: underline;
 }
 /* --- End of Advisor Text Styling --- */
 
 /* Forgot Password Text Styling  */
-.forgotPassword :visited {
+.contact-service-link :visited {
     color: var(--bcit-blue);
     text-decoration: underline;
 }
 
-.forgotPassword :hover {
+.contact-service-link :hover {
     color: var(--link-color);
     text-decoration: underline;
 }

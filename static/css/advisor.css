@@ -160,7 +160,7 @@ svg.logo {
 .login-container p {
     font-size: 16px;
     margin-bottom: 20px;
-    color: var(--bcit-blue);
+    color: #333;
 }
 
 .login-container form {
@@ -214,11 +214,6 @@ svg.logo {
 }
 
 .advisorlogin-text a {
-    color: var(--bcit-blue);
-    text-decoration: underline;
-}
-
-.advisorlogin-text a:hover {
     color: var(--link-color);
     text-decoration: underline;
 }
