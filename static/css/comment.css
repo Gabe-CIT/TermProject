@@ -1,36 +1,40 @@
-@font-face {
-    font-family: "jpAlva";
-    src: url("../fonts/jpalva/jpalva-regular-webfont.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Nunito Sans";
-    src: url("../fonts/nunito-sans/nunito-sans-latin-400-normal.woff") format("woff");
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Nunito Sans";
-    src: url("../fonts/nunito-sans/nunito-sans-latin-700-normal.woff") format("woff");
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: "DM Sans";
-    src: url("../fonts/dm-sans/DMSans-VariableFont_opsz\,wght.ttf");
-}
-
-@font-face {
-    font-family: "DM Sans";
-    src: url("../fonts/dm-sans/DMSans-Italic-VariableFont_opsz\,wght.ttf");
-    font-style: italic;
-}
-
 :root {
     --bcit-blue: #003c71;
     --bcit-yellow: #fff400;
     --link-color: #296cf6;
     --grey-border: 1px solid#f2f2f2;
+    --divider: 1px solid #d6d6d6;
+    --header-height: 140px;
+    --margin: 150px;
+    --cont-top: calc(var(--header-height) + 25px);
+}
+
+@font-face {
+    font-family: "jpAlva";
+    src: url("../../fonts/jpalva/jpalva-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("../../fonts/nunito-sans/nunito-sans-latin-400-normal.woff") format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("../../fonts/nunito-sans/nunito-sans-latin-700-normal.woff") format("woff");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("../../fonts/dm-sans/DMSans-VariableFont_opsz\,wght.ttf");
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("../../fonts/dm-sans/DMSans-Italic-VariableFont_opsz\,wght.ttf");
+    font-style: italic;
 }
 
 * {
@@ -39,10 +43,13 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    cursor: default;
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
-    height: 150vh;
+    overflow-x: hidden;
 }
 
 a {
@@ -51,13 +58,18 @@ a {
 
 .default {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     border-bottom: var(--grey-border);
+    z-index: 1;
+    cursor: default;
+    font-size: 30px; 
+    height: 15px;
 }
 
 .default li {
     cursor: pointer;
     display: flex;
+    align-items: center;
 }
 
 .portalnav {
@@ -66,21 +78,25 @@ a {
     width: 100%;
     display: flex;
     align-items: center;
+    background-color: var(--bcit-blue);
+    border-bottom: var(--grey-border);
 }
 
 .portalnav ul {
     display: flex;
     list-style: none;
     position: absolute;
-    right: 150px;
+    right: var(--margin);
     height: 100%;
 }
 
 .portalnav li {
     padding: 0 8px;
+    font-family: "jpAlva", Arial, Helvetica, sans-serif;
     font-size: 35px;
-    transition: all .15s ease-in-out;
-    border: 2px solid transparent;
+    text-transform: uppercase;
+    transition: all .1s ease-in-out;
+    border: 1px solid transparent;
 }
 
 .portalnav a {
@@ -101,7 +117,8 @@ div.logo {
 
 .sitenav {
     display: flex;
-    padding: 10px 97px 10px 150px;
+    padding: 10px 97px 10px var(--margin);
+    background-color: #fff;
 }
 
 svg.logo {
@@ -132,10 +149,11 @@ svg.logo {
 .sitenav li:hover a {
     border-bottom: 2px solid var(--bcit-yellow);
     color: var(--link-color);
-}
+} 
 
 textarea {
     resize: none;
+    padding: 5px;
 }
 
 main {
@@ -143,15 +161,13 @@ main {
     align-items: flex-start;
     min-height: calc(100vh - 114px);
     padding-top: 114px;
-    background-color: #f9f9f9;
     text-align: left;
     flex-direction: column;
     padding: 80px 0 0 150px;
 }
 
 .type-option {
-    width: 75%;
-    border: 1px solid rgba(0, 0, 0, 0.6);
+    width: 100%;
 }
 
 .option {
@@ -177,15 +193,14 @@ main {
 .type {
     text-align: flex-start;
     align-items: center;
-    align-items: center;
     background: white;
-    padding: 30px;
+    padding: 15px 20px;
     margin-bottom: 30px;
-    border-radius: 16px;
-    box-shadow: 0 5px 10px rgba(1, 1, 1, 0.5);
-    width: 755px;
+    border-radius: 0px;
+    width: 45%;
+    border: 1px solid black;
+    border-color: black;
 }
-
 .schedule {
     margin-top: 12px;
 }
@@ -195,7 +210,11 @@ main h1 {
     font-family: 'Times New Roman', Times, serif;
 }
 
-.purpose, .type, .schedule {
+.type, .schedule {
+    margin-bottom: 20px;
+}
+
+.purpose {
     margin-bottom: 20px;
 }
 
@@ -217,16 +236,23 @@ button {
 }
 
 .type-option p {
-    font-size: 20px;
+    font-size: 14px;
+    padding: 0 5px;
+    margin: 5px 0;
 }
 
 .button-group {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+    margin-top: 10px;
 }
 
 h2 {
     color: var(--bcit-blue);
     font-size: 2rem;
+}
+
+body {
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
 }
