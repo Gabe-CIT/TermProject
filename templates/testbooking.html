@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block links %}
+<link rel="stylesheet" href="../static/css/testbooking.css"/>
+{% endblock %}
+
+{% block title %}
+Book Appointment - BCIT
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="detail-cont name">
+        <h2>Booking appointment with:</h2>
+        <p>Valerie Frizzle</p>
+    </div>
+    <div class="detail-cont purpose">
+        <h3>Appointment purpose:</h3>
+        <textarea id="purpose-field" name="purpose" rows="5" placeholder="State the purpose of your visit here..."></textarea>
+    </div>
+    <div class="detail-cont type">
+        <h3>Appointment type:</h3>
+        <select class="appt-type" name="appt-type" size="2">
+            <option value="in-person">In-Person</option>
+            <option value="phone-call">Phone Call</option>
+        </select>
+    </div>
+    <div class="detail-cont schedule">
+        <h3>Available dates:</h3>
+        <input id="calendar" type="date" name="calendar" min="2025-05-05">
+    </div>
+    <div class="detail-cont time">
+        <h3>Available times:</h3>
+        <select name="time" id="time">
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+        </select>
+    </div>
+    <a href="confirmation.html">
+        <button class="continue-btn">Continue</button>
+    </a>
+</main>  
+<script>
+    document.getElementById("calendar").min = new Date().toLocaleDateString('fr-ca');
+</script>
+{% endblock %}
