@@ -1,12 +1,3 @@
-<!-- 
- 
-THIS PAGE WILL CONSIST OF ALL HARD CODED ELEMENTS SUCH AS HEADER AND FOOTERS 
-
-THIS WILL ALSO INCLUDE HARDCODED LINKS TO THE CSS
-
-CSS LINKS FOR OTHER ELEMENTS FOUND IN OTHER PAGES WILL REQUIRE YOU TO ADD THEM TO THE CHILD TEMPLATE
-
--->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,18 +5,17 @@ CSS LINKS FOR OTHER ELEMENTS FOUND IN OTHER PAGES WILL REQUIRE YOU TO ADD THEM T
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ url_for('static', filename='/css/basedashboard.css') }}">
         {% block links %}
-        <!-- this is where the link tags would go -->
+        <!-- Links -->
         {% endblock %}
-        <!-- just switch filename to whatever the file name is -->
         <title>
             {% block title %}
-            <!-- this is where the page title would go -->
+            <!-- Page Title -->
             {% endblock %}
         </title>
         
 </head>
 <body>
-    <!-- header would go before the block content tag -->
+    <!-- Header -->
     <header class="prof-field">
         <nav class="prof-cont">
             <ul>
@@ -37,7 +27,7 @@ CSS LINKS FOR OTHER ELEMENTS FOUND IN OTHER PAGES WILL REQUIRE YOU TO ADD THEM T
         </nav>
     </header>
     {% block content %} 
-    <!-- this is where the changing element would go -->
+    <!-- Child Content -->
     {% endblock %}
 </body>
 </html>

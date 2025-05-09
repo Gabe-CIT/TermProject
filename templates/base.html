@@ -1,12 +1,3 @@
-<!-- 
- 
-THIS PAGE WILL CONSIST OF ALL HARD CODED ELEMENTS SUCH AS HEADER AND FOOTERS 
-
-THIS WILL ALSO INCLUDE HARDCODED LINKS TO THE CSS
-
-CSS LINKS FOR OTHER ELEMENTS FOUND IN OTHER PAGES WILL REQUIRE YOU TO ADD THEM TO THE CHILD TEMPLATE
-
--->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,18 +6,17 @@ CSS LINKS FOR OTHER ELEMENTS FOUND IN OTHER PAGES WILL REQUIRE YOU TO ADD THEM T
         <link rel="stylesheet" href="{{ url_for('static', filename='/css/base.css') }}">
         <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css">
         {% block links %}
-        <!-- this is where the link tags would go -->
+        <!-- Links -->
         {% endblock %}
-        <!-- just switch filename to whatever the file name is -->
         <title>
             {% block title %}
-            <!-- this is where the page title would go -->
+            <!-- Page Title -->
             {% endblock %}
         </title>
         
 </head>
 <body>
-    <!-- header would go before the block content tag -->
+    <!-- Header -->
     <header class="default">
         <nav class="portalnav">
             <ul>
@@ -52,9 +42,9 @@ CSS LINKS FOR OTHER ELEMENTS FOUND IN OTHER PAGES WILL REQUIRE YOU TO ADD THEM T
         </ul>
     </header>
     {% block content %} 
-    <!-- this is where the changing element would go -->
+    <!-- Child Content -->
     {% endblock %}
-    <!-- footer would go after the endblock tag -->
+    <!-- Footer -->
     <footer class="site-footer">
         <section id="contact">
             <h3 class="bar">Contact</h3>
