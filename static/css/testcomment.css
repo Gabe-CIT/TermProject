@@ -1,8 +1,3 @@
-.default,
-.site-footer {
-    display: none;
-}
-
 textarea {
     padding: 5px;
     width: 100%;
@@ -70,50 +65,3 @@ h2 {
 body {
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
 }
-
-#logout-button {
-    margin-left: 5px;
-}
-
-.prof-cont {
-    position: relative;
-    height: 50px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: var(--bcit-blue);
-    border-bottom: var(--grey-border);
-}
-
-.prof-cont ul {
-    display: flex;
-    list-style: none;
-    position: absolute;
-    right: var(--margin);
-    height: 100%;
-}
-
-.prof-cont li {
-    padding: 0 8px;
-    font-family: "jpAlva", Arial, Helvetica, sans-serif;
-    font-size: 35px;
-    text-transform: uppercase;
-    transition: all .1s ease-in-out;
-    border: 1px solid transparent;
-}
-
-.prof-cont a {
-    color: #fff;
-}
-
-.prof-cont li:hover {
-    background-color: var(--bcit-yellow);
-}
-
-.prof-cont li:hover a {
-    color: var(--bcit-blue);
-}
-
-#logout-button {
-    margin-left: 5px;
-} 
