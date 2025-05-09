@@ -164,17 +164,18 @@ main,
 footer {
     width: 74%; /* Makes a max width of 74% of screen */
     min-width: 92%;
-    min-width: 92%;
     margin-left: auto; /* Centers main body */
     margin-right: auto;
 }
 
 #appointments {
+    height: 50vh; /* Placeholder */
     color: var(--bcit-darkblue);
     display: flex;
     flex-direction: column;
     padding: 20px;
     border: var(--grey-border); /* Temp border */
+    position: relative;
 }
 
 #appointments h1 {
@@ -293,7 +294,6 @@ span.btn-text {
 }
 
 .details li {
-    padding: 50px;
     margin: 10px;
     border: 0.5px solid rgb(203, 210, 222);
     background-color: var(--bcit-white);
@@ -357,9 +357,9 @@ span.btn-text {
     height: 1px;
     left: 0;
     width: 32px;
-    margin-top: 15px;  
     background-color: var(--bcit-darkblue);
     position: absolute;
+    margin-top: 15px;  
 }
 
 .site-footer .campuses {

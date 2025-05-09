@@ -32,10 +32,6 @@
         </ul>
     </header>
     <div class="login-container">
-<<<<<<< HEAD
-<<<<<<<< HEAD:templates/student_login.html
-=======
->>>>>>> gabe
         <h2>Welcome to BCIT Advisor Booking</h2>
         <p>Student Login Portal</p>
         <form method="post" action="{{ url_for('auth.student_login') }}">
@@ -53,22 +49,13 @@
             
             <button type="submit">Login</button>
             <br>
-<<<<<<< HEAD
-            <p><a href="forgot.html">Forgot Password?</a> 
-=======
             <p><a href="{{ url_for('auth.forgot_pass') }}">Forgot Password?</a> 
->>>>>>> gabe
         </form>
         <p class="advisorlogin-text">
         <b> For Advisors:</b> <a href="{{ url_for('auth.advisor_login', next=request.args.get('next')) }}"">Advisor Login Portal</a>
         </p>
-<<<<<<< HEAD
-========
         <h2>Error {{ err_code }}</h2>
         <p>{{ err_msg }}</p>
->>>>>>>> gabe:templates/error.html
-=======
->>>>>>> gabe
     </div>     
 </body>
 </html>
