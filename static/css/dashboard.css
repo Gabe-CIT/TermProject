@@ -64,8 +64,3 @@ h2 {
 body {
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
 }
-
-.info:focus {
-    outline: auto;
-    outline-color: Highlight;
-}
