@@ -46,6 +46,3 @@ def load_user(user_id):
     
     except Exception as e:
         print(e)
-        
-        
-    

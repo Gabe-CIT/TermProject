@@ -142,7 +142,7 @@ textarea {
     resize: none;
 }
 
-main {
+form {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -184,7 +184,7 @@ main {
 
 .purpose {
     align-items: center;
-    text-align: flex-start;
+    text-align: flex-start; 
 }
 
 .type {
@@ -196,7 +196,7 @@ main {
     margin-top: 12px;
 }
 
-main h1 {
+form h1 {
     margin-bottom: 15px;
 }
 
@@ -210,4 +210,8 @@ main h1 {
 
 button {
     padding: 12px 30px;
+}
+
+label {
+    font-size: 25px;
 }

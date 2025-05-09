@@ -5,6 +5,7 @@
 # import routes
 from .controllers.auth_routes import auth_bp
 from .controllers.main_routes import main_bp
+from .controllers.book_routes import book_bp
 
 # import services
 from .services.login_mgmt import User, init_login_mgr, load_user

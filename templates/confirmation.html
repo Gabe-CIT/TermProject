@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/advisor.css">
-    <title>Advisor Login Portal — BCIT </title>
+    <title>Health Services</title>
+    <link rel="stylesheet" href="confirmation.css">
 </head>
 <body>
     <header class="default">
@@ -31,21 +32,21 @@
             <li><a href="https://www.bcit.ca/about/">About BCIT</a></li>
         </ul>
     </header>
-    <div class="login-container">
-        <h2>Welcome to BCIT Advisor Booking</h2>
-        <p>Advisor Login Portal</p>
-        <form>
-            <label>Email:</label>
-            <input type="email" placeholder="name@my.bcit.ca" required>
-
-            <label>Password:</label>
-            <input type="password" placeholder="••••••••" required>
-
-            <button type="submit">Login</button>
-        </form>
-        <p class="advisorlogin-text">
-        <a href="forgot.html">Forgot Password?</a>
-        </p>
-    </div>     
+    <main>
+        <div class="conf">
+            <h1>Confirmation</h1>
+                <form class="receipt">
+                    <label for="bcit-id">BCIT ID:</label><br>
+                    <input type="text" id="bcit-id" name="bcit-id"><br><br>
+                    <label for="first-name">First Name:</label><br>
+                    <input type="text" id="first-name" name="first-name"><br><br>
+                    <label for="last-name">Last Name:</label><br>
+                    <input type="text" id="last-name" name="last-name"><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email"><br><br>
+                </form>
+        </div>
+        <button>Submit</button>
+    </main>
 </body>
 </html>

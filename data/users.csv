@@ -1,0 +1,16 @@
+name,surname,email,password,role,service_id
+Kristine,Prez,kpaez1@my.bcit.ca,1234,student,
+Janek,Basi,jbasi15@my.bcit.ca,5678,student,
+Yee Ling (Eric),Yau,yyau8@my.bcit.ca,1234,student,
+Nicholas,Cao,ncao5@my.bcit.ca,5678,student,
+Gabriel,Junio,gjunio@my.bcit.ca,1234,student,
+Klint,Taaca,ktaaca@my.bcit.ca,5678,student,
+Charles,Leclerc,cleclerc@bcit.ca,1234,advisor,1
+Carlos,Sainz,csainz@bcit.ca,1234,advisor,1
+Lewis,Hamilton,lhamilton@bcit.ca,1234,advisor,1
+Elsie,Hughes,ehughes@bcit.ca,1234,advisor,2
+Padma,Patil,ppatil@bcit.ca,1234,advisor,2
+Valerie,Frizzle,vfrizzle@bcit.ca,1234,advisor,2
+Elon,Musk,emusk@bcit.ca,1234,advisor,3
+Jeff,Bezos,jbezos@bcit.ca,1234,advisor,3
+Bill,Gates,bgates@bcit.ca,1234,advisor,3

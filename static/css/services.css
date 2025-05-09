@@ -155,11 +155,7 @@ svg.logo {
     margin-left: var(--margin);
     border-right: var(--divider);
     padding-right: 50px;
-<<<<<<< HEAD
-    height: 75vh;
-=======
     height: 70vh;
->>>>>>> Nick
 }
 
 .cat-list {
@@ -173,20 +169,14 @@ svg.logo {
     cursor: pointer;
     width: fit-content;
     font-size: 1.1rem;
-<<<<<<< HEAD
-    border-bottom: 2px solid transparent;
-    line-height: 1.3rem;
-    transition: .1s ease all;
-}
-
-.cat-list li:hover {
-    border-bottom: 2px solid var(--bcit-blue);
-=======
 }
 
 .cat-list li:hover {
     opacity: .7;
->>>>>>> Nick
+}
+
+.cat-list li:hover {
+    opacity: .7;
 }
 
 .service-cat {
@@ -197,19 +187,15 @@ svg.logo {
     color: var(--bcit-blue);
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
-<<<<<<< HEAD
-    margin-bottom: 2rem;
-}
-
-.advisor {
-    margin-bottom: 2rem;
-=======
     margin-bottom: 1.5rem;
 }
 
 .advisor {
     margin-bottom: 30px;
->>>>>>> Nick
+}
+
+.advisor {
+    margin-bottom: 30px;
 }
 
 .advisor p {
@@ -221,7 +207,6 @@ svg.logo {
     color: var(--link-color);
 }
 
-<<<<<<< HEAD
 .book-btn {
     width: fit-content;
     margin-top: 10px;
@@ -249,12 +234,7 @@ svg.logo {
     color: #fff;
 }
 
-=======
->>>>>>> Nick
+
 .counseling {
     display: none;
 }
-
-/* .group-therapy {
-    display: none;
-} */
