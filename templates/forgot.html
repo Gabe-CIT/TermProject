@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Health Services - BCIT</title>
-    <link rel="stylesheet" href="../static/css/services.css">
+    <link rel="stylesheet" href="../static/css/forgot.css">
+    <title>Forgot Password — BCIT </title>
 </head>
 <body>
     <header class="default">
@@ -31,28 +31,17 @@
             <li><a href="https://www.bcit.ca/about/">About BCIT</a></li>
         </ul>
     </header>
-    <div class="services-container">
-        <div class="cat-list-container">
-            <ul class="cat-list">
-                <li><a href="{{ url_for('main.services') }}">All Services</a></li>
-                <li><a href="{{ url_for('main.filter_services', service_id=1)}}">Counseling</a></li>
-                <li><a href="{{ url_for('main.filter_services', service_id=2)}}">Group Therapy</a></li>
-                <li><a href="{{ url_for('main.filter_services', service_id=3)}}">Psychiatry</a></li>
-                <li><a href="{{ url_for('main.filter_services', service_id=4)}}">Specialized services</a></li>
-                <li><a href="{{ url_for('main.filter_services', service_id=5)}}">Helplines</a></li>
-            </ul>
-        </div>
-        <div class="service-cat">
-            {% for advisor in advisors %}
-            <div class="advisor">
-                    <!-- <img> -->
-                    <h3>Advisor,{{ advisor.name }} {{ advisor.surname}} </h3>
-                    <p>Advisor, {{ advisor.service.name }}</p>
-                    <p><a href="mailto: {{ advisor.email }}">{{ advisor.email }}</a></p>
-                    <div class="book-btn"><a href="{{ url_for('booking.create_booking') }}">Book an appointment with {{ advisor.name }}</a></div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
+    <div class="input-container">
+        <h2>Forgot your Password?</h2>
+        <p>Please enter your email address below. An email will be sent to you with instructions to reset your password.</p>
+        <form>
+            <label>Email:</label>
+            <input type="email" placeholder="name@my.bcit.ca" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p class="advisorlogin-text">
+        <a href="https://www.bcit.ca/it-services/">Contact IT Services</a>
+        </p>
+    </div>     
 </body>
 </html>

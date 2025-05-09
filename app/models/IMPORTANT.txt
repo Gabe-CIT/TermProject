@@ -1,0 +1,3 @@
+!!! user_database.json is a PSEUDO DATABASE. !!!
+
+!!! please refactor code in future sprints when implementing SQL !!!

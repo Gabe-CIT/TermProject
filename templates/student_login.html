@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Health Services - BCIT</title>
-    <link rel="stylesheet" href="../static/css/services.css">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <title>Student Login Portal — BCIT </title>
 </head>
 <body>
     <header class="default">
@@ -31,28 +31,31 @@
             <li><a href="https://www.bcit.ca/about/">About BCIT</a></li>
         </ul>
     </header>
-    <div class="services-container">
-        <div class="cat-list-container">
-            <ul class="cat-list">
-                <li><a href="{{ url_for('main.services') }}">All Services</a></li>
-                <li><a href="{{ url_for('main.filter_services', service_id=1)}}">Counseling</a></li>
-                <li><a href="{{ url_for('main.filter_services', service_id=2)}}">Group Therapy</a></li>
-                <li><a href="{{ url_for('main.filter_services', service_id=3)}}">Psychiatry</a></li>
-                <li><a href="{{ url_for('main.filter_services', service_id=4)}}">Specialized services</a></li>
-                <li><a href="{{ url_for('main.filter_services', service_id=5)}}">Helplines</a></li>
-            </ul>
-        </div>
-        <div class="service-cat">
-            {% for advisor in advisors %}
-            <div class="advisor">
-                    <!-- <img> -->
-                    <h3>Advisor,{{ advisor.name }} {{ advisor.surname}} </h3>
-                    <p>Advisor, {{ advisor.service.name }}</p>
-                    <p><a href="mailto: {{ advisor.email }}">{{ advisor.email }}</a></p>
-                    <div class="book-btn"><a href="{{ url_for('booking.create_booking') }}">Book an appointment with {{ advisor.name }}</a></div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
+    <div class="login-container">
+        <h2>Welcome to BCIT Advisor Booking</h2>
+        <p>Student Login Portal</p>
+        <form method="post" action="{{ url_for('auth.student_login') }}">
+
+            <!-- THIS IS TO CATCH THE NEXT PARAM IN POST REQUEST. READ DOC.md FOR MORE INFORMATION -->
+            {% if request.args.get('next') %}
+                <input type="hidden" name="next" value="{{ request.args.get('next') }}">
+            {% endif %}
+            
+            <label>Email:</label>
+            <input type="email" placeholder="name@my.bcit.ca" name="email_address_data" required>
+
+            <label>Password:</label>
+            <input type="password" placeholder="••••••••" name="password_data" required>
+            
+            <button type="submit">Login</button>
+            <br>
+            <p><a href="{{ url_for('auth.forgot_pass') }}">Forgot Password?</a> 
+        </form>
+        <p class="advisorlogin-text">
+        <b> For Advisors:</b> <a href="{{ url_for('auth.advisor_login', next=request.args.get('next')) }}"">Advisor Login Portal</a>
+        </p>
+        <h2>Error {{ err_code }}</h2>
+        <p>{{ err_msg }}</p>
+    </div>     
 </body>
 </html>
