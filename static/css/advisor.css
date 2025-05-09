@@ -6,10 +6,9 @@ main {
     display: flex;
     align-items: flex-start;
     min-height: calc(100vh - 114px);
-    padding-top: 114px;
     text-align: left;
     flex-direction: column;
-    padding: 80px 0 0 150px;
+    padding: 40px 0 0 150px;
 }
 
 .user-info {
