@@ -8,7 +8,7 @@ class Appointments(db.Model):
     id = db.mapped_column(db.Integer, nullable=False, primary_key=True)
     
     # relationship between appointments and users
-    user_email = db.mapped_column(db.Integer, db.ForeignKey("Users.email"), nullable=False)
+    user_email = db.mapped_column(db.String, db.ForeignKey("Users.email"), nullable=False)
     user = db.relationship("Users", back_populates="appointments")
 
     # relationship between appointments and advisors

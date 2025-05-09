@@ -31,32 +31,25 @@ def confirm_booking():
 
 
     # get the user id from the current user
-    appt_end_time = Appointments.create_end_time(request.form["appt_time"])
-    # (datetime.strptime(request.form["appt_time"], "%H:%M") + timedelta(hours=1)).time()  # 1-hour-long appointment
+    appt_end_time = Appointments.create_end_time(request.form["appt_time"]) # 1-hour-long appointment
 
     user = db.session.execute(db.select(Users).where(Users.email == current_user.id)).scalar()
     user_email = user.email  # get the user id from the current user
-    # create a new appointment object
     
     # optional comment
     if request.form['appt_purpose']:
         appt_comment = request.form['appt_purpose']
     else:
         appt_comment = None
+
     # create new apponitment object
     new_appt = Appointments.create_appointment(
         user_email=user_email, # user email from the current user
-
         advisor_id=advisor_id, # advisor id from the form
-        
         date=appt_date, # date from the form
-        
         start_time=appt_start_time, # start time from the form
-        
         end_time=appt_end_time, # end time from the form
-        
         meeting_type=appt_type, # appointment type from the form
-        
         comment=appt_comment # comment from the form
     )
 

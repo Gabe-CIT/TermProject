@@ -1,5 +1,4 @@
 import pytest
-from application import application  # Import your Flask app
 from app.models import Appointments
 from datetime import datetime, timedelta
 
