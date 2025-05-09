@@ -148,3 +148,7 @@ svg.logo {
 .portalnav li:hover a {
     color: var(--bcit-blue);
 }
+
+#logout-button {
+    margin-left: 5px;
+}
