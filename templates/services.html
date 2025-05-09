@@ -34,6 +34,7 @@
     <div class="services-container">
         <div class="cat-list-container">
             <ul class="cat-list">
+                <li><a href="{{ url_for('main.services') }}">All Services</a></li>
                 <li><a href="{{ url_for('main.filter_services', service_id=1)}}">Counseling</a></li>
                 <li><a href="{{ url_for('main.filter_services', service_id=2)}}">Group Therapy</a></li>
                 <li><a href="{{ url_for('main.filter_services', service_id=3)}}">Psychiatry</a></li>
@@ -45,10 +46,10 @@
             {% for advisor in advisors %}
             <div class="advisor">
                     <!-- <img> -->
-                    <h3>{{ advisor.name }} {{ advisor.surname}} </h3>
-                    <p>{{ advisor.service.name }}</p>
+                    <h3>Advisor,{{ advisor.name }} {{ advisor.surname}} </h3>
+                    <p>Advisor, {{ advisor.service.name }}</p>
                     <p><a href="mailto: {{ advisor.email }}">{{ advisor.email }}</a></p>
-                    <div class="book-btn"><a href="{{ url_for('booking.create_booking') }}">Book an appointment</a></div>
+                    <div class="book-btn"><a href="{{ url_for('booking.create_booking') }}">Book an appointment with {{ advisor.name }}</a></div>
                 </div>
             {% endfor %}
         </div>
