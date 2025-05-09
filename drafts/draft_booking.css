@@ -276,3 +276,23 @@ button:hover {
     background-color: #002b53;
 }
 
+.appt-type {
+    font-size: 10px;
+    padding: 4px 8px;
+    width: 25px;
+    height: auto;
+}
+
+
+.appt-type {
+    padding: 5px;
+    width: 50%;
+    height: auto;
+    font-size: 14px;
+}
+
+.appt-type option {
+    padding: 5px 8px; /* top-bottom 5px, left-right 8px */
+    font-size: 14px;
+}
+
