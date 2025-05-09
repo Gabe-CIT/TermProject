@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Services - BCIT</title>
-    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <link rel="stylesheet" href="../static/css/advisor_dashboard.css">
     <link rel="stylesheet" href="../static/css/header.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
     </header>
     <main> 
         <div class="upcoming">
-            <h2>Upcoming Appointments</h2>
+            <h2>Appointments</h2>
         </div>
         <div class="info">
             <div class="user-info">
@@ -28,9 +28,10 @@
                 <p><strong>Time:</strong></p>
                 <p><strong>Name:</strong></p>
                 <p><strong>Details:</strong></p>
+                <textarea id="comment-field" name="comment" rows="5" placeholder="State your comment here..."></textarea>
                 <div class="button-group">
                     <button>Cancel</button>
-                    <a href="comment.html"><button>Continue</button></a> 
+                    <button>Send</button>
                 </div>
             </div>
         </div> 
