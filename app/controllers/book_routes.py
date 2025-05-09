@@ -39,14 +39,14 @@ def confirm_booking():
     
     # optional comment
     if request.form['appt_purpose']:
-        appt_comment = request.form['appt_purpose']
+        appt_comment = request.form['appt_comment']
     else:
         appt_comment = None
     # create new apponitment object
     new_appt = Appointments(
         user_id=user_email,
         advisor_id=advisor_id,
-        day=appt_date,
+        date=appt_date,
         start_time=appt_start_time,
         end_time=appt_end_time,  # this should be updated to the end time of the appointment
         meeting_type=appt_type,

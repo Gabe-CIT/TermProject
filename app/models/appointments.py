@@ -16,7 +16,7 @@ class Appointments(db.Model):
     # advisor = db.relationship("Users", back_populates="advisor_appointments")
 
     # appointment attributes 
-    day = db.mapped_column(db.Date, nullable=False)
+    date = db.mapped_column(db.Date, nullable=False)
     start_time = db.mapped_column(db.Time, nullable=False)
     end_time = db.mapped_column(db.Time, nullable=False)
     confirmed = db.mapped_column(db.Boolean, nullable=False, default=False)

@@ -24,7 +24,14 @@ def import_users():
                 service_data = row['service_id']
 
                 # creates a new user with columns filled
-                user = models.Users(name=name_data, surname=surname_data, email=email_data, password=password_data, role=role_data, service_id=service_data)
+                user = models.Users(
+                    name=name_data, 
+                    surname=surname_data,
+                    email=email_data, 
+                    password=password_data, 
+                    role=role_data, 
+                    service_id=service_data
+                    )
 
                 db.session.add(user)
 
