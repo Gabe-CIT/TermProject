@@ -38,3 +38,4 @@ def test_get_booking_page(client):
     res = client.get('/booking/')
 
     assert b'<h1>Select Advisor:</h1>' in res.data
+    assert res.status_code == 200
