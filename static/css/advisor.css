@@ -40,6 +40,10 @@ h2 {
     margin: 5px 0;
 }
 
+.user-info p {
+    font-size: 15px;
+}
+
 textarea {
     resize: both;
     min-width: 100%;

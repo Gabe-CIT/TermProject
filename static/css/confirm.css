@@ -26,6 +26,7 @@ h2 {
 .recpt {
     border: 1px solid black;
     padding: 15px 20px;
+    width: 400px;
 }
 
 .form-line {
@@ -47,6 +48,7 @@ h2 {
 .text {
     justify-content: flex-end;
     flex-direction: column;
+    width: 65%
 }
 
 .bttn-grp {
