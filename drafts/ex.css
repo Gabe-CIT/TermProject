@@ -41,3 +41,16 @@ button {
     justify-content: flex-end;
     margin-top: 20px;
 }
+
+
+/*
+
+button {
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 1px solid;
+    cursor: pointer;
+    justify-content: flex-end;
+}
+
+*/

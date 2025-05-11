@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Services - BCIT</title>
+    <link rel="stylesheet" href="../static/css/advisor.css">
     <link rel="stylesheet" href="../static/css/header.css">
-    <link rel="stylesheet" href="../static/css/comment.css">
 </head>
 <body>
     <header class="prof-field">
@@ -19,16 +19,19 @@
         </nav>
     </header>
     <main> 
-        <div class="comment">
-            <h2>Comment</h2>
+        <div class="upcoming">
+            <h2>Appointments</h2>
         </div>
         <div class="info">
             <div class="user-info">
+                <p><strong>Date:</strong></p>
+                <p><strong>Time:</strong></p>
                 <p><strong>Name:</strong></p>
-                <p><strong>Email:</strong></p>
-                <textarea id="comment-field" name="comment" cols="25" rows="20" placeholder="State your comment here..."></textarea>
-                <div class="button-group">
-                    <button>Send</button>
+                <p><strong>Details:</strong></p>
+                <textarea id="comment-field" name="comment" rows="5" placeholder="State your comment here..."></textarea>
+                <div class="grp-cont">
+                    <button class="button-grp">Cancel</button>
+                    <button class="button-grp">Send</button>
                 </div>
             </div>
         </div> 
