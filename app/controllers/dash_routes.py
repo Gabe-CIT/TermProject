@@ -28,14 +28,14 @@ def func_name()
 
 @dash_bp.route("/")
 @login_required
-def redirect():
+def dashboard_redirect():
     user_email = current_user.id
         
     if not user_email:
         return redirect(url_for('main.error'))
 
     if is_student(user_email):
-        return redirect(url_for('dashboard.student_dashboard', email=user_email))
+        return redirect(url_for('dashboard.student_dashboard', email=current_user.id))
 
     if is_advisor(user_email):
         return redirect(url_for('dashboard.advisor_dashboard', email=user_email))        
