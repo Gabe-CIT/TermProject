@@ -192,3 +192,25 @@ body {
         width: 100%;
     }
 }
+
+.go-back {
+    width: fit-content;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    background-color: var(--bcit-blue);
+    border: 1px solid var(--bcit-blue);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.go-back:hover{
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+    color: #fff;
+}

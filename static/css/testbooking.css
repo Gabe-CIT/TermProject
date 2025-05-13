@@ -3,9 +3,9 @@ footer,
     display: none;
 }
 
-main {
+form {
     position: absolute;
-    margin-top: 200px;
+    margin-top: 50px;
     margin-left: var(--margin);
 }
 
@@ -13,7 +13,7 @@ body {
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
 }
 
-main {
+form {
     padding-bottom: 3rem;
 }
 
@@ -66,6 +66,23 @@ h2, .name h3, .purpose h3, .type h3 {
 label {
     margin-right: .8rem;
 }
+.go-back {
+    margin-top: 200px;
+    width: fit-content;
+    padding: 10px 15px;
+    background-color: var(--bcit-blue);
+    border: 1px solid var(--bcit-blue);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 3px;
+    margin-left: var(--margin);
+}
+
 
 .continue-btn {
     width: fit-content;
@@ -83,7 +100,7 @@ label {
     border-radius: 3px;
 }
 
-.continue-btn:hover {
+.continue-btn:hover , .go-back:hover{
     background-color: var(--link-color);
     border-color: var(--link-color);
     color: #fff;
@@ -109,9 +126,11 @@ textarea, #calendar, #time {
     padding: 10px;
     width: 65%;
     height: auto;
+    overflow: hidden;
 }
 
 .appt-type option {
     padding: 10px;
     font-size: 12px;
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
 }

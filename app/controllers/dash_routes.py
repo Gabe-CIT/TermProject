@@ -10,14 +10,14 @@ from colorama import Fore
 dash_bp = Blueprint("dashboard", __name__, url_prefix="/dashboard")
 # DASHBOARD ROUTE
 
-@dash_bp.route("/student/<int:ID>")
+@dash_bp.route("/student/<string:email>")
 @login_required
-def student_dashboard(ID):
+def student_dashboard(email):
     """
     Student dashboard route
     Displays the student's information and their appointments.
     """
-    user = db.session.execute(db.select(Users).where(Users.id == ID)).scalar()
+    user = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
     if user is None:
         flash("User not found", "danger")
         return redirect(url_for("main.index"))
@@ -25,9 +25,9 @@ def student_dashboard(ID):
         flash("You are not authorized to access this page", "danger")
         return redirect(url_for("main.index"))
     
-    user_appointments = db.session.execute(db.select(Appointments).where(Appointments.user_id == ID)).scalars()
+    user_appointments = db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars()
 
-    return render_template("student_dashboard.html", user=user, appointments=user_appointments)
+    return render_template("student_dashboard.html", user=user, appts=user_appointments)
 
 @dash_bp.route("/advisor/<int:ID>")
 @login_required
@@ -44,6 +44,6 @@ def advisor_dashboard(ID):
         flash("You are not authorized to access this page", "danger")
         return redirect(url_for("main.index"))
     
-    user_appointments = db.session.execute(db.select(Appointments).where(Appointments.advisor_id == ID)).scalars()
+    user_appts = db.session.execute(db.select(Appointments).where(Appointments.advisor_id == ID)).scalars()
 
-    return render_template("advisor_dashboard.html", user=user, appointments=user_appointments)
+    return render_template("advisor_dashboard.html", user=user, appts=user_appts)
