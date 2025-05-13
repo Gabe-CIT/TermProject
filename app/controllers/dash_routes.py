@@ -10,6 +10,37 @@ from colorama import Fore
 dash_bp = Blueprint("dashboard", __name__, url_prefix="/dashboard")
 # DASHBOARD ROUTE
 
+"""
+/dashboard
+def func_name()
+@login_required
+- check for rule
+    - check email
+
+    - if student:
+        - get student email@my.bcit.ca
+        - redirect to /student/<string:email>
+
+    if advisor:
+        - get advisor email@bcit.ca
+        - redirect to /advisor/<string:email>
+"""
+
+@dash_bp.route("/")
+@login_required
+def redirect():
+    user_email = current_user.id
+        
+    if not user_email:
+        return redirect(url_for('main.error'))
+
+    if is_student(user_email):
+        return redirect(url_for('dashboard.student_dashboard', email=user_email))
+
+    if is_advisor(user_email):
+        return redirect(url_for('dashboard.advisor_dashboard', email=user_email))        
+
+
 @dash_bp.route("/student/<string:email>")
 @login_required
 def student_dashboard(email):
@@ -25,18 +56,19 @@ def student_dashboard(email):
         flash("You are not authorized to access this page", "danger")
         return redirect(url_for("main.index"))
     
+    # Searches for appointments with same user email
     user_appointments = db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars()
+    advisor = db.session.execute(db.select(Users).where(Users.id == Appointments.advisor_id)).scalar()
+    return render_template("student_dashboard.html", user=user, appts=user_appointments, advisor=advisor)
 
-    return render_template("student_dashboard.html", user=user, appts=user_appointments)
-
-@dash_bp.route("/advisor/<int:ID>")
+@dash_bp.route("/advisor/<string:email>")
 @login_required
-def advisor_dashboard(ID):
+def advisor_dashboard(email):
     """
     Advisor dashboard route
     Displays the advisor's information and their appointments.
     """
-    user = db.session.execute(db.select(Users).where(Users.id == ID)).scalar()
+    user = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
     if user is None:
         flash("User not found", "danger")
         return redirect(url_for("main.index"))
@@ -44,6 +76,6 @@ def advisor_dashboard(ID):
         flash("You are not authorized to access this page", "danger")
         return redirect(url_for("main.index"))
     
-    user_appts = db.session.execute(db.select(Appointments).where(Appointments.advisor_id == ID)).scalars()
+    user_appts = db.session.execute(db.select(Appointments).where(Appointments.advisor_id == email)).scalars()
 
     return render_template("advisor_dashboard.html", user=user, appts=user_appts)

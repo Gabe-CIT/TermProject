@@ -21,7 +21,9 @@
             <ul>
                 <li id="profile">👤</li>
                 <li id="logout" style="display: none;">
-                    <button onclick="logout()">Logout</button>
+                    <a href="{{ url_for('auth.logout') }}">
+                    <button>Logout</button>
+                    </a>
                 </li>
             </ul>
         </nav>

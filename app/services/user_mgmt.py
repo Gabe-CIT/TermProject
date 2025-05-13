@@ -1,5 +1,7 @@
 import json
 from colorama import Fore
+from app.models import Users
+from db import db
 
 """
 what the pseudo database looks like:
@@ -15,24 +17,19 @@ what the pseudo database looks like:
 we can access a user (for now) using the email as a key, implement SQL later
 """
 
-# !!! refactor this once SQLAlchemy is implemented
-def read_db():
-    with open("./app/models/user_database.json", "r") as file:
-        users = json.load(file)
-        return users
 
 # !!! refactor this once SQLAlchemy is implemented
 def get_user_by_email(email):
-    user_db = read_db()
+    user_db = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
     
     # return the user with the email_key of email param
-    return user_db.get(email)
+    return user_db
 
 # just check if the POST'ed credentials are valid entries in the pseudo database
 def validate_credentials(email, password):
     user = get_user_by_email(email)
     
-    if user and user["password"] == password:
+    if user and user.password == password:
         return True
     
     return False
@@ -43,12 +40,12 @@ def validate_credentials(email, password):
 def is_student(email):
     user = get_user_by_email(email)
     
-    if user and user["role"] == "student":
+    if user and user.role == "student":
         return True
     
 # you could probably make this into one function, but i like the semantics of two, even if it's redundant
 def is_advisor(email):
     user = get_user_by_email(email)
     
-    if user and user["role"] == "advisor":
-        return False
+    if user and user.role == "advisor":
+        return True

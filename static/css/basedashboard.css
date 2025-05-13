@@ -150,6 +150,7 @@ svg.logo {
 
 #logout-button {
     margin-left: 5px;
+    position: relative;
 }
 
 .prof-cont {
@@ -195,7 +196,3 @@ svg.logo {
     color: var(--link-color);
     text-decoration: underline;
 }
-
-#logout-button {
-    margin-left: 5px;
-} 
