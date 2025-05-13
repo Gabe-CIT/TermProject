@@ -1,0 +1,225 @@
+/* Main Body */
+body {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    min-width: 320px;
+}
+
+a, 
+ul li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/* Main section of body */
+main {
+    margin-top: 138px; /* Gives enough space to not overlap with nav bar */
+}
+
+/* Main section appointments */
+#appointments {
+    color: var(--bcit-index-darkblue);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: var(--grey-border);
+}
+
+#appointments h1 {
+    margin-bottom: 23px;
+}
+
+#appointments .im-lazy {
+    display: inline;
+    margin-bottom: 23px;
+}
+
+
+/* Animated booking buttons */
+.booking-btn a {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--bcit-index-blue);
+    max-width: 15rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--white-color);
+    border: 1px solid var(--bcit-index-blue);
+    text-transform: uppercase;
+    max-height: 5rem;
+}
+
+.booking-btn a:hover {
+    transition: 0.3s ease-in-out;
+    background-color: var(--bcit-index-blue);
+    color: var(--bcit-index-white);
+}
+
+.booking-btn span.btn-text {
+    padding-top: 4px;
+    margin-right: auto;
+}
+
+.booking-btn a .material-symbols-outlined:after {
+    content: "\e5cc";
+    font-size: 1.2rem;
+}
+
+.booking-btn a:hover .material-symbols-outlined {
+    transform: translateX(4px);
+    transition: all 0.2s ease 0.3s;
+}
+
+/* Main section pictures */
+#pictures {
+    border: var(--grey-border);
+    border-top: 0;
+    color: var(--bcit-index-darkblue);
+    padding: 20px;
+}
+
+#pictures h2 {
+    margin-bottom: 23px;
+}
+
+#pictures .healthgrids {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
+}
+
+#pictures .img {
+    border-radius: 10px;
+    max-width: 425px;
+    min-height: 16rem;
+}
+
+#pictures .booknow {
+    position: relative;
+    min-height: 14rem;
+}
+
+#pictures .showpoint li {
+    list-style-type: disc;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+#pictures .showpoint .booking-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#pictures .img1 {
+    background-image: url("../images/index/students.jpg");
+    background-size: cover;
+}
+
+#pictures .img2 {
+    background-image: url("../images/index/people-therapy.jpg");
+    background-size: cover;
+}
+
+#pictures .img3 {
+    background-image: url("../images/index/psychologist-office.jpg");
+    background-size: cover;
+}
+
+#pictures .img4 {
+    background-image: url("../images/index/man-drinking-juice.jpg");
+    background-size: cover;
+}
+
+/* Main section services */
+#services {
+    color: var(--bcit-index-darkblue);
+    padding: 20px;
+    border: var(--grey-border);
+    border-top: 0;
+    border-bottom: 0;
+    display: flex;
+}
+
+.txt-img {
+    margin: auto;
+}
+
+.service-img {
+    background-image: url("../images/index/happy-people.jpg");
+    max-width: 420px;
+    min-height: 20em;
+    background-size: cover;
+}
+
+.txt-img h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
+    list-style-type: none;
+    font-weight: bold;
+}
+
+.details li {
+    border: 0.5px solid rgb(203, 210, 222);
+    background-color: var(--bcit-index-white);
+    padding: 1.67em;
+    min-width: 300px;
+    min-height: 10em;
+}
+
+.details li:hover {
+    background-color: var(--bcit-index-darkblue);
+    color: var(--bcit-index-white);
+    transition: 0.3s ease-in-out; 
+}
+
+.details img {
+    width: 50px;
+}
+
+/* Main section responsive screen sizing */
+@media screen and (max-width: 1200px) {
+    #pictures ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #services {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    main, footer {
+        padding: 0;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    #pictures .healthgrids,
+    #services .details {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #services .details li {
+        min-width: 0;
+    }
+    
+    #pictures img {
+        max-width: 400px;
+    }
+
+}

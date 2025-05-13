@@ -1,0 +1,27 @@
+{% extends "basedashboard.html" %}
+
+{% block links %}
+<link rel="stylesheet" href="../static/css/testcomment.css">
+{% endblock %}
+
+{% block title %}
+Comments
+{% endblock %}
+
+{% block content %}
+<main> 
+    <div class="comment">
+        <h2>Comment</h2>
+    </div>
+    <div class="info">
+        <div class="user-info">
+            <p><strong>Name:</strong></p>
+            <p><strong>Email:</strong></p>
+            <textarea id="comment-field" name="comment" cols="25" rows="20" placeholder="State your comment here..."></textarea>
+            <div class="button-group">
+                <button>Send</button>
+            </div>
+        </div>
+    </div> 
+</main>
+{% endblock %}
