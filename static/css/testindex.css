@@ -170,7 +170,7 @@ main {
 }
 
 .details li {
-    border: 0.5px solid rgb(203, 210, 222);
+    border: 1px solid var(--grey-border);
     background-color: var(--bcit-index-white);
     padding: 1.67em;
     min-width: 300px;
@@ -179,8 +179,12 @@ main {
 
 .details li:hover {
     background-color: var(--bcit-index-darkblue);
-    color: var(--bcit-index-white);
-    transition: 0.3s ease-in-out; 
+    color: var(--bcit-yellow);
+    transition: 0.3s ease-in-out;
+}
+
+.details li:hover img {
+    filter: invert();
 }
 
 .details img {
@@ -221,5 +225,4 @@ main {
     #pictures img {
         max-width: 400px;
     }
-
 }
