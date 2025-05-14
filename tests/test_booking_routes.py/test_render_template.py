@@ -16,7 +16,7 @@ def test_booking_page_form_post(client):
     """
     testing to see if form on booking_page gets posted into database
     """
-    login(client, "ncao5@my.bcit.ca", "1234")
+    login(client, "ncao5@my.bcit.ca", "5678")
 
 
     res = client.post('/booking/confirm', data={
@@ -33,9 +33,9 @@ def test_get_booking_page(client):
     """
     testing to see if booking page will get rendered
     """
-    login(client, "ncao5@my.bcit.ca", "1234")
+    login(client, "ncao5@my.bcit.ca", "5678")
 
-    res = client.get('/booking/')
+    res = client.get('/booking/7')
 
-    assert b'<h1>Select Advisor:</h1>' in res.data
+    assert b'Booking appointment with:' in res.data
     assert res.status_code == 200

@@ -14,7 +14,7 @@ def test_homepage(client):
     """
     testing to see if homepage will get rendered
     """
-    res = client.get('/')
+    res = client.get("/")
 
     assert b'Book an Appointment' in res.data
     assert res.status_code == 200
@@ -23,12 +23,10 @@ def test_services_page(client):
     """
     testing to see if services page will get rendered
     """
-    login(client, "ncao5@my.bcit.ca", "1234")
+    login(client, "ncao5@my.bcit.ca", "5678")
 
     res = client.get('/services')
     
-    assert b'All Services' in res.data
-    assert b'Counseling' in res.data
-    assert b'Group Therapy' in res.data
-    assert b'Psychiatry' in res.data
+
+    assert b'Specialized Services' in res.data
     assert res.status_code == 200

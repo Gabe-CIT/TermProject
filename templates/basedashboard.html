@@ -19,10 +19,8 @@
     <header class="prof-field">
         <nav class="prof-cont">
             <ul>
+                <a href="{{ url_for('auth.logout') }}">
                 <li id="profile">👤</li>
-                <li id="logout" style="display: none;">
-                    <a href="{{ url_for('auth.logout') }}">
-                    <button>Logout</button>
                     </a>
                 </li>
             </ul>

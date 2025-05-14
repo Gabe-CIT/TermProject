@@ -10,22 +10,6 @@ from colorama import Fore
 dash_bp = Blueprint("dashboard", __name__, url_prefix="/dashboard")
 # DASHBOARD ROUTE
 
-"""
-/dashboard
-def func_name()
-@login_required
-- check for rule
-    - check email
-
-    - if student:
-        - get student email@my.bcit.ca
-        - redirect to /student/<string:email>
-
-    if advisor:
-        - get advisor email@bcit.ca
-        - redirect to /advisor/<string:email>
-"""
-
 @dash_bp.route("/")
 @login_required
 def dashboard_redirect():
