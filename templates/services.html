@@ -48,7 +48,7 @@ Mental Health Services - BCIT
                     <p>Advisor, {{ advisor.service.name }}</p>
                     <p><a href="mailto:{{ advisor.email }}">{{ advisor.email }}</a></p>
                     <a href="{{ url_for('booking.create_booking', advisor_id=advisor.id) }}">
-                        <div class="book-btn">Book an appointment with {{ advisor.name }}</div>
+                        <div class="book-btn">Book an appointment with {{ advisor.name }} {{ advisor.surname }}</div>
                     </a>
                 </div>
             </li>
@@ -107,11 +107,9 @@ Mental Health Services - BCIT
                         </div>
                     </li>
                 </ul>
-            </div> 
-
-
-
-
-
+            </div>
+            </section>
+        </div>
+    </div>
 </main>
 {% endblock %}
