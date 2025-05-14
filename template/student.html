@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <script src="../script/student.js" defer></script>
+</head>
+<body>
+    <header class="prof-field">
+        <nav class="prof-cont">
+            <ul>
+                <li id="profile" onclick="profileLogout()">👤</li>
+                <li id="logout" style="display: none;">
+                    <button onclick="buttonLogout()">Logout</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main> 
+        <div class="upcoming">
+            <h2>Appointments</h2>
+        </div>
+        <div class="info">
+            <div class="user-info">
+                <p><strong>Date:</strong></p>
+                <p><strong>Time:</strong></p>
+                <p><strong>Advisor:</strong></p>
+                <p><strong>Details:</strong></p>
+                <div class="button-group">
+                    <button class="button-choices" onclick="cancelAppointment()">Cancel</button>
+                </div>
+            </div> 
+            <div id="cancelModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Are you sure you want to cancel the appointment?</h3>
+                    <button onclick="confirmCancel()">Yes</button>
+                    <button onclick="closeModal()">No</button>
+                </div>
+            </div>
+            <div id="cancel-message" style="display:none; padding: 10px; background-color: #f2d7d5; margin-top: 10px; text-align: center;">
+                This appointment has been cancelled.
+            </div>
+        </div> 
+    </main>
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogoutModal()">&times;</span>
+            <h3>Are you sure you want to logout?</h3>
+            <button onclick="confirmLogout()">Yes</button>
+            <button onclick="closeLogoutModal()">No</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -2,6 +2,17 @@
     transition: all 0.2s ease-in-out;
 }
 
+#logout {
+    position: absolute;
+    top: 50px; /* adjust as needed to drop it below the emoji */
+    right: 0; /* align to right side under the emoji */
+    background-color: white;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 100;
+}
+
 .prof-cont {
     position: relative;
     height: 50px;
@@ -43,4 +54,8 @@
 
 .prof-field {
     background-color: var(--bcit-blue);
+}
+
+.profile {
+    justify-content: end;
 }

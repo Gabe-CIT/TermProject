@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="adv_draft.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
     <link rel="stylesheet" href="../static/css/header.css">
     <link rel="stylesheet" href="../static/css/profile.css">
+    <script src="adv.js" defer></script>
 </head>
 <body>
     <header class="prof-field">
@@ -31,11 +32,23 @@
                 <p><strong>Details:</strong></p>
                 <textarea id="comment-field" name="comment" rows="5" placeholder="State your comment here..."></textarea>
                 <div class="button-group">
-                    <button class="button-choices">Cancel</button>
+                    <button class="button-choices" onclick="cancelAppointment()">Cancel</button>
                     <button class="button-choices">Send</button>
                 </div>
+            </div> 
+            <div id="cancelModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Are you sure you want to cancel the appointment?</h3>
+                    <button onclick="confirmCancel()">Yes</button>
+                    <button onclick="closeModal()">No</button>
+                </div>
+            </div>
+            <div id="cancel-message" style="display:none; padding: 10px; background-color: #f2d7d5; margin-top: 10px; text-align: center;">
+                This appointment has been cancelled.
             </div>
         </div> 
     </main>
 </body>
+<script src="../script/adv.js"></script>
 </html>
