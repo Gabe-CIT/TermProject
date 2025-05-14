@@ -196,3 +196,10 @@ svg.logo {
     color: var(--link-color);
     text-decoration: underline;
 }
+
+#header_title {
+    margin-left: 10px;
+    padding-bottom: 8px;
+    color: white;
+    font-size: 40px;
+}

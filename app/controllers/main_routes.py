@@ -23,7 +23,7 @@ def schedule():
 
 # SERVICES ROUTE > http://127.0.0.1:8888/services
 @main_bp.route("/services")
-@login_required # make a route have the requirement of a user being auth'ed !!!TEMP BECAUSE GUEST USER SHOULD BE ABLE TO ACCESS SERVICES, PROMPT THEM TO LOGIN TO BOOK SERVICE
+# make a route have the requirement of a user being auth'ed !!!TEMP BECAUSE GUEST USER SHOULD BE ABLE TO ACCESS SERVICES, PROMPT THEM TO LOGIN TO BOOK SERVICE
 def services():
     services = db.session.execute(db.select(Services)).scalars()
     navs = db.session.execute(db.select(Services)).scalars()
