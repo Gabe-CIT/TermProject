@@ -35,7 +35,7 @@ def dashboard_redirect():
         return redirect(url_for('main.error'))
 
     if is_student(user_email):
-        return redirect(url_for('dashboard.student_dashboard', email=current_user.id))
+        return redirect(url_for('dashboard.student_dashboard', email=user_email))
 
     if is_advisor(user_email):
         return redirect(url_for('dashboard.advisor_dashboard', email=user_email))        

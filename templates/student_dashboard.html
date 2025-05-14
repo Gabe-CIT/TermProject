@@ -20,10 +20,23 @@ Dashboard
     {% for appt in appts %}
     <div class="info">
         <div class="user-info">
-            <p><strong>Date:{{ appt.date }}</strong></p>
-            <p><strong>Time: {{ appt.start_time }} - {{ appt.end_time }}</strong></p>
-            <p><strong>Advisor Name: {{ advisor.name }}</strong></p>
-            <p><strong>Details:</strong></p>
+            <p><strong>Date: 
+                </strong>
+                <br>
+                {{ appt.date }}</p>
+            <p><strong>Time:</strong>
+                <br>
+                {{ appt.start_time }} - {{ appt.end_time }}
+            </p>
+            <p><strong>Advisor Name: </strong>
+                <br>
+                {{ advisor.name }} {{ advisor.surname }} 
+            </p>
+            <p><strong>Details: </strong>
+                <br>
+                {{ appt.comment }}
+
+            </p>
             <div class="button-group">
                 <button>Cancel</button>
                 <a href="comment.html"><button>Continue</button></a> 
