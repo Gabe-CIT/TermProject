@@ -40,3 +40,7 @@
 .prof-cont li:hover a {
     color: var(--bcit-blue);
 }
+
+.prof-field {
+    background-color: var(--bcit-blue);
+}

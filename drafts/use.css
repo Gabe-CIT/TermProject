@@ -1,0 +1,73 @@
+body {
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+}
+
+main {
+    display: flex;
+    align-items: flex-start;
+    min-height: calc(100vh - 114px);
+    text-align: left;
+    flex-direction: column;
+    padding: 20px 0 0 150px;
+}
+
+.user-info {
+    width: 100%;
+}
+
+.upcoming {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    width: 30%;
+    border: 1px solid black;
+    height: 150px;
+}
+
+.user-info p {
+    font-size: 1rem;
+    padding: 0 5px;
+    margin: 5px 0;
+}
+
+.grp-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns button and message to the right */
+    gap: 10px;
+}
+
+.button-grp {
+    background-color: var(--bcit-blue);
+    border: 1px solid var(--bcit-blue);
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 3px;
+    padding: 8px 10px;
+}
+
+.button-grp:hover {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+}
+
+.hidden {
+    display: none; /* Starts hidden */
+    text-align: center;
+    padding: 10px;
+    background-color: #f2d7d5;
+    border-radius: 5px;
+    width: 100%;
+}
