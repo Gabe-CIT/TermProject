@@ -10,12 +10,19 @@ Dashboard
 
 {% block content %}
 <main> 
-    {% if not appts %}
-    <h2>No Appointments</h2>
-    {% else %}
     <h1>Welcome, {{ user.name }} {{ user.surname }}</h1>
     <div class="upcoming">
+        {% if appt_length|length > 0 %}
+        <a href="{{ url_for('main.services') }}">
+            <button>Book an Appointment</button>
+        </a>
         <h2>Upcoming Appointments</h2>
+        {% else %}
+        <h2>No Appointments</h2>
+        <a href="{{ url_for('main.services') }}">
+            <button>Book an Appointment</button>
+        </a>
+        {% endif %}
     </div>
     {% for appt in appts %}
     <div class="info">
@@ -44,6 +51,5 @@ Dashboard
         </div>
     </div>
     {% endfor %}
-    {% endif %}
 </main>
 {% endblock %}

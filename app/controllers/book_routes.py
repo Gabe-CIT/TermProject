@@ -4,7 +4,11 @@ from db import db
 from app.models import Appointments, Users
 from app.services.user_mgmt import is_student
 from datetime import datetime, timedelta
-from colorama import Fore 
+from colorama import Fore
+import resend
+
+resend.api_key = "re_QENVUkg7_3qqudiajyvQyr2rqNzft5AEM"
+
 
 book_bp = Blueprint("booking", __name__, url_prefix="/booking")
 
@@ -62,10 +66,23 @@ def confirm_booking():
             comment=appt_comment
         )
 
+        advisor = db.session.execute(db.select(Users).where(Users.id == advisor_id)).scalar()
+
+        params: resend.Emails.SendParams = {
+            "from": "Acme <onboarding@resend.dev>",
+            "to": ["delivered@resend.dev"],
+            "subject": "Appointment Booked",
+            "html": f"<p>Hello {user.name} {user.surname}, <br> This is a confimation email regarding your appointment. <br> You have booked an appointment with {advisor.name} {advisor.surname}. <br> Your appointment is on {appt_date} at {appt_start_time} - {appt_end_time}.</p>"
+        }
+
+        email = resend.Emails.send(params)
+
         db.session.add(new_appt)
         db.session.commit()
         print("\n" * 15 + Fore.GREEN + "Appointment created successfully!")
+        print(f"Email Info: {email}") # prints email id of resend email
         print(Fore.GREEN + "Sending appointment confirmation email..." + "\n" * 15)
+        
         return redirect(url_for('dashboard.student_dashboard', email=current_user.id))
 
     except Exception as e:
