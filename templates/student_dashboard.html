@@ -45,7 +45,7 @@ Dashboard
 
             </p>
             <div class="button-group">
-                <button>Cancel</button>
+                <a href="{{ url_for('dashboard.cancel_appt', appt_id=appt.id) }}"><button>Cancel</button></a>
                 <a href="comment.html"><button>Continue</button></a> 
             </div>
         </div>

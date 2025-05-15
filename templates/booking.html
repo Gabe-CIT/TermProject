@@ -36,36 +36,14 @@ Book Appointment - BCIT
     <div class="detail-cont time">
         <h3>Available times:</h3>
         <select name="appt_time" id="time">
-            <option value="08:00">08:00 AM</option>
-            <option value="09:00">09:00 AM</option>
-            <option value="10:00">10:00 AM</option>
-            <option value="11:00">11:00 AM</option>
-            <option value="12:00">12:00 PM</option>
-            <option value="13:00">1:00 PM</option>
-            <option value="14:00">2:00 PM</option>
-            <option value="15:00">3:00 PM</option>
-            <option value="16:00">4:00 PM</option>
-        </select>
+    {% set all_times = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"] %}
+    {% for time in all_times %}
+    <option value="{{ time }}">{{ time }}</option>
+    {% endfor %}
+</select>
+
     </div>
         <button class="continue-btn">Continue</button>
 </form>
-<script>
-    // Get the calendar input element
-    const calendar = document.getElementById("calendar");
 
-    // Set the minimum date to today's date
-    calendar.min = new Date().toLocaleDateString('fr-ca');
-
-    // Add an event listener to prevent selecting weekends
-    calendar.addEventListener("input", function () {
-        const selectedDate = new Date(this.value);
-        const day = selectedDate.getDay(); // 0 = Sunday, 6 = Saturday
-
-        // If the selected day is Saturday (6) or Sunday (0), clear the value
-        if (day === 5 || day === 6) {
-            alert("Weekends are not available for booking. Please select a weekday.");
-            this.value = ""; // Clear the invalid date
-        }
-    });
-</script>
 {% endblock %}

@@ -70,4 +70,10 @@ def advisor_dashboard(email):
 @dash_bp.route("/cancel/<int:appt_id>")
 @login_required
 def cancel_appt(appt_id):
-    pass
+    appt = db.session.execute(db.select(Appointments).where(Appointments.id == appt_id)).scalar()
+
+    db.session.delete(appt)
+    db.session.commit()
+
+
+    return redirect(url_for('dashboard.dashboard_redirect'))
