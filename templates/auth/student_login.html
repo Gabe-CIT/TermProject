@@ -63,6 +63,62 @@
         <h2>{{ err_code }}</h2>
         <p>{{ err_msg }}</p>
 
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const form = document.querySelector('form');
+                const emailInput = form.querySelector('input[name="email_address_data"]');
+            
+                // Create the custom tooltip element
+                const tooltip = document.createElement('div');
+                tooltip.style.position = 'absolute';
+                tooltip.style.background = '#ffdddd';
+                tooltip.style.color = '#a10000';
+                tooltip.style.padding = '6px 10px';
+                tooltip.style.border = '1px solid #a10000';
+                tooltip.style.borderRadius = '5px';
+                tooltip.style.fontSize = '0.9em';
+                tooltip.style.display = 'none';
+                tooltip.style.zIndex = 999;
+                tooltip.textContent = 'Please enter a valid BCIT email address.';
+            
+                document.body.appendChild(tooltip);
+            
+                function isValidEmail(email) {
+                    // Basic validation (no full regex, but enough for structure)
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                }
+            
+                function showTooltip(input) {
+                    const rect = input.getBoundingClientRect();
+                    tooltip.style.top = (window.scrollY + rect.bottom + 5) + 'px';
+                    tooltip.style.left = (window.scrollX + rect.left) + 'px';
+                    tooltip.style.display = 'block';
+                }
+            
+                function hideTooltip() {
+                    tooltip.style.display = 'none';
+                }
+            
+                emailInput.addEventListener('input', () => {
+                    if (isValidEmail(emailInput.value)) {
+                        emailInput.style.borderColor = '';
+                        hideTooltip();
+                    }
+                });
+            
+                form.addEventListener('submit', function (e) {
+                    if (!isValidEmail(emailInput.value)) {
+                        e.preventDefault(); // Stop form from submitting
+                        emailInput.style.borderColor = 'red';
+                        showTooltip(emailInput);
+                    }
+                });
+            
+                emailInput.addEventListener('focus', hideTooltip);
+                emailInput.addEventListener('blur', hideTooltip);
+            });
+            </script>
+            
     </div>     
 </body>
 </html>

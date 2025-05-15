@@ -1,6 +1,6 @@
 from db import db
 from app import models
-from application import application
+from main import application
 import csv
 
 def create():
