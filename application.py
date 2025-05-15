@@ -1,7 +1,7 @@
 from flask import Flask
 from db import db
 from pathlib import Path
-from app import auth_bp, main_bp, init_login_mgr, book_bp
+from app import auth_bp, main_bp, init_login_mgr, book_bp, dash_bp
 
 application = Flask(__name__)
 
@@ -21,6 +21,7 @@ application.secret_key = "1234"
 application.register_blueprint(auth_bp)
 application.register_blueprint(main_bp)
 application.register_blueprint(book_bp)
+application.register_blueprint(dash_bp)
 init_login_mgr(application)
 
 

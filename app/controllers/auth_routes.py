@@ -86,7 +86,7 @@ def advisor_login():
 @login_required # just for integrity reasons, it feels weird to logout_user a user that isnt logged in
 def logout():
     logout_user()
-    return redirect(url_for("auth.student_login"))
+    return redirect(url_for("main.homepage"))
 
 #  FORGOT PASSWORD ROUTE > 127.0.0.1:8888/auth/forgot
 @auth_bp.route('/forgot')

@@ -6,7 +6,9 @@
 from .controllers.auth_routes import auth_bp
 from .controllers.main_routes import main_bp
 from .controllers.book_routes import book_bp
+from .controllers.dash_routes import dash_bp
 
 # import services
 from .services.login_mgmt import User, init_login_mgr, load_user
-from .services.user_mgmt import read_db, get_user_by_email, validate_credentials
+from .services.user_mgmt import get_user_by_email, validate_credentials
+from .models import Users, Appointments, Services

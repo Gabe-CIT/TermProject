@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request
 from flask_login import login_required, current_user
 from db import db
-from app.models import Users
+from app.models import Users, Services
 
 main_bp = Blueprint("main", __name__)
 
@@ -23,10 +23,12 @@ def schedule():
 
 # SERVICES ROUTE > http://127.0.0.1:8888/services
 @main_bp.route("/services")
-@login_required # make a route have the requirement of a user being auth'ed !!!TEMP BECAUSE GUEST USER SHOULD BE ABLE TO ACCESS SERVICES, PROMPT THEM TO LOGIN TO BOOK SERVICE
+# make a route have the requirement of a user being auth'ed !!!TEMP BECAUSE GUEST USER SHOULD BE ABLE TO ACCESS SERVICES, PROMPT THEM TO LOGIN TO BOOK SERVICE
 def services():
-    advisors = db.session.execute(db.select(Users).where(Users.role == "advisor")).scalars()
-    return render_template("services.html", advisors=advisors)
+    services = db.session.execute(db.select(Services)).scalars()
+    navs = db.session.execute(db.select(Services)).scalars()
+
+    return render_template("services.html", services=services, navs=navs)
 
 @main_bp.route("/cancel")
 @login_required
