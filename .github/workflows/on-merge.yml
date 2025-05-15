@@ -1,7 +1,7 @@
 name: BCIT Services Python Application
 
 on:
-  merge:
+  push:
     branches: [ "testing" ]
 
 jobs:
