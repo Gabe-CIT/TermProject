@@ -18,7 +18,7 @@ book_bp = Blueprint("booking", __name__, url_prefix="/booking")
 def create_booking(advisor_id):
     selected_advisor = db.session.execute(db.select(Users).where(Users.id == advisor_id)).scalar()
     advisors = db.session.execute(db.select(Users).where(Users.role == "advisor")).scalars()
-    return render_template("booking.html", advisors=advisors, selected_advisor=selected_advisor)
+    return render_template("main/booking.html", advisors=advisors, selected_advisor=selected_advisor)
 
 # form method to post appointment data to datatbase
 @book_bp.route("/confirm", methods=["POST"])

@@ -28,5 +28,4 @@ function closeLogoutModal() {
 
 function confirmLogout() {
   closeLogoutModal();
-  window.location.href = "booking.html";
 }

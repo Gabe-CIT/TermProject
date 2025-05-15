@@ -1,6 +1,6 @@
 from db import db
 from app import models
-from application import application
+from main import application
 import csv
 
 def create():
@@ -11,7 +11,7 @@ def create():
 def import_users():
     try:
         # reads the files
-        with open("./data/users.csv", 'r') as file:
+        with open("./app/data/users.csv", 'r') as file:
             data = csv.DictReader(file)
 
 
@@ -44,7 +44,7 @@ def import_users():
 
 def import_services():
     try:
-        with open("./data/services.csv", 'r') as file:
+        with open("./app/data/services.csv", 'r') as file:
             data = csv.DictReader(file)
 
 

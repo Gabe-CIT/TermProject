@@ -35,10 +35,10 @@ def student_dashboard(email):
     user = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
     if user is None:
         flash("User not found", "danger")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.homepage"))
     if not is_student(user.email):
         flash("You are not authorized to access this page", "danger")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.homepage"))
     
     # Searches for appointments with same user email
     user_appointments = db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars()
@@ -56,10 +56,10 @@ def advisor_dashboard(email):
     user = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
     if user is None:
         flash("User not found", "danger")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.homepage"))
     if not is_advisor(user.email):
         flash("You are not authorized to access this page", "danger")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.homepage"))
     
     user_appts = db.session.execute(db.select(Appointments).where(Appointments.advisor_id == email)).scalars()
 

@@ -25,23 +25,23 @@ def schedule():
 @main_bp.route("/services")
 # make a route have the requirement of a user being auth'ed !!!TEMP BECAUSE GUEST USER SHOULD BE ABLE TO ACCESS SERVICES, PROMPT THEM TO LOGIN TO BOOK SERVICE
 def services():
+    """
+    flask route to access services page
+    it will query all services and will be able to access each service name and each advisor in every service
+    """
     services = db.session.execute(db.select(Services)).scalars()
     navs = db.session.execute(db.select(Services)).scalars()
+    # used 2 differnet variables since we needed 2 different for loops
 
-    return render_template("services.html", services=services, navs=navs)
+    return render_template("main/services.html", services=services, navs=navs)
 
-@main_bp.route("/cancel")
-@login_required
-def cancel_booking():
-    return render_template('cancel.html') # cancellation page
-
-@main_bp.route('/advisor')
-def advisor_log_page():
-    return render_template('advisor.html')
 
 # filter out the advisors through this page
 @main_bp.route("/services<int:service_id>")
 @login_required # make a route have the requirement of a user being auth'ed !!!TEMP BECAUSE GUEST USER SHOULD BE ABLE TO ACCESS SERVICES, PROMPT THEM TO LOGIN TO BOOK SERVICE
 def filter_services(service_id):
+    """
+    please add detail here
+    """
     advisors = db.session.execute(db.select(Users).where(Users.service_id == service_id)).scalars()
-    return render_template("services.html", advisors=advisors)
+    return render_template("auth/services.html", advisors=advisors)
