@@ -1,0 +1,74 @@
+body {
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+}
+
+main {
+    display: flex;
+    align-items: flex-start;
+    min-height: calc(100vh - 114px);
+    text-align: left;
+    flex-direction: column;
+    padding: 20px 0 0 150px;
+}
+
+.conf {
+    text-align: center;
+    margin-bottom: 14px;
+    margin-top: 148px;
+}
+
+h2 {
+    color: var(--bcit-blue);
+    font-size: 2rem;
+    margin-bottom: .6rem;
+}
+
+.recpt {
+    border: 1px solid black;
+    padding: 15px 20px;
+    width: 400px;
+}
+
+.form-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-line label {
+    width: 120px;
+    font-weight: bold;
+}
+
+.form-line input {
+    flex: 1;
+    padding: 5px;
+}
+
+.text {
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 65%
+}
+
+.bttn-grp {
+    width: fit-content;
+    margin: 20px 0;
+    padding: 10px 15px;
+    background-color: var(--bcit-blue);
+    border: 1px solid var(--bcit-blue);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.bttn-grp:hover {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+    color: #fff;
+}

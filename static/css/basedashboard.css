@@ -203,3 +203,7 @@ svg.logo {
     color: white;
     font-size: 40px;
 }
+
+#logout {
+    margin-top: 0;
+}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block links %}
-<link rel="stylesheet" href="../static/css/testbooking.css"/>
+<link rel="stylesheet" href="{{url_for('static', filename='css/booking.css')}}"/>
 {% endblock %}
 
 {% block title %}
@@ -20,22 +20,22 @@ Book Appointment - BCIT
 
     <div class="detail-cont purpose">
         <h3>Appointment Purpose:</h3>
-        <textarea id="purpose-field" name="appt_purpose" rows="5" placeholder="State the purpose of your visit here..."></textarea>
+        <textarea id="purpose-field" name="appt_purpose" rows="5" placeholder="State the purpose of your visit here..." required></textarea>
     </div>
     <div class="detail-cont type">
         <h3>Appointment type:</h3>
-        <select class="appt-type" name="appt_type" size="2">
-            <option value="in-person">In-Person</option>
-            <option value="phone-call">Phone Call</option>
+        <select class="appt-type" name="appt_type" size="2" required>
+            <option value="In-person">In-Person</option>
+            <option value="Phone-call">Phone Call</option>
         </select>
     </div>
     <div class="detail-cont schedule">
         <h3>Available dates:</h3>
-        <input id="calendar" type="date" name="appt_date" min="2025-05-05">
+        <input id="calendar" type="date" name="appt_date" min="2025-05-05" required>
     </div>
     <div class="detail-cont time">
         <h3>Available times:</h3>
-        <select name="appt_time" id="time">
+        <select name="appt_time" id="time" required>
     {% set all_times = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"] %}
     {% for time in all_times %}
     <option value="{{ time }}">{{ time }}</option>

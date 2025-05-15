@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Services</title>
-    <link rel="stylesheet" href="../static/css/confirmation.css">
-    <link rel="stylesheet" href="../static/confirmation.css">
+    <link rel="stylesheet" href="../static/css/confirm.css">
+    <link rel="stylesheet" href="../static/css/header.css">
 </head>
 <body>
     <header class="default">
@@ -35,19 +35,28 @@
     </header>
     <main>
         <div class="conf">
-            <h1>Confirmation</h1>
-                <form class="receipt">
-                    <label for="bcit-id">BCIT ID:</label><br>
-                    <input type="text" id="bcit-id" name="bcit-id"><br><br>
-                    <label for="first-name">First Name:</label><br>
-                    <input type="text" id="first-name" name="first-name"><br><br>
-                    <label for="last-name">Last Name:</label><br>
-                    <input type="text" id="last-name" name="last-name"><br><br>
-                    <label for="email">Email:</label><br>
-                    <input type="text" id="email" name="email"><br><br>
-                </form>
+            <h2>Confirmation</h2>
         </div>
-        <button>Submit</button>
+        <div class="receipt">
+            <div class="recpt">
+                <div class="form-line">
+                    <label for="bcit-id">BCIT ID:</label>
+                    <input type="text" id="bcit-id" name="bcit-id">
+                </div>
+                <div class="form-line">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name">
+                </div>
+                <div class="form-line">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name">
+                </div>
+                <div class="form-line">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                </div>
+            </div>
+            <button class="bttn-grp">Confirm</button>       
     </main>
 </body>
 </html>
