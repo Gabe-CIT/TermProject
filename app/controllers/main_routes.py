@@ -25,6 +25,9 @@ def schedule():
 @main_bp.route("/services")
 @login_required # make a route have the requirement of a user being auth'ed !!!TEMP BECAUSE GUEST USER SHOULD BE ABLE TO ACCESS SERVICES, PROMPT THEM TO LOGIN TO BOOK SERVICE
 def services():
+    """
+    please add detail here
+    """
     services = db.session.execute(db.select(Services)).scalars()
     navs = db.session.execute(db.select(Services)).scalars()
 
@@ -33,15 +36,24 @@ def services():
 @main_bp.route("/cancel")
 @login_required
 def cancel_booking():
+    """
+    please add detail here
+    """
     return render_template('cancel.html') # cancellation page
 
 @main_bp.route('/advisor')
 def advisor_log_page():
+    """
+    please add detail here
+    """
     return render_template('advisor.html')
 
 # filter out the advisors through this page
 @main_bp.route("/services<int:service_id>")
 @login_required # make a route have the requirement of a user being auth'ed !!!TEMP BECAUSE GUEST USER SHOULD BE ABLE TO ACCESS SERVICES, PROMPT THEM TO LOGIN TO BOOK SERVICE
 def filter_services(service_id):
+    """
+    please add detail here
+    """
     advisors = db.session.execute(db.select(Users).where(Users.service_id == service_id)).scalars()
     return render_template("services.html", advisors=advisors)

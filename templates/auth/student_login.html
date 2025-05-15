@@ -58,6 +58,11 @@
         <p class="advisorlogin-text">
         <b> For Advisors:</b> <a href="{{ url_for('auth.advisor_login', next=request.args.get('next')) }}"">Advisor Login Portal</a>
         </p>
+
+        <!-- please document what this does -->
+        <h2>{{ err_code }}</h2>
+        <p>{{ err_msg }}</p>
+
     </div>     
 </body>
 </html>

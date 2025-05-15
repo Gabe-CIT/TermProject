@@ -3,6 +3,8 @@ from flask_login import login_required, logout_user, login_user
 from app.services.user_mgmt import validate_credentials, get_user_by_email, is_advisor, is_student
 from app.services.login_mgmt import User
 
+from colorama import Fore
+
 auth_bp = Blueprint("auth", __name__, url_prefix="/auth")
 
 """

@@ -28,7 +28,7 @@ def student_login():
         if validate_credentials(email, password) == True:
             
             if not is_student(email):
-                return render_template("student_login.html", error_code=403, error_msg="You are not authorized to use student login portal!")
+                return render_template("auth/student_login.html", error_code=403, error_msg="You are not authorized to use student login portal!")
             
             user_data = get_user_by_email(email)
 
@@ -46,10 +46,10 @@ def student_login():
             return redirect(url_for("main.homepage"))
         
         else:
-            return render_template("student_login.html", error_code=404, error_msg="Invalid credentials! Please check email or password again!")
+            return render_template("auth/student_login.html", error_code=404, error_msg="Invalid credentials! Please check email or password again!")
 
     # Return statement IF user sends a GET request
-    return render_template("student_login.html")
+    return render_template("auth/student_login.html")
 
 @auth_bp.route("/advisor_login", methods=["GET", "POST"])
 def advisor_login():
@@ -65,7 +65,7 @@ def advisor_login():
         if validate_credentials(email, password) == True:
             
             if not is_advisor(email):
-                return render_template("advisor_login.html", error_code=403, error_msg="You are not authorized to use advisor login portal!")
+                return render_template("auth/advisor_login.html", error_code=403, error_msg="You are not authorized to use advisor login portal!")
             
             user_data = get_user_by_email(email)
 
@@ -83,10 +83,10 @@ def advisor_login():
             return redirect(url_for("main.homepage"))
         
         else:
-            return render_template("advisor_login.html", error_code=404, error_msg="Invalid credentials! Please check email or password again!")
+            return render_template("auth/advisor_login.html", error_code=404, error_msg="Invalid credentials! Please check email or password again!")
 
     # Return statement IF user sends a GET request
-    return render_template("advisor_login.html")
+    return render_template("auth/advisor_login.html")
 
 # LOGOUT ROUTE > 127.0.0.1:8888/auth/logout
 @auth_bp.route("/logout")
@@ -98,5 +98,9 @@ def logout():
 #  FORGOT PASSWORD ROUTE > 127.0.0.1:8888/auth/forgot
 @auth_bp.route('/forgot')
 def forgot_pass():
-    # return render_template('forgot.html')
-    return "<h1>TBD</h1>"
+    """
+    IM GOING TO BE REFACTORING THE ENTIRE FILE HIERARCHY, IT IS JUST A MESS TO LOOK AT
+    A COMPLETE EYE SORE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    """
+    
+    return render_template("auth/forgot_password.html")
