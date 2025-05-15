@@ -31,7 +31,7 @@ def services():
     services = db.session.execute(db.select(Services)).scalars()
     navs = db.session.execute(db.select(Services)).scalars()
 
-    return render_template("services.html", services=services, navs=navs)
+    return render_template("main/services.html", services=services, navs=navs)
 
 @main_bp.route("/cancel")
 @login_required
@@ -39,14 +39,16 @@ def cancel_booking():
     """
     please add detail here
     """
-    return render_template('cancel.html') # cancellation page
+    # return render_template('cancel.html') # cancellation page
+    return "<h1>make a cancel.html first before we have a route for cancel_booking</h1>"
 
 @main_bp.route('/advisor')
 def advisor_log_page():
     """
     please add detail here
     """
-    return render_template('advisor.html')
+    # return render_template('advisor.html')
+    return "<h1>return render_template('advisor.html') --- what is advisor.html?</h1>"
 
 # filter out the advisors through this page
 @main_bp.route("/services<int:service_id>")
@@ -56,4 +58,4 @@ def filter_services(service_id):
     please add detail here
     """
     advisors = db.session.execute(db.select(Users).where(Users.service_id == service_id)).scalars()
-    return render_template("services.html", advisors=advisors)
+    return render_template("auth/services.html", advisors=advisors)

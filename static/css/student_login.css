@@ -185,6 +185,11 @@ svg.logo {
     border-radius: 4px;
 }
 
+.invalid-email {
+    border: 1px solid red !important;
+    background-color: #ffe5e5;
+}
+
 .login-container button {
     padding: 10px 20px;
     background-color: var(--bcit-blue);

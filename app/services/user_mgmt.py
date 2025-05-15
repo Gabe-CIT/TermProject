@@ -17,7 +17,6 @@ what the pseudo database looks like:
 we can access a user (for now) using the email as a key, implement SQL later
 """
 
-
 # !!! refactor this once SQLAlchemy is implemented
 def get_user_by_email(email):
     user_db = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
