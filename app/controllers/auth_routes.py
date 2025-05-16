@@ -12,7 +12,7 @@ This file is for routes that are related to authentication, like LOGIN and LOUGO
 
 Generally, we don't want to put anything in here besides LOGIN and LOGOUT.
 """
-# testing comment for github action
+
 
 
 # LOGIN ROUTE > 127.0.0.1:8888/auth/login
