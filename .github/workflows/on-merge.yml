@@ -2,7 +2,7 @@ name: BCIT Services Python Application
 
 on:
   push:
-    branches: [ "testing" ]
+    branches: [ "testing", "dev" ]
 
 jobs:
   build:
