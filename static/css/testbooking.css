@@ -3,22 +3,26 @@ footer,
     display: none;
 }
 
-main {
+form {
     position: absolute;
-    margin-top: 200px;
+    margin-top: 50px;
     margin-left: var(--margin);
+    width: 35vw;
+    padding-bottom: 3rem;
 }
 
 body {
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    overflow-y: auto;
 }
 
 main {
-    padding-bottom: 3rem;
+    margin: calc(var(--cont-top) + 3vh) auto 0 var(--margin);
+    padding: 0;
 }
 
 h2, h3 {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-darkblue);
 }
 
 h2 {
@@ -43,36 +47,67 @@ h2, .name h3, .purpose h3, .type h3 {
 }
 
 #purpose-field {
-    width: 100%;
+    min-width: 400px;
+    max-width: 25vw;
+    min-height: 12vh;
+    height: 12vh;
+    max-height: 20vh;
+}
+
+.appt-type {
+    width: 65%;
+    height: auto;
+    overflow: hidden;
+    font-size: 1rem;
+}
+
+.appt-type option {
+    padding: 10px;
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.type {
+    min-width: fit-content;
+    width: 25vw;
 }
 
 .type-option {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.6);
     border-radius: 1px;
-}
-
-.option {
     cursor: pointer;
     padding: 5px 0 5px 10px;
     transition: .05s ease all;
 }
 
-.option:hover {
-    background-color: var(--link-color);
-    color: #fff;
-}
-
 label {
     margin-right: .8rem;
 }
+.go-back {
+    margin-top: 200px;
+    width: fit-content;
+    padding: 10px 15px;
+    background-color: var(--bcit-index-darkblue);
+    border: 1px solid var(--bcit-index-darkblue);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 3px;
+    margin-left: var(--margin);
+}
+
 
 .continue-btn {
     width: fit-content;
     margin: 7px 0;
     padding: 10px 15px;
-    background-color: var(--bcit-blue);
-    border: 1px solid var(--bcit-blue);
+    background-color: var(--bcit-index-darkblue);
+    border: 1px solid var(--bcit-index-darkblue);
     transition: all .1s ease-in-out;
     cursor: pointer;
     text-decoration: none;
@@ -83,9 +118,9 @@ label {
     border-radius: 3px;
 }
 
-.continue-btn:hover {
-    background-color: var(--link-color);
-    border-color: var(--link-color);
+.continue-btn:hover , .go-back:hover{
+    background-color: var(--bcit-index-blue);
+    border-color: var(--bcit-index-blue);
     color: #fff;
 }
 
@@ -102,16 +137,4 @@ textarea, #calendar, #time {
 
 #calendar, #time {
     margin-left: 1rem;
-}
-
-.appt-type {
-    font-size: 10px;
-    padding: 10px;
-    width: 65%;
-    height: auto;
-}
-
-.appt-type option {
-    padding: 10px;
-    font-size: 12px;
 }

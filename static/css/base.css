@@ -340,6 +340,7 @@ svg.logo {
     }
 
     .hamburger {
+        cursor: pointer;
         height: 10vh;
         width: auto;
         display: block;
