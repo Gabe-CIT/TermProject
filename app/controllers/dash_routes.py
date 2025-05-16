@@ -44,7 +44,7 @@ def student_dashboard(email):
     user_appointments = db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars()
     len_appts = list(db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars())
     advisor = db.session.execute(db.select(Users).where(Users.id == Appointments.advisor_id)).scalar()
-    return render_template("student_dashboard.html", user=user, appts=user_appointments, advisor=advisor, appt_length=len_appts)
+    return render_template("dash/student_dashboard.html", user=user, appts=user_appointments, advisor=advisor, appt_length=len_appts)
 
 @dash_bp.route("/advisor/<string:email>")
 @login_required
@@ -63,7 +63,7 @@ def advisor_dashboard(email):
     
     user_appts = db.session.execute(db.select(Appointments).where(Appointments.advisor_id == email)).scalars()
 
-    return render_template("advisor_dashboard.html", user=user, appts=user_appts)
+    return render_template("dash/advisor_dashboard.html", user=user, appts=user_appts)
 
 
 # cancel booking route

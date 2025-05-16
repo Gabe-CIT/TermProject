@@ -16,10 +16,6 @@ For example, /login page fall under auth_routes, however, /homepage page wouldn'
 def homepage():
     return render_template("index.html")
 
-# BOOKING ROUTE > http://127.0.0.1:8888/schedule
-@main_bp.route("/schedule")
-def schedule():
-    return render_template("schedule.html")
 
 # SERVICES ROUTE > http://127.0.0.1:8888/services
 @main_bp.route("/services")
@@ -34,14 +30,3 @@ def services():
     # used 2 differnet variables since we needed 2 different for loops
 
     return render_template("main/services.html", services=services, navs=navs)
-
-
-# filter out the advisors through this page
-@main_bp.route("/services<int:service_id>")
-@login_required # make a route have the requirement of a user being auth'ed !!!TEMP BECAUSE GUEST USER SHOULD BE ABLE TO ACCESS SERVICES, PROMPT THEM TO LOGIN TO BOOK SERVICE
-def filter_services(service_id):
-    """
-    please add detail here
-    """
-    advisors = db.session.execute(db.select(Users).where(Users.service_id == service_id)).scalars()
-    return render_template("auth/services.html", advisors=advisors)

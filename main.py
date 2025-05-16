@@ -27,4 +27,4 @@ init_login_mgr(application)
 
 
 if __name__ == "__main__":
-    application.run(debug=True, port=8888, use_reloader=False)
+    application.run(debug=True, port=8888)
