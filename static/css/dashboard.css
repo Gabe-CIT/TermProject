@@ -69,7 +69,8 @@ textarea {
 }
 
 .button-choices,
-button {
+button,
+.add-apt {
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -90,6 +91,7 @@ button {
 
 .button-choices:hover,
 button:hover,
+.add-apt:hover,
 .modal-content button:hover {
     background-color: var(--link-color);
     border-color: var(--link-color);
