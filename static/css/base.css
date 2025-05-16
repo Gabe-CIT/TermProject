@@ -67,10 +67,14 @@ a {
 }
 
 /* Header section */
+.hamburger {
+    display: none;
+}
+
 .default {
     top: 0;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     border-bottom: var(--grey-border);
     background-color: white;
     z-index: 1;
@@ -94,7 +98,7 @@ a {
 .portalnav ul {
     display: flex;
     position: absolute;
-    right: 150px;
+    right: var(--margin);
     height: 100%;
 }
 
@@ -128,13 +132,15 @@ div.logo {
 }
 
 svg.logo {
-    height: 80px;
+    max-height: 80px;
+    height: 10vh;
 }
 
 .sitenav ul {
     display: flex;
     list-style: none;
     margin-top: 15px;
+    width: fit-content;
 }
 
 .sitenav li {
@@ -266,12 +272,86 @@ svg.logo {
 
 @media screen and (max-width: 900px) {
 
+    :root {
+        --margin: 5vw;
+        --header-height: 18vh;
+        --sitenav-padding-y: 2vh;
+    }
+
     /* Header */
 
-    /* .sitenav li {
-        font-size: 1.5vw;
-    } */
+    main {
+        margin-left: 5vw;
+    }
 
+    .portalnav ul {
+        width: 100%;
+        justify-content: center;
+        right: 0;
+    }
+
+    .sitenav {
+        padding: var(--sitenav-padding-y) var(--margin);
+    }
+
+    .sitenav ul {
+        flex-direction: column;
+        position: absolute;
+        top: calc(var(--header-height) + var(--sitenav-padding-y));
+        height: 100vh;
+        margin-top: 0;
+        background-color: #fff;
+        border-left: var(--grey-border);
+    }
+
+    @keyframes open-options {
+        from {
+            right: -35vw;
+        }
+
+        to {
+            opacity: 1;
+            right: 0;
+        }
+    }
+
+    @keyframes close-options {
+        0% {
+            right: 0;
+        }
+
+        80% {
+            right: -40vw;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .open {
+        animation: open-options 1s ease;
+        right: 0;
+    }
+
+    .closed {
+        animation: close-options 1s ease;
+        right: -40vw;
+    }
+
+    .sitenav li {
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        height: 10vh;
+        width: auto;
+        display: block;
+        position: absolute;
+        right: 5vw;
+        top: 50%;
+        transform: translateY(-25%);
+    }
 
     /* Footer */
     .site-footer {
@@ -308,10 +388,39 @@ svg.logo {
 }
 
 
-/* @media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
 
-    Header
+    :root {
+        --sitenav-padding-y: 1vh;
+        --header-height: 16vh;
+    }
 
+    /* Header */
 
+    .default {
+        height: var(--header-height);
+    }
 
-} */
+    .sitenav {
+        padding: var(--sitenav-padding-y) 5vw;
+    }
+
+    svg.logo {
+        height: 8vh;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    /* Header */
+
+    .portalnav li {
+        text-wrap: nowrap;
+    }
+
+    .closed {
+        right: -50vw;
+    }
+
+}
