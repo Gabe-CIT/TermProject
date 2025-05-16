@@ -30,5 +30,5 @@ function closeLogoutModal() {
 
 function confirmLogout() {
   closeLogoutModal();
-  window.location.href = "booking.html";
+  window.location.href = "booking.html"; // This needs to be changed to index.html
 }
