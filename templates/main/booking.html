@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block links %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/booking.css')}}"/>
+
+{% endblock %}
+
+{% block title %}
+Book Appointment - BCIT
+{% endblock %}
+
+{% block content %}
+<a href="{{url_for('main.services')}}"><button class="go-back">Go Back</button></a>
+<form action="/booking/confirm" method="post">
+    <div class="detail-cont name">
+        <h2>Booking appointment with:</h2>
+        <p>{{ selected_advisor.name }} {{ selected_advisor.surname }}</p>
+    </div>
+
+     <!-- Hidden input to include advisor_id -->
+        <input type="hidden" name="appt_advisor" value="{{ selected_advisor.id }}">
+
+    <div class="detail-cont purpose">
+        <h3>Appointment Purpose:</h3>
+        <textarea id="purpose-field" name="appt_purpose" rows="5" placeholder="State the purpose of your visit here..." required></textarea>
+    </div>
+    <div class="detail-cont type">
+        <h3>Appointment type:</h3>
+        <select class="appt-type" name="appt_type" size="2" required>
+            <option value="In-person">In-Person</option>
+            <option value="Phone-call">Phone Call</option>
+        </select>
+    </div>
+    <div class="detail-cont schedule">
+        <h3>Available dates:</h3>
+        <input id="calendar" type="date" name="appt_date" min="2025-05-05" required>
+    </div>
+    <div class="detail-cont time">
+        <h3>Available times:</h3>
+        <select name="appt_time" id="time" required>
+    
+    <option value="08:00">8:00 AM</option>
+    <option value="09:00">9:00 AM</option>
+    <option value="10:00">10:00 PM</option>
+    <option value="11:00">11:00 PM</option>
+    <option value="12:00">12:00 PM</option>
+    <option value="13:00">1:00 PM</option>
+    <option value="14:00">2:00 PM</option>
+    <option value="15:00">3:00 PM</option>
+    <option value="16:00">4:00 PM</option>
+    
+</select>
+
+    </div>
+        <button class="continue-btn">Continue</button>
+</form>
+<script>
+  const calendar = document.getElementById('calendar');
+
+  calendar.addEventListener('input', function () {
+    const selectedDate = new Date(this.value);
+    const day = selectedDate.getDay(); // Sunday = 5, Saturday = 6
+
+    if (day === 5 || day === 6) {
+      alert("Weekends are not allowed. Please choose a weekday.");
+      this.value = '';
+    }
+  });
+
+  // Optional: prevent users from even opening the datepicker on weekends
+  calendar.addEventListener('click', function () {
+    const today = new Date();
+    const minDate = new Date(this.min);
+    const maxDate = new Date(today);
+    maxDate.setMonth(today.getMonth() + 2); // arbitrary limit if needed
+
+    const formatDate = (d) => d.toISOString().split('T')[0];
+
+    const disabledDates = [];
+    for (let d = new Date(minDate); d <= maxDate; d.setDate(d.getDate() + 1)) {
+      if (d.getDay() === 0 || d.getDay() === 6) {
+        disabledDates.push(formatDate(new Date(d)));
+      }
+    }
+
+  });
+</script>
+{% endblock %}

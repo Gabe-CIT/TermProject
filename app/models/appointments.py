@@ -32,7 +32,9 @@ class Appointments(db.Model):
     
     @staticmethod
     def create_appointment(user_email, advisor_id, date, start_time, end_time, meeting_type, comment=None):
-        # Create a new appointment object
+        """ 
+        Create a new appointment object
+        """
         new_appt = Appointments(
             user_email=user_email,
             advisor_id=advisor_id,
@@ -43,16 +45,3 @@ class Appointments(db.Model):
             comment=comment
         )
         return new_appt
-    
-    def get_appointments_by_user(user_id):
-        # Get all appointments for a specific user
-        return db.session.execute(db.select(Appointments).where(Appointments.user_id == user_id)).scalars().all()
-    
-    def get_appointments_by_advisor(advisor_id):
-        # Get all appointments for a specific advisor
-        return db.session.execute(db.select(Appointments).where(Appointments.advisor_id == advisor_id)).scalars().all()
-    
-    def get_appointments_by_date(date):
-        # Get all appointments for a specific date
-        return db.session.execute(db.select(Appointments).where(Appointments.date == date)).scalars().all()
-    

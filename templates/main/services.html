@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block links %}
+<link rel="stylesheet" href="../static/css/testservices.css">
+{% endblock %}
+
+{% block title %}
+Mental Health Services - BCIT
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="to-top">
+        <a href="#top">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M160-760v-80h640v80H160Zm280 640v-408L336-424l-56-56 200-200 200 200-56 56-104-104v408h-80Z"/></svg>
+            <p>Back to Top</p>
+        </a>
+    </div>
+    <div class="services-container">
+        <div class="cat-list-container">
+        <ul class="cat-list">
+            <a href="{{url_for('main.homepage')}}"><button class="go-back">Go Back</button></a>
+            {% for nav in navs %}
+            <a href="#{{ nav.name | lower | replace(' ', '-') }}">
+                <li class="cat"><span>{{ nav.name }}</span></li>
+            </a>
+            {% endfor %}
+            <a href="#specialized"><li class="cat">Specialized Services<span></span></li></a>
+            <a href="#helplines"><li class="cat"><span>Helplines</span></li></a>
+
+        </ul>
+    </div>
+        <div class="service-cat">
+            <div class="blurb">
+                <h1>Mental Health Services</h1>
+                <p>BCIT's top priority is supporting our students. We have a number of services available for your mental health needs — book an appointment with us today.</p>
+            </div>
+    {% for service in services %}
+    <section id="{{ service.name }}">    
+    <div class="directory {{ service.name | lower | replace(' ', '-') }}" id="{{ service.name | lower | replace(' ', '-') }}">
+        <h2 class="cat-name">{{ service.name }}</h2>
+        <ul class="advisor-list">
+            {% for advisor in service.advisors %}
+            <li>
+                <div class="advisor">
+                    <!-- <img> -->
+                    <h3>{{ advisor.name }} {{ advisor.surname }}</h3>
+                    <p>Advisor, {{ advisor.service.name }}</p>
+                    <p><a href="mailto:{{ advisor.email }}">{{ advisor.email }}</a></p>
+                    <a href="{{ url_for('booking.create_booking', advisor_id=advisor.id) }}">
+                        <div class="book-btn">Book an appointment with {{ advisor.name }} {{ advisor.surname }}</div>
+                    </a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+    <div class="directory specialized-services" id="specialized">
+        <h2 class="cat-name">Specialized services</h2>
+        <ul class="advisor-list">
+            <li>
+                <div class="advisor">
+                    <!-- <img> -->
+                    <h3>Jeremy Usbourne</h3>
+                    <p>Advisor, Substance Abuse Referrals</p>
+                    <p><a href="mailto:youfellforit@gmail.com">jusbourne@bcit.ca</a></p>
+                    <a href="{{ url_for('booking.create_booking', advisor_id=27) }}"><div class="book-btn">Book an appointment with Jeremy</div></a>
+                </div>
+            </li>
+            <li>
+                <div class="advisor">
+                    <!-- <img> -->
+                    <h3>Rae Earl</h3>
+                    <p>Advisor, Disordered Eating Referrals</p>
+                    <p><a href="mailto:youfellforit@gmail.com">rearl@bcit.ca</a></p>
+                    <a href="{{ url_for('booking.create_booking', advisor_id=28) }}"><div class="book-btn">Book an appointment with Rae</div></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="directory helplines" id="helplines">
+                <h2 class="cat-name">Helplines</h2>
+                <ul class="advisor-list">
+                    <li>
+                        <div class="advisor helpline">
+                            <h3>Suicide Helpline</h3>
+                            <p>BC Suicide Intervention and Prevention (Mon-Sat, 7am-7pm)</p>
+                            <p class="number">1-800-784-2433</p>
+                            <a href="https://helpstartshere.gov.bc.ca/">Help Starts Here</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="advisor helpline">
+                            <h3>Crisis Support Line</h3>
+                            <p>BC Mental Health & Crisis Response (24/7)</p>
+                            <p class="number">310-6789</p>
+                            <a href="https://www.crisiscentre.bc.ca/get-support/crisis-lines/">Crisis Centre BC</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="advisor helpline">
+                            <h3>Drug and Poison Control</h3>
+                            <p>BC Drug and Poison Information Centre (24/7)</p>
+                            <p class="number">1-800-567-8911</p>
+                            <a href="http://www.dpic.org/">DPIC</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            </section>
+        </div>
+    </div>
+</main>
+{% endblock %}

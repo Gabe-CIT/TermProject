@@ -1,0 +1,62 @@
+{% extends "base_dashboard.html" %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/basedashboard.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+{% endblock %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/student.js')}}"></script>
+{% endblock %}
+
+{% block content %}
+    <main> 
+        <h1>Welcome, {{ user.name }} {{ user.surname }}</h1>
+        <div class="upcoming">
+            {% if appt_length|length > 0 %}
+        <a href="{{ url_for('main.services') }}"><button>Book an Appointment</button></a>
+        <h2>Upcoming Appointments</h2>
+        {% else %}
+        <h2>No Appointments</h2>
+        <a href="{{ url_for('main.services') }}"><button>Book an Appointment</button></a>
+        {% endif %}
+        </div>
+        {% for appt in appts %}
+        <div class="info">
+            <div class="user-info">
+                <p><strong>Date:</strong>
+                    <br>{{ appt.date }}</p>
+                <p><strong>Time:</strong>
+                    <br>{{ appt.start_time }} - {{ appt.end_time }}</p>
+                <p><strong>Advisor:</strong>
+                    <br>{{ advisor.name }} {{ advisor.surname }} </p>
+                <p><strong>Meeting Type:</strong>
+                    <br>{{ appt.meeting_type}}</p>
+                <p><strong>Details:</strong>
+                    <br>{{ appt.comment }}</p>
+                <div class="button-group">
+                    <button class="button-choices" onclick="cancelAppointment()">Cancel</button>
+                </div>
+            </div> 
+            <div id="cancelModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Are you sure you want to cancel the appointment?</h3>
+                    <a href="{{ url_for('dashboard.cancel_appt', appt_id=appt.id)}}">
+                    <button onclick="confirmCancel()">Yes</button>
+                    </a>
+                    <button onclick="closeModal()">No</button>
+                </div>
+            </div>
+            <div id="cancel-message" style="display:none; padding: 10px; background-color: #f2d7d5; margin-top: 10px; text-align: center;">
+                This appointment has been cancelled.
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+{% endblock %}
