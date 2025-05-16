@@ -7,15 +7,18 @@ form {
     position: absolute;
     margin-top: 50px;
     margin-left: var(--margin);
+    width: 35vw;
+    padding-bottom: 3rem;
 }
 
 body {
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    overflow-y: auto;
 }
 
-form {
-    width: 35vw;
-    padding-bottom: 3rem;
+main {
+    margin: calc(var(--cont-top) + 3vh) auto 0 var(--margin);
+    padding: 0;
 }
 
 h2, h3 {
@@ -44,32 +47,38 @@ h2, .name h3, .purpose h3, .type h3 {
 }
 
 #purpose-field {
-    min-width: 20vw;
+    min-width: 400px;
     max-width: 25vw;
     min-height: 12vh;
     height: 12vh;
     max-height: 20vh;
 }
 
+.appt-type {
+    width: 65%;
+    height: auto;
+    overflow: hidden;
+    font-size: 1rem;
+}
+
+.appt-type option {
+    padding: 10px;
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
 .type {
-    width: 80%;
+    min-width: fit-content;
+    width: 25vw;
 }
 
 .type-option {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.6);
     border-radius: 1px;
-}
-
-.option {
     cursor: pointer;
     padding: 5px 0 5px 10px;
     transition: .05s ease all;
-}
-
-.option:hover {
-    background-color: var(--bcit-index-blue);
-    color: #fff;
 }
 
 label {
@@ -128,18 +137,4 @@ textarea, #calendar, #time {
 
 #calendar, #time {
     margin-left: 1rem;
-}
-
-.appt-type {
-    padding: 5px;
-    width: 65%;
-    height: auto;
-    overflow: hidden;
-    font-size: 14px;
-}
-
-.appt-type option {
-    padding: 10px;
-    font-family: "DM Sans", Arial, Helvetica, sans-serif;
-    font-size: 14px;
 }
