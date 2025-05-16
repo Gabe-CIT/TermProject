@@ -51,7 +51,7 @@ h2, .name h3, .purpose h3, .type h3 {
     max-width: 25vw;
     min-height: 12vh;
     height: 12vh;
-    max-height: 20vh;
+    max-height: 30vh;
 }
 
 .appt-type {
