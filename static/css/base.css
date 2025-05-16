@@ -339,6 +339,10 @@ svg.logo {
         font-size: 1.2rem;
     }
 
+    .sitenav li:hover a {
+        border-bottom-color: transparent;
+    }
+
     .hamburger {
         cursor: pointer;
         height: 10vh;
