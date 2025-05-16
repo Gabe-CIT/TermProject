@@ -35,16 +35,16 @@ def student_dashboard(email):
     user = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
     if user is None:
         flash("User not found", "danger")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.homepage"))
     if not is_student(user.email):
         flash("You are not authorized to access this page", "danger")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.homepage"))
     
     # Searches for appointments with same user email
     user_appointments = db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars()
     len_appts = list(db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars())
     advisor = db.session.execute(db.select(Users).where(Users.id == Appointments.advisor_id)).scalar()
-    return render_template("student_dashboard.html", user=user, appts=user_appointments, advisor=advisor, appt_length=len_appts)
+    return render_template("dash/student_dashboard.html", user=user, appts=user_appointments, advisor=advisor, appt_length=len_appts)
 
 @dash_bp.route("/advisor/<string:email>")
 @login_required
@@ -56,14 +56,14 @@ def advisor_dashboard(email):
     user = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
     if user is None:
         flash("User not found", "danger")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.homepage"))
     if not is_advisor(user.email):
         flash("You are not authorized to access this page", "danger")
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.homepage"))
     
     user_appts = db.session.execute(db.select(Appointments).where(Appointments.advisor_id == email)).scalars()
 
-    return render_template("advisor_dashboard.html", user=user, appts=user_appts)
+    return render_template("dash/advisor_dashboard.html", user=user, appts=user_appts)
 
 
 # cancel booking route

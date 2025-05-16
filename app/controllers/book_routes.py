@@ -18,7 +18,7 @@ book_bp = Blueprint("booking", __name__, url_prefix="/booking")
 def create_booking(advisor_id):
     selected_advisor = db.session.execute(db.select(Users).where(Users.id == advisor_id)).scalar()
     advisors = db.session.execute(db.select(Users).where(Users.role == "advisor")).scalars()
-    return render_template("booking.html", advisors=advisors, selected_advisor=selected_advisor)
+    return render_template("main/booking.html", advisors=advisors, selected_advisor=selected_advisor)
 
 # form method to post appointment data to datatbase
 @book_bp.route("/confirm", methods=["POST"])
@@ -83,13 +83,8 @@ def confirm_booking():
         print(f"Email Info: {email}") # prints email id of resend email
         print(Fore.GREEN + "Sending appointment confirmation email..." + "\n" * 15)
         
-        return redirect(url_for('dashboard.student_dashboard', email=current_user.id))
+        return redirect(url_for('dashboard.dashboard_redirect'))
 
     except Exception as e:
         print(Fore.RED + "\n" * 8 + f"ERROR: {e}" + "\n" * 8)
         return redirect(url_for("booking.create_booking", advisor_id=advisor_id))
-
-# BOOKING ROUTE > http://127.0.0.1:8888/booking/schedule
-@book_bp.route("/schedule")
-def schedule():
-    return render_template("schedule.html")

@@ -1,5 +1,5 @@
 import pytest
-from application import application as app
+from main import application as app
 
 @pytest.fixture
 def client():
@@ -12,7 +12,7 @@ def login(client, email, password):
     return client.post('/auth/login', data={'email_address_data': email, 'password_data': password}, follow_redirects=True)
 
 
-def test_booking_page_form_post(client):
+def test_confirm_booking(client):
     """
     testing to see if form on booking_page gets posted into database
     """
@@ -29,7 +29,7 @@ def test_booking_page_form_post(client):
     
     assert res.status_code == 302
 
-def test_get_booking_page(client):
+def test_create_booking(client):
     """
     testing to see if booking page will get rendered
     """

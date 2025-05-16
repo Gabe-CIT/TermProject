@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block links %}
-<link rel="stylesheet" href="../static/css/testadvisor_login.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/student_login.css') }}">
 {% endblock %}
 
 {% block title %}
@@ -9,12 +9,17 @@ Student Login Portal — BCIT
 {% endblock %}
 
 {% block content %}
-
+<!-- please make ur indentations and tag closing consistent, i beg you -->
 <main>
+    <script src="{{ url_for('static', filename='js/student.js') }}" defer></script>
     <div class="login-container">
         <h2>Welcome to BCIT Advisor Booking</h2>
         <p>Student Login Portal</p>
         <form method="post" action="{{ url_for('auth.student_login') }}">
+            {% if error_code %}                
+                <h4 class="error-msg">Error {{error_code}}, {{error_msg}}</h4>
+            {% endif %}
+
 
             <!-- THIS IS TO CATCH THE NEXT PARAM IN POST REQUEST. READ DOC.md FOR MORE INFORMATION -->
             {% if request.args.get('next') %}
@@ -36,6 +41,6 @@ Student Login Portal — BCIT
         </p>
         <h2>{{ err_code }}</h2>
         <p>{{ err_msg }}</p>
-    </main>     
-</body>
+    </div>
+</main>     
 {% endblock %}
