@@ -1,18 +1,23 @@
 :root {
     --cat-width: 200px;
+    --service-cont-gap : 50px;
 }
 
 /* scroll to top button */
 
 .to-top {
     position: fixed;
-    bottom: 20px;
-    right: 35px;
-    fill: var(--bcit-blue);
+    bottom: 5vh;
+    right: 5vw;
+    fill: var(--bcit-index-darkblue);
     cursor: pointer;
     opacity: .5;
     z-index: 1;
     transition: .2s ease all;
+}
+
+.to-top[width] {
+    
 }
 
 .to-top:hover {
@@ -23,9 +28,9 @@
 
 .services-container {
     position: absolute;
+    left: 0;
     top: var(--cont-top);
     display: flex;
-    width: 100%;
 }
 
 .services-container ul {
@@ -35,18 +40,19 @@
 /* left sidebar */
 
 .cat-list-container {
-    margin-left: var(--margin);
-    padding-right: 50px;
+    width: calc(var(--cat-width) + var(--margin));
+    margin: 0 var(--service-cont-gap) 0 var(--margin);
+    padding-right: var(--service-cont-gap);
     height: 75vh;
+    position: fixed;
 }
 
 .cat-list {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-darkblue);
     font-weight: 600;
     margin-top: 10px;
     text-wrap: nowrap;
     width: var(--cat-width);
-    position: fixed;
 }
 
 .cat-list li {
@@ -62,22 +68,22 @@
 }
 
 .cat-list li:hover {
-    border-bottom: 2px solid var(--bcit-blue);
+    border-bottom: 2px solid var(--bcit-index-darkblue);
 }
 
 /* directory container */
 
 .service-cat {
-    padding: 5px 0 0 50px;
+    padding: 5px 0 0 var(--service-cont-gap);
     border-left: var(--divider);
     margin-bottom: 50px;
-    margin-left: var(--cat-width);
+    margin-left: calc(var(--cat-width) + var(--margin) + var(--service-cont-gap));
 }
 
 /* title and page summary */
 
 .service-cat h1 {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-darkblue);
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -100,7 +106,7 @@
 }
 
 .cat-name {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-darkblue);
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
     font-size: 1.8rem;
     margin-bottom: 1.2rem;
@@ -123,7 +129,7 @@
 }
 
 .email, .email:visited {
-    color: var(--link-color);
+    color: var(--bcit-index-blue);
     transition: .1s ease all;
 }
 
@@ -137,8 +143,8 @@
     width: fit-content;
     margin: 7px 0;
     padding: 8px;
-    background-color: var(--bcit-blue);
-    border: 1px solid var(--bcit-blue);
+    background-color: var(--bcit-index-darkblue);
+    border: 1px solid var(--bcit-index-darkblue);
     transition: all .1s ease-in-out;
     cursor: pointer;
     text-decoration: none;
@@ -150,25 +156,25 @@
 }
 
 .book-btn:hover {
-    background-color: var(--link-color);
-    border-color: var(--link-color);
+    background-color: var(--bcit-index-blue);
+    border-color: var(--bcit-index-blue);
     color: #fff;
 }
 
 .book-btn:visited {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-darkblue);
 }
 
 /* helplines */
 
 .helpline a, .helpline a:visited {
-    color: var(--link-color);
+    color: var(--bcit-index-blue);
     border-bottom: 1px solid transparent;
     transition: .1s ease all;
 }
 
 .helpline a:hover {
-    border-bottom: 1px solid var(--link-color) !important;
+    border-bottom: 1px solid var(--bcit-index-blue) !important;
 }
 
 .number {
