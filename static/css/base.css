@@ -316,16 +316,12 @@ svg.logo {
     }
 
     @keyframes close-options {
-        0% {
+        from {
             right: 0;
         }
 
-        80% {
+        to {
             right: -40vw;
-        }
-
-        100% {
-            opacity: 0;
         }
     }
 

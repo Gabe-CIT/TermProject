@@ -119,13 +119,12 @@ CSS LINKS FOR OTHER ELEMENTS FOUND IN OTHER PAGES WILL REQUIRE YOU TO ADD THEM T
     </footer>
     <script>
         window.onload = function () {
-        const siteNavList = document.querySelector(".sitenav-options");
+            const siteNavList = document.querySelector(".sitenav-options");
             const hamburger = document.querySelector(".hamburger");
             hamburger.addEventListener("click", function() {
                 if (siteNavList.classList.contains('closed')) {
                     siteNavList.classList.add('open');
                     siteNavList.classList.remove('closed');
-                    console.log('open')
                 }
                 else {
                     siteNavList.classList.add('closed');
