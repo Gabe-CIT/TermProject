@@ -7,11 +7,8 @@
     --grey-border: 1px solid #f2f2f2;
     --divider: 1px solid #d6d6d6;
     --header-height: 140px;
-    --margin: 150px;
+    --margin: 10vw;
     --cont-top: calc(var(--header-height) + 25px);
-    --bcit-blue: #003c71;
-    --bcit-yellow: #fff400;
-    --link-color: #296cf6;
 }
 
 /* Fonts */
@@ -44,22 +41,39 @@
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Default font */
+/* Defaults */
 body {
-    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+main,
+footer {
+    max-width: 1448px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Header section */
 .default {
+    top: 0;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     border-bottom: var(--grey-border);
+    background-color: white;
     z-index: 1;
-    cursor: default;
 }
 
 .default li {
@@ -70,28 +84,26 @@ body {
 
 .portalnav {
     position: relative;
-    height: 40px;
-    width: 100%;
+    height: 5vh;
     display: flex;
     align-items: center;
-    background-color: var(--bcit-blue);
+    background-color: var(--bcit-index-darkblue);
     border-bottom: var(--grey-border);
 }
 
 .portalnav ul {
     display: flex;
-    list-style: none;
     position: absolute;
-    right: var(--margin);
+    right: 150px;
     height: 100%;
 }
 
 .portalnav li {
     padding: 0 8px;
     font-family: "jpAlva", Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 1.1rem;
     text-transform: uppercase;
-    transition: all .1s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 
 .portalnav a {
@@ -99,27 +111,24 @@ body {
 }
 
 .portalnav li:hover {
-    background-color: var(--bcit-yellow);
+    background-color: var(--bcit-index-yellow);
 }
 
 .portalnav li:hover a {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-darkblue);
 }
 
 div.logo {
-    margin-right: 28px;
+    margin-right: 3vw;
 }
 
 .sitenav {
     display: flex;
-    padding: 10px 97px 10px var(--margin);
-    background-color: #fff;
+    padding: 2vh 5vw 2vh var(--margin);
 }
 
 svg.logo {
-    height: 74px;
-    max-height: 78px;
-    width: 78px;
+    height: 80px;
 }
 
 .sitenav ul {
@@ -130,26 +139,29 @@ svg.logo {
 
 .sitenav li {
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
     font-weight: 700;
     margin: 5px;
     padding: 0 10px;
     height: 35px;
+    text-wrap: nowrap;
 }
 
 .sitenav a {
-    color: var(--bcit-blue);
+    color: var(--bcit-index-darkblue);
     border-bottom: 2px solid transparent;
 }
 
 .sitenav li:hover a {
-    border-bottom: 2px solid var(--bcit-yellow);
-    color: var(--link-color);
+    border-bottom: 2px solid var(--bcit-index-yellow);
+    color: var(--bcit-index-blue);
 }
 
 /* Footer section */
 .site-footer {
     display: flex;
     color: var(--bcit-index-darkblue);
+    background-color: #fff;
 }
 
 .site-footer section {
@@ -242,8 +254,10 @@ svg.logo {
     font-size: 13px;
 }
 
-/* Responsive screen sizing for Footer section */
+/* Responsive screen sizing */
 @media screen and (max-width: 1000px) {
+   
+    /* Footer */
     .site-footer .legal {
         flex-direction: column;
         gap: 5px;
@@ -251,6 +265,15 @@ svg.logo {
 }
 
 @media screen and (max-width: 900px) {
+
+    /* Header */
+
+    /* .sitenav li {
+        font-size: 1.5vw;
+    } */
+
+
+    /* Footer */
     .site-footer {
         flex-direction: column-reverse;
     }
@@ -260,7 +283,7 @@ svg.logo {
     }
 
     .site-footer section {
-        width: 100%;
+        min-width: 100%;
     }
 
     #visit,
@@ -283,3 +306,12 @@ svg.logo {
         flex-direction: row;
     }
 }
+
+
+/* @media screen and (max-width: 480px) {
+
+    Header
+
+
+
+} */
