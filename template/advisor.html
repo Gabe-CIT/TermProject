@@ -6,6 +6,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="../static/css/dashboard.css">
     <link rel="stylesheet" href="../static/css/profile.css">
+    <link rel="stylesheet" href="../static/css/header.css">
     <script src="../script/advisor.js" defer></script>
 </head>
 <body>
@@ -37,7 +38,6 @@
             </div> 
             <div id="cancelModal" class="modal">
                 <div class="modal-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
                     <h3>Are you sure you want to cancel the appointment?</h3>
                     <button onclick="confirmCancel()">Yes</button>
                     <button onclick="closeModal()">No</button>
@@ -50,12 +50,11 @@
     </main>
     <div id="logoutModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeLogoutModal()">&times;</span>
             <h3>Are you sure you want to logout?</h3>
             <button onclick="confirmLogout()">Yes</button>
             <button onclick="closeLogoutModal()">No</button>
         </div>
     </div>
 </body>
-<script src="../script/adv.js"></script>
+<script src="../script/advisor.js"></script>
 </html>

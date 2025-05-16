@@ -18,6 +18,7 @@
     position: absolute;
     right: var(--margin);
     height: 100%;
+    right: 160px;
 }
 
 .prof-cont li {
@@ -33,9 +34,6 @@
     color: #fff;
 }
 
-.prof-cont li:hover {
-    background-color: var(--bcit-yellow);
-}
 
 .prof-cont li:hover a {
     color: var(--bcit-blue);
