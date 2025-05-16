@@ -13,7 +13,7 @@ def login(client, email, password):
 def test_dashboard_redirect(client):
     login(client, "ncao5@my.bcit.ca", "5678")
 
-    res = client.get("/dashboard/student/ncao@my.bcit.ca")
+    res = client.get("/dashboard/" )
 
     assert res.status_code == 302
 

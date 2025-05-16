@@ -19,13 +19,23 @@ Dashboard
         <h1>Welcome, {{ user.name }} {{ user.surname }}</h1>
         <div class="upcoming">
             {% if appt_length|length > 0 %}
-        <a href="{{ url_for('main.services') }}"><button>Book an Appointment</button></a>
         <h2>Upcoming Appointments</h2>
+        </div>
+        <a href="{{ url_for('main.services') }}"><button style="margin-bottom: 30px;">Book an Appointment</button></a>
         {% else %}
         <h2>No Appointments</h2>
-        <a href="{{ url_for('main.services') }}"><button>Book an Appointment</button></a>
-        {% endif %}
         </div>
+        <a href="{{ url_for('main.services') }}"><button style="margin-bottom: 30px;">Book an Appointment</button></a>
+        {% endif %}
+        
+        {% with messages = get_flashed_messages()%}
+            {% if messages%}
+                {% for message in messages%}
+                    <p style="background-color: lightgreen; padding: 20px; font-size: 20px; margin-bottom: 20px; border-radius: 5px;">{{message}}</p>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+
         {% for appt in appts %}
         <div class="info">
             <div class="user-info">
@@ -34,7 +44,7 @@ Dashboard
                 <p><strong>Time:</strong>
                     <br>{{ appt.start_time }} - {{ appt.end_time }}</p>
                 <p><strong>Advisor:</strong>
-                    <br>{{ advisor.name }} {{ advisor.surname }} </p>
+                    <br>{{ appt.advisor.name }} {{ appt.advisor.surname }} </p>
                 <p><strong>Meeting Type:</strong>
                     <br>{{ appt.meeting_type}}</p>
                 <p><strong>Details:</strong>
@@ -52,9 +62,6 @@ Dashboard
                     </a>
                     <button onclick="closeModal()">No</button>
                 </div>
-            </div>
-            <div id="cancel-message" style="display:none; padding: 10px; background-color: #f2d7d5; margin-top: 10px; text-align: center;">
-                This appointment has been cancelled.
             </div>
         </div>
         {% endfor %}
