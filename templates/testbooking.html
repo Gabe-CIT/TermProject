@@ -48,6 +48,11 @@ Book Appointment - BCIT
     </main>  
     <script>
         window.onload = function () {
+        // Make dates before current date unselectable
+            const calendar = document.getElementById('calendar');
+            calendar.min = new Date().toLocaleDateString('fr-ca');
+
+        // Responsive header (for testing on this page)
             const siteNavList = document.querySelector(".sitenav-options");
             const hamburger = document.querySelector(".hamburger");
             hamburger.addEventListener("click", function() {

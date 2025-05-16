@@ -294,6 +294,8 @@ svg.logo {
         padding: var(--sitenav-padding-y) var(--margin);
     }
 
+    /* Responsive menu for sitenav */
+    
     .sitenav ul {
         flex-direction: column;
         position: absolute;
