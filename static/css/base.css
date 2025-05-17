@@ -7,11 +7,11 @@
     --grey-border: 1px solid #f2f2f2;
     --divider: 1px solid #d6d6d6;
     --header-height: 140px;
-    --margin: 150px;
     --cont-top: calc(var(--header-height) + 25px);
     --bcit-blue: #003c71;
     --bcit-yellow: #fff400;
     --link-color: #296cf6;
+    --margin: 10vw;
 }
 
 /* Fonts */
@@ -70,6 +70,10 @@ a {
 }
 
 /* Header section */
+.hamburger {
+    display: none;
+}
+
 .default {
     top: 0;
     position: fixed;
@@ -87,7 +91,7 @@ a {
 
 .portalnav {
     position: relative;
-    height: 40px;
+    height: 5vh;
     display: flex;
     align-items: center;
     background-color: var(--bcit-index-darkblue);
@@ -97,14 +101,14 @@ a {
 .portalnav ul {
     display: flex;
     position: absolute;
-    right: 150px;
+    right: var(--margin);
     height: 100%;
 }
 
 .portalnav li {
     padding: 0 8px;
     font-family: "jpAlva", Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 1.1rem;
     text-transform: uppercase;
     transition: all .15s ease-in-out;
 }
@@ -122,32 +126,34 @@ a {
 }
 
 div.logo {
-    margin-right: 28px;
+    margin-right: 3vw;
 }
 
 .sitenav {
     display: flex;
-    padding: 10px 97px 10px 150px;
+    padding: 2vh 5vw 2vh var(--margin);
 }
 
 svg.logo {
-    height: 74px;
-    max-height: 78px;
-    width: 78px;
+    max-height: 80px;
+    height: 10vh;
 }
 
 .sitenav ul {
     display: flex;
     list-style: none;
     margin-top: 15px;
+    width: fit-content;
 }
 
 .sitenav li {
     font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
     font-weight: 700;
     margin: 5px;
     padding: 0 10px;
     height: 35px;
+    text-wrap: nowrap;
 }
 
 .sitenav a {
@@ -257,8 +263,10 @@ svg.logo {
     font-size: 13px;
 }
 
-/* Responsive screen sizing for Footer section */
+/* Responsive screen sizing */
 @media screen and (max-width: 1000px) {
+   
+    /* Footer */
     .site-footer .legal {
         flex-direction: column;
         gap: 5px;
@@ -266,6 +274,92 @@ svg.logo {
 }
 
 @media screen and (max-width: 900px) {
+
+    :root {
+        --margin: 5vw;
+        --header-height: 18vh;
+        --sitenav-padding-y: 2vh;
+    }
+
+    /* Header */
+
+    main {
+        margin-left: 5vw;
+    }
+
+    .portalnav ul {
+        width: 100%;
+        justify-content: center;
+        right: 0;
+    }
+
+    .sitenav {
+        padding: var(--sitenav-padding-y) var(--margin);
+    }
+
+    /* Responsive menu for sitenav */
+    
+    .sitenav ul {
+        flex-direction: column;
+        position: absolute;
+        top: calc(var(--header-height) + var(--sitenav-padding-y));
+        height: 100vh;
+        margin-top: 0;
+        background-color: #fff;
+        border-left: var(--grey-border);
+    }
+
+    @keyframes open-options {
+        from {
+            right: -35vw;
+        }
+
+        to {
+            opacity: 1;
+            right: 0;
+        }
+    }
+
+    @keyframes close-options {
+        from {
+            right: 0;
+        }
+
+        to {
+            right: -40vw;
+        }
+    }
+
+    .open {
+        animation: open-options 1s ease;
+        right: 0;
+    }
+
+    .closed {
+        animation: close-options 1s ease;
+        right: -40vw;
+    }
+
+    .sitenav li {
+        font-size: 1.2rem;
+    }
+
+    .sitenav li:hover a {
+        border-bottom-color: transparent;
+    }
+
+    .hamburger {
+        cursor: pointer;
+        height: 10vh;
+        width: auto;
+        display: block;
+        position: absolute;
+        right: 5vw;
+        top: 50%;
+        transform: translateY(-25%);
+    }
+
+    /* Footer */
     .site-footer {
         flex-direction: column-reverse;
     }
@@ -297,4 +391,42 @@ svg.logo {
         justify-content: center;
         flex-direction: row;
     }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    :root {
+        --sitenav-padding-y: 1vh;
+        --header-height: 16vh;
+    }
+
+    /* Header */
+
+    .default {
+        height: var(--header-height);
+    }
+
+    .sitenav {
+        padding: var(--sitenav-padding-y) 5vw;
+    }
+
+    svg.logo {
+        height: 8vh;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    /* Header */
+
+    .portalnav li {
+        text-wrap: nowrap;
+    }
+
+    .closed {
+        right: -50vw;
+    }
+
 }

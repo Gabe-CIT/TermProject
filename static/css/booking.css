@@ -51,7 +51,7 @@ h2, .name h3, .purpose h3, .type h3 {
     max-width: 25vw;
     min-height: 12vh;
     height: 12vh;
-    max-height: 20vh;
+    max-height: 30vh;
 }
 
 .appt-type {
@@ -81,14 +81,6 @@ h2, .name h3, .purpose h3, .type h3 {
     transition: .05s ease all;
 }
 
-.option:hover {
-    background-color: var(--link-color);
-    color: #fff;
-}
-
-label {
-    margin-right: .8rem;
-}
 label {
     margin-right: .8rem;
 }

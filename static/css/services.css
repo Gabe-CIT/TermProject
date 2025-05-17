@@ -1,0 +1,179 @@
+:root {
+    --cat-width: 200px;
+    --service-cont-gap : 50px;
+}
+
+/* scroll to top button */
+
+.to-top {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+    fill: var(--bcit-index-darkblue);
+    cursor: pointer;
+    opacity: .5;
+    z-index: 1;
+    transition: .2s ease all;
+}
+
+
+.to-top:hover {
+    opacity: 1;
+}
+
+/* main section */
+
+.services-container {
+    position: absolute;
+    left: 0;
+    top: var(--cont-top);
+    display: flex;
+}
+
+.services-container ul {
+    list-style: none;
+}
+
+/* left sidebar */
+
+.cat-list-container {
+    width: calc(var(--cat-width) + var(--margin));
+    margin: 0 var(--service-cont-gap) 0 var(--margin);
+    padding-right: var(--service-cont-gap);
+    height: 75vh;
+    position: fixed;
+}
+
+.cat-list {
+    color: var(--bcit-index-darkblue);
+    font-weight: 600;
+    margin-top: 10px;
+    text-wrap: nowrap;
+    width: var(--cat-width);
+}
+
+.cat-list li {
+    margin-bottom: 18px;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 1.25rem;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    line-height: 1.3rem;
+    transition: .1s ease all;
+}
+
+.cat-list li:hover {
+    border-bottom: 2px solid var(--bcit-index-darkblue);
+}
+
+/* directory container */
+
+.service-cat {
+    padding: 5px 0 0 var(--service-cont-gap);
+    border-left: var(--divider);
+    margin-bottom: 50px;
+    margin-left: calc(var(--cat-width) + var(--margin) + var(--service-cont-gap));
+}
+
+/* title and page summary */
+
+.service-cat h1 {
+    color: var(--bcit-index-darkblue);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.blurb {
+    margin-bottom: 40px;
+}
+
+.blurb p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    width: 70%;
+}
+
+/* for each category in directory */
+
+.directory {
+    margin-bottom: 50px;
+    scroll-margin: var(--cont-top);
+}
+
+.cat-name {
+    color: var(--bcit-index-darkblue);
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+}
+
+/* for each advisor listed in directory */
+
+.advisor {
+    margin-bottom: 2rem;
+}
+
+.advisor p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.advisor a {
+    display: block;
+    width: fit-content;
+}
+
+.email, .email:visited {
+    color: var(--bcit-index-blue);
+    transition: .1s ease all;
+}
+
+.email:hover {
+    opacity: .7;
+}
+
+/* book appointment button */
+
+.book-btn {
+    width: fit-content;
+    margin: 7px 0;
+    padding: 8px;
+    background-color: var(--bcit-index-darkblue);
+    border: 1px solid var(--bcit-index-darkblue);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-size: .95em;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.book-btn:hover {
+    background-color: var(--bcit-index-blue);
+    border-color: var(--bcit-index-blue);
+    color: #fff;
+}
+
+.book-btn:visited {
+    color: var(--bcit-index-darkblue);
+}
+
+/* helplines */
+
+.helpline a, .helpline a:visited {
+    color: var(--bcit-index-blue);
+    border-bottom: 1px solid transparent;
+    transition: .1s ease all;
+}
+
+.helpline a:hover {
+    border-bottom: 1px solid var(--bcit-index-blue) !important;
+}
+
+.number {
+    font-weight: 600;
+}
