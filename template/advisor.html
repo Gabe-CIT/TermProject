@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <link rel="stylesheet" href="../static/css/advisor.css">
     <link rel="stylesheet" href="../static/css/profile.css">
     <link rel="stylesheet" href="../static/css/header.css">
     <script src="../script/advisor.js" defer></script>
@@ -20,8 +20,9 @@
             </ul>
         </nav>
     </header>
-    <main> 
+    <main>
         <div class="upcoming">
+            <a href="availability.html" class="edit-avail">Edit Time Slot</a>
             <h2>Appointments</h2>
         </div>
         <div class="info">
@@ -30,12 +31,46 @@
                 <p><strong>Time:</strong></p>
                 <p><strong>Name:</strong></p>
                 <p><strong>Details:</strong></p>
-                <textarea id="comment-field" name="comment" rows="5" placeholder="State your comment here..."></textarea>
                 <div class="button-group">
+                    <button class="send-message" onclick="sendMessage()">📧</button>
+                    <button class="button-choices" onclick="editAppointment()">Edit</button>
                     <button class="button-choices" onclick="cancelAppointment()">Cancel</button>
-                    <button class="button-choices">Send</button>
                 </div>
-            </div> 
+                <div class="edit-options" id="edit-options" style="display: none; align-items: center; justify-content: space-between; width: 100%; ">
+                    <label for="time"><strong>Time:</strong></label>
+                    <select name="time" id="time" class="time-select">
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                    </select>
+                    <div class="edit-buttons">
+                        <button onclick="confirmEdit()">Confirm</button>
+                        <button onclick="closeEditOptions()">Close</button>
+                    </div>
+                </div>
+                <div id="edit-message" style="display:none; padding: 10px; background-color: #f2d7d5; margin-top: 10px; text-align: center;">
+                    The appointment has been successfully updated.
+                </div>
+                <div id="comment-section" style="display:none; margin-top: 15px;">
+                    <textarea id="comment-field" name="comment" rows="5" placeholder="State your comment here..."></textarea>
+                    <button class="button-choices" onclick="sendComment()">Send</button>
+                </div>
+            </div>
+            <div id="sendModal" class="modal">
+                <div class="modal-content">
+                    <h3>Are you sure you want to send this comment?</h3>
+                    <button onclick="confirmSend()">Yes</button>
+                    <button onclick="closeSend()">No</button>
+                </div>
+            </div>
+            <div id="send-message" style="display:none; padding: 10px; background-color: #f2d7d5; margin-top: 10px; text-align: center;">
+                The comment has been sent.
+            </div>
             <div id="cancelModal" class="modal">
                 <div class="modal-content">
                     <h3>Are you sure you want to cancel the appointment?</h3>
@@ -46,7 +81,7 @@
             <div id="cancel-message" style="display:none; padding: 10px; background-color: #f2d7d5; margin-top: 10px; text-align: center;">
                 This appointment has been cancelled.
             </div>
-        </div> 
+        </div>
     </main>
     <div id="logoutModal" class="modal">
         <div class="modal-content">
@@ -56,5 +91,4 @@
         </div>
     </div>
 </body>
-<script src="../script/advisor.js"></script>
 </html>

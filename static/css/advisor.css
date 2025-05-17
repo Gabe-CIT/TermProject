@@ -1,6 +1,5 @@
 body {
     font-family: "DM Sans", Arial, Helvetica, sans-serif;
-    font-family: Arial, sans-serif;
 }
 
 main {
@@ -32,10 +31,11 @@ h3 {
     padding: 15px 20px;
     margin-bottom: 30px;
     border-radius: 0px;
-    min-width: 30%;
+    min-width: 33%;
     border: 1px solid black;
     box-sizing: border-box;
     vertical-align: top;
+    position: relative;
 }
 
 .user-info {
@@ -66,12 +66,14 @@ textarea {
     justify-content: flex-end;
     gap: 10px;
     margin-top: 10px;
+    position: relative;
 }
 
 .button-choices,
 button,
 .add-apt,
-.edit-avail {
+.edit-avail,
+.send-message {
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -139,12 +141,6 @@ button:hover,
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-    color: var(--link-color);
-    text-decoration: none;
-}
-
 .cancel-btn {
     color: #ff4d4d;
     font-size: 16px;
@@ -192,3 +188,125 @@ button:hover,
     background-color: var(--link-color);
     border-color: var(--link-color);
 }
+
+.time-container {
+    position: absolute;
+    top: 100%;
+    left: 65%;
+    margin-top: 5px;
+    display: none;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.time-select {
+    padding: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.close-time {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-time:hover {
+    color: #f00;
+}
+
+#comment-section {
+    margin-top: 15px;
+}
+
+#comment-field {
+    resize: none;
+    min-width: 100%;
+    min-height: 60px;
+    box-sizing: border-box;
+    padding: 5px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button-choices {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--bcit-blue);
+    border: 1px solid var(--bcit-blue);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.button-choices:hover {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+    color: #fff;
+}
+
+.edit-options {
+    display: none;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-options label {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.edit-options .time-select {
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.edit-buttons button {
+    padding: 8px 15px;
+    background-color: var(--bcit-blue);
+    border: 1px solid var(--bcit-blue);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.edit-buttons button:hover {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+}
+
+#edit-options {
+    display: none;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.send-message:hover {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+    color: #fff;
+}
+

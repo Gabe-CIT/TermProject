@@ -28,5 +28,9 @@ function closeLogoutModal() {
 
 function confirmLogout() {
   closeLogoutModal();
-  window.location.href = "booking.html"; // This needs to be changed to index.html
+  window.location.href = ".html"; // This needs to be changed to index.html
+}
+
+function sendAppointment() {
+  document.getElementById("sendModal").style.display = "block";
 }
