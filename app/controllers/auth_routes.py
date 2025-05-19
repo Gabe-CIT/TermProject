@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request, Response
-from flask_login import login_required, logout_user, login_user
+from flask_login import login_required, logout_user, login_user, current_user
 from app.services.user_mgmt import validate_credentials, get_user_by_email, is_advisor, is_student
 from app.services.login_mgmt import User
 
@@ -13,7 +13,17 @@ This file is for routes that are related to authentication, like LOGIN and LOUGO
 Generally, we don't want to put anything in here besides LOGIN and LOGOUT.
 """
 
-
+@auth_bp.route("/login_dashboard")
+def login_dashboard():
+    """
+    This is for the Student Login button in the header.\n
+    if user is currently logged in, then it redirects to dashboard, if not logs in and redirects to homepage
+    """
+    if current_user.is_authenticated:
+        return redirect(url_for("dashboard.dashboard_redirect", email=current_user.id))
+    
+    return redirect(url_for('auth.student_login'))
+        
 
 # LOGIN ROUTE > 127.0.0.1:8888/auth/login
 @auth_bp.route("/login", methods=["GET", "POST"])

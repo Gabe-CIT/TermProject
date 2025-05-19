@@ -69,5 +69,5 @@ def cancel_appt(appt_id):
     db.session.delete(appt)
     db.session.commit()
 
-
+    flash(f"Appointment #{ appt.id } has been canceled")
     return redirect(url_for('dashboard.dashboard_redirect'))

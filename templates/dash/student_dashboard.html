@@ -20,25 +20,27 @@ Dashboard
         <div class="upcoming">
             {% if appt_length|length > 0 %}
         <h2>Upcoming Appointments</h2>
-        </div>
+        
         <a href="{{ url_for('main.services') }}"><button style="margin-bottom: 30px;">Book an Appointment</button></a>
         {% else %}
         <h2>No Appointments</h2>
-        </div>
+        
         <a href="{{ url_for('main.services') }}"><button style="margin-bottom: 30px;">Book an Appointment</button></a>
         {% endif %}
         
         {% with messages = get_flashed_messages()%}
             {% if messages%}
                 {% for message in messages%}
-                    <p style="background-color: lightgreen; padding: 20px; font-size: 20px; margin-bottom: 20px; border-radius: 5px;">{{message}}</p>
+                    <p style="background-color: lightgreen; padding: 20px; font-size: 4vw; margin-bottom: 20px; border-radius: 5px;">{{message}}</p>
                 {%endfor%}
             {%endif%}
         {%endwith%}
-
+        </div>
+        <div class="main-display">
         {% for appt in appts %}
         <div class="info">
             <div class="user-info">
+                <h2>Appointment #{{ appt.id }}</h2>
                 <p><strong>Date:</strong>
                     <br>{{ appt.date }}</p>
                 <p><strong>Time:</strong>
@@ -50,20 +52,21 @@ Dashboard
                 <p><strong>Details:</strong>
                     <br>{{ appt.comment }}</p>
                 <div class="button-group">
-                    <button class="button-choices" onclick="cancelAppointment()">Cancel</button>
+                    <button class="button-choices" onclick="cancelAppointment()">Cancel This Appointment</button>
                 </div>
             </div> 
-            <div id="cancelModal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <h3>Are you sure you want to cancel the appointment?</h3>
-                    <a href="{{ url_for('dashboard.cancel_appt', appt_id=appt.id)}}">
-                    <button onclick="confirmCancel()">Yes</button>
-                    </a>
-                    <button onclick="closeModal()">No</button>
+                <div id="cancelModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <h3>Are you sure you want to cancel the appointment?</h3>
+                        <a href="{{ url_for('dashboard.cancel_appt', appt_id=appt.id)}}">
+                        <button onclick="confirmCancel()">Yes</button>
+                        </a>
+                        <button onclick="closeModal()">No</button>
+                    </div>
                 </div>
             </div>
-        </div>
         {% endfor %}
+        </div>
     </main>
 {% endblock %}
