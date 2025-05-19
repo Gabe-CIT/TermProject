@@ -47,7 +47,11 @@ CSS LINKS FOR OTHER ELEMENTS FOUND IN OTHER PAGES WILL REQUIRE YOU TO ADD THEM T
                 <li><a href="{{ url_for('main.homepage')}}">Student Services</a></li>
                 <li><a href="https://www.bcit.ca/applied-research/">Research</a></li>
                 <li><a href="https://www.bcit.ca/about/">About BCIT</a></li>
-                <li id="login_dashboard"><a href="{{ url_for('auth.login_dashboard') }}">Student Login</a></li>
+                {% if current_user.is_authenticated %}
+                <li id="login_dashboard"><a href="{{ url_for('dashboard.student_dashboard', email=current_user.id) }}">Student Dashboard</a></li>
+                {% else %}
+                <li id="login_dashboard"><a href="{{ url_for('auth.student_login') }}">Student Login</a></li>
+                {% endif %}
 
             </ul>
             <?xml version="1.0" encoding="utf-8"?>
