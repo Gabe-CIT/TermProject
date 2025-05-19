@@ -44,7 +44,7 @@ CSS LINKS FOR OTHER ELEMENTS FOUND IN OTHER PAGES WILL REQUIRE YOU TO ADD THEM T
             <ul class="sitenav-options closed invisible">
                 <li><a href="https://www.bcit.ca/study/">Programs & Courses</a></li>
                 <li><a href="https://www.bcit.ca/admission/">Admission</a></li>
-                <li><a href="https://www.bcit.ca/student-services/">Student Services</a></li>
+                <li><a href="{{ url_for('main.homepage')}}">Student Services</a></li>
                 <li><a href="https://www.bcit.ca/applied-research/">Research</a></li>
                 <li><a href="https://www.bcit.ca/about/">About BCIT</a></li>
                 <li id="login_dashboard"><a href="{{ url_for('auth.login_dashboard') }}">Student Login</a></li>
