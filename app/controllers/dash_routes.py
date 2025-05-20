@@ -71,3 +71,10 @@ def cancel_appt(appt_id):
 
     flash(f"Appointment #{ appt.id } has been canceled")
     return redirect(url_for('dashboard.dashboard_redirect'))
+
+@dash_bp.route("/edit/<int:appt_id>")
+@login_required
+def edit_details(appt_id):
+
+    appt = db.session.execute()
+    pass

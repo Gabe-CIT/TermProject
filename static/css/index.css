@@ -224,3 +224,7 @@ main {
     }
 
 }
+
+a:visited {
+    color: var(--bcit-index-darkblue);
+}

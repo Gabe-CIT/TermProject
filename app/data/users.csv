@@ -1,10 +1,4 @@
 name,surname,email,password,role,service_id
-Kristine,Prez,kpaez1@my.bcit.ca,1234,student,
-Janek,Basi,jbasi15@my.bcit.ca,5678,student,
-Yee Ling (Eric),Yau,yyau8@my.bcit.ca,1234,student,
-Nicholas,Cao,ncao5@my.bcit.ca,5678,student,
-Gabriel,Junio,gjunio@my.bcit.ca,1234,student,
-Klint,Taaca,ktaaca@my.bcit.ca,5678,student,
 Charles,Leclerc,cleclerc@bcit.ca,1234,advisor,1
 Carlos,Sainz,csainz@bcit.ca,1234,advisor,1
 Lewis,Hamilton,lhamilton@bcit.ca,1234,advisor,1
@@ -27,5 +21,5 @@ Linus,Torvalds,ltorvalds@bcit.ca,1234,advisor,3
 James,Gosling,jgosling@bcit.ca,1234,advisor,3
 Jeremy,Usbourne,jusbourne@bcit.ca,1234,advisor,4
 Rae,Earl,rearl@bcit.ca,1234,advisor,4
-John,Doe,a@bcit.ca,asdf,advisor,1
-Jane,Doe,s@my.bcit.ca,asdf,student,
+test1,user1,testUser@my.bcit.ca,1234,student,
+test2,user2,testUser2@my.bcit.ca,1234,student,
