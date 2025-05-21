@@ -12,6 +12,15 @@ Book Appointment - BCIT
 {% block content %}
 <a href="{{url_for('main.services')}}"><button class="go-back">Go Back</button></a>
 <form action="/booking/confirm" method="post">
+
+  {% with messages = get_flashed_messages()%}
+              {% if messages%}
+                  {% for message in messages%}
+                      <p style="background-color: rgb(197, 126, 126); padding: 20px; font-size: 20px; margin-bottom: 20px; border-radius: 5px;">{{message}}</p>
+                  {%endfor%}
+              {%endif%}
+          {%endwith%}
+          
     <div class="detail-cont name">
         <h2>Booking appointment with:</h2>
         <p>{{ selected_advisor.name }} {{ selected_advisor.surname }}</p>

@@ -155,12 +155,17 @@ svg.logo {
 
 .prof-cont {
     position: relative;
-    height: 50px;
+    height: 50%;
     width: 100%;
     display: flex;
     align-items: center;
     background-color: var(--bcit-blue);
     border-bottom: var(--grey-border);
+    color: white;    
+}
+
+.prof-cont h1 {
+    margin-left: 40px;
 }
 
 .prof-cont ul {

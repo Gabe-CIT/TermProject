@@ -25,6 +25,7 @@ main {
 }
 
 #appointments h1 {
+    padding-top: 25px;
     margin-bottom: 23px;
 }
 
@@ -222,4 +223,8 @@ main {
         max-width: 400px;
     }
 
+}
+
+a:visited {
+    color: var(--bcit-index-darkblue);
 }

@@ -1,32 +1,28 @@
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
 from db import db
 from datetime import datetime, timedelta
-from flask import request
 
 class Appointments(db.Model):
     __tablename__ = "Appointments"
 
-    id = db.mapped_column(db.Integer, nullable=False, primary_key=True)
-    
-    # relationship between appointments and users
-    user_email = db.mapped_column(db.String, db.ForeignKey("Users.email"), nullable=False)
-    user = db.relationship("Users", back_populates="appointments")
+    id = db.mapped_column(db.Integer, primary_key=True)
 
-    # relationship between appointments and advisors
-    advisor_id= db.mapped_column(db.Integer, nullable=False, unique=True)
-    # advisor = db.relationship("Users", back_populates="advisor_appointments")
+    user_email = db.mapped_column(db.String, ForeignKey("Users.email"), nullable=False)
+    user = relationship("Users", foreign_keys=[user_email], back_populates="appointments")
 
-    # appointment attributes 
+    advisor_id = db.mapped_column(db.Integer, ForeignKey("Users.id"), nullable=False)  # <-- MUST HAVE THIS
+    advisor = relationship("Users", foreign_keys=[advisor_id], back_populates="advisor_appointments")
+
     date = db.mapped_column(db.Date, nullable=False)
     start_time = db.mapped_column(db.Time, nullable=False)
     end_time = db.mapped_column(db.Time, nullable=False)
-    confirmed = db.mapped_column(db.Boolean, nullable=False, default=False)
     completed = db.mapped_column(db.Boolean, nullable=False, default=False)
     meeting_type = db.mapped_column(db.String, nullable=False)
     comment = db.mapped_column(db.String, nullable=True)
 
     @staticmethod
     def create_end_time(start_time):
-        # Create an end time based on the start time and duration
         end_time = (datetime.strptime(str(start_time), "%H:%M") + timedelta(hours=1)).time()
         return end_time
     

@@ -15,15 +15,25 @@ function confirmCancel() {
 
 function profileLogout() {
   const logoutItem = document.getElementById("logout");
+  const homeItem = document.getElementById("home");
   logoutItem.style.display = logoutItem.style.display === "none" ? "block" : "none";
+  homeItem.style.display = homeItem.style.display === "none" ? "block" : "none";
 }
 
 function buttonLogout() {
   document.getElementById("logoutModal").style.display = "block";
 }
 
+function buttonHome() {
+  document.getElementById("homeModal").style.display = "block";
+}
+
 function closeLogoutModal() {
   document.getElementById("logoutModal").style.display = "none";
+}
+
+function closeHomeModal() {
+  document.getElementById("homeModal").style.display = "none";
 }
 
 function confirmLogout() {

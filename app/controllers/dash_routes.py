@@ -33,18 +33,11 @@ def student_dashboard(email):
     Displays the student's information and their appointments.
     """
     user = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
-    if user is None:
-        flash("User not found", "danger")
-        return redirect(url_for("main.homepage"))
-    if not is_student(user.email):
-        flash("You are not authorized to access this page", "danger")
-        return redirect(url_for("main.homepage"))
     
     # Searches for appointments with same user email
     user_appointments = db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars()
     len_appts = list(db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars())
-    advisor = db.session.execute(db.select(Users).where(Users.id == Appointments.advisor_id)).scalar()
-    return render_template("dash/student_dashboard.html", user=user, appts=user_appointments, advisor=advisor, appt_length=len_appts)
+    return render_template("dash/student_dashboard.html", user=user, appts=user_appointments, appt_length=len_appts)
 
 @dash_bp.route("/advisor/<string:email>")
 @login_required
@@ -54,16 +47,9 @@ def advisor_dashboard(email):
     Displays the advisor's information and their appointments.
     """
     user = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
-    if user is None:
-        flash("User not found", "danger")
-        return redirect(url_for("main.homepage"))
-    if not is_advisor(user.email):
-        flash("You are not authorized to access this page", "danger")
-        return redirect(url_for("main.homepage"))
-    
-    user_appts = db.session.execute(db.select(Appointments).where(Appointments.advisor_id == email)).scalars()
-
-    return render_template("dash/advisor_dashboard.html", user=user, appts=user_appts)
+    user_appts = db.session.execute(db.select(Appointments).where(Appointments.advisor_id == user.id)).scalars()
+    len_appts = list(user_appts)
+    return render_template("dash/advisor_dashboard.html", user=user, appts=user_appts, appt_length=len_appts)
 
 
 # cancel booking route
@@ -75,5 +61,20 @@ def cancel_appt(appt_id):
     db.session.delete(appt)
     db.session.commit()
 
-
+    flash(f"Appointment #{ appt.id } has been canceled")
     return redirect(url_for('dashboard.dashboard_redirect'))
+
+@dash_bp.route("/edit/<int:appt_id>", methods=["GET", "POST"])
+@login_required
+def edit_comment(appt_id):
+    user = db.session.execute(db.select(Users).where(Users.email == current_user.id))
+    appt = db.session.execute(db.select(Appointments).where(Appointments.id == appt_id)).scalar()
+
+    if request.method == "POST":
+        new_comment = request.form.get("comment")
+        appt.comment = new_comment
+        db.session.commit()
+        flash("Appointment details updated.")
+        return redirect(url_for("dashboard.dashboard_redirect"))
+
+    return render_template("dash/student_edit.html", appt=appt, user=user)
