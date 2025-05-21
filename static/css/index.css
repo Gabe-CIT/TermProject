@@ -144,6 +144,10 @@ main {
     display: flex;
 }
 
+.details a:visited {
+    color: var(--bcit-index-darkblue);
+}
+
 .txt-img {
     margin: auto;
 }
@@ -225,6 +229,3 @@ main {
 
 }
 
-a:visited {
-    color: var(--bcit-index-darkblue);
-}
