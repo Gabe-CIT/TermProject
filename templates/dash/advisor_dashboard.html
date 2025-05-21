@@ -54,9 +54,9 @@ Dashboard
                         <span class="close" onclick="closeModal()">&times;</span>
                         <h3>Are you sure you want to cancel the appointment?</h3>
                         <a href="{{ url_for('dashboard.cancel_appt', appt_id=appt.id)}}">
-                        <button onclick="confirmCancel()">Yes</button>
+                        <button class="topButton" onclick="confirmCancel()">Yes</button>
                         </a>
-                        <button onclick="closeModal()">No</button>
+                        <button class="topButton" onclick="closeModal()">No</button>
                     </div>
                 </div>
             </div>
