@@ -11,9 +11,10 @@ login_manager = LoginManager()
 class User(UserMixin):
     def __init__(self, email, data):
         self.id = email
-        self.name = data.get("name", "User")
-        self.password = data.get("password")
-        self.role = data.get("role")
+        self.name = data.name
+        self.surname = data.surname
+        self.password = data.password
+        self.role = data.role
         
     def __repr__(self):
         return Fore.BLUE + f"""

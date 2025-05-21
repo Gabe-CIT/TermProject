@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/basedashboard.css') }}">
+        <link rel="icon" href="favicon.ico">
+        {% block links %}
+        <!-- Links -->
+        {% endblock %}
+        <title>
+            {% block title %}
+            <!-- Page Title -->
+            {% endblock %}
+        </title>
+        
+        {% block scripts %}
+        <!-- Scripts -->
+        {% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <header class="prof-field">
+        <nav class="prof-cont">
+            {% if user.role == "advisor" %}
+            <h1>Advisor Dashboard</h1>
+            {% else %}
+            <h1>Student Dashboard</h1>
+            {% endif %}
+            <ul>
+                <li id="logout">
+                    <a class="topBar"onclick="buttonLogout()">Logout</a>
+                </li>
+                <li id="home">
+                    <a class="topBar" onclick="buttonHome()">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% block content %} 
+    <!-- Child Content -->
+    {% endblock %}
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogoutModal()">&times;</span>
+            <h3>Are you sure you want to logout?</h3>
+            <a href="{{ url_for('auth.logout') }}"><button class="topButton" onclick="confirmLogout()">Yes</button></a>
+            <button class="topButton" onclick="closeLogoutModal()">No</button>
+        </div>
+    </div>
+     <div id="homeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeHomeModal()">&times;</span>
+            <h3>Are you sure you want to go back to the homepage?</h3>
+            <a href="{{ url_for('main.homepage') }}"><button class="topButton" onclick="confirmLogout()">Yes</button></a>
+            <button class="topButton" onclick="closeHomeModal()">No</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,428 @@
+:root {
+    --bcit-index-darkblue: #003c71;
+    --bcit-index-yellow: #fff400; /* Only used for nav bar so no need */
+    --bcit-index-blue: #296cf6;
+    --bcit-index-lightblue: #1e88e5;
+    --bcit-index-white: #f2f2f2;
+    --grey-border: 1px solid #f2f2f2;
+    --divider: 1px solid #d6d6d6;
+    --header-height: 140px;
+    --cont-top: calc(var(--header-height) + 25px);
+    --bcit-blue: #003c71;
+    --bcit-yellow: #fff400;
+    --link-color: #296cf6;
+    --margin: 10vw;
+}
+
+/* Fonts */
+@font-face {
+    font-family: "jpAlva";
+    src: url("../fonts/jpalva/jpalva-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("../fonts/nunito-sans/nunito-sans-latin-400-normal.woff") format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("../fonts/nunito-sans/nunito-sans-latin-700-normal.woff") format("woff");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("../fonts/dm-sans/DMSans-VariableFont_opsz\,wght.ttf");
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("../fonts/dm-sans/DMSans-Italic-VariableFont_opsz\,wght.ttf");
+    font-style: italic;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Defaults */
+body {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+main,
+footer {
+    max-width: 1448px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header section */
+.hamburger {
+    display: none;
+}
+
+.default {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    border-bottom: var(--grey-border);
+    background-color: white;
+    z-index: 1;
+}
+
+.default li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.portalnav {
+    position: relative;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--bcit-index-darkblue);
+    border-bottom: var(--grey-border);
+}
+
+.portalnav ul {
+    display: flex;
+    position: absolute;
+    right: var(--margin);
+    height: 100%;
+}
+
+.portalnav li {
+    padding: 0 8px;
+    font-family: "jpAlva", Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: all .15s ease-in-out;
+}
+
+.portalnav a {
+    color: #fff;
+}
+
+.portalnav li:hover {
+    background-color: var(--bcit-index-yellow);
+}
+
+.portalnav li:hover a {
+    color: var(--bcit-index-darkblue);
+}
+
+div.logo {
+    margin-right: 3vw;
+}
+
+.sitenav {
+    display: flex;
+    padding: 2vh 5vw 2vh var(--margin);
+}
+
+svg.logo {
+    max-height: 80px;
+    height: 10vh;
+}
+
+.sitenav ul {
+    display: flex;
+    list-style: none;
+    margin-top: 15px;
+    width: fit-content;
+}
+
+.sitenav li {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 5px;
+    padding: 0 10px;
+    height: 35px;
+    text-wrap: nowrap;
+}
+
+.sitenav a {
+    color: var(--bcit-index-darkblue);
+    border-bottom: 2px solid transparent;
+}
+
+.sitenav li:hover a {
+    border-bottom: 2px solid var(--bcit-index-yellow);
+    color: var(--bcit-index-blue);
+}
+
+/* Footer section */
+.site-footer {
+    display: flex;
+    color: var(--bcit-index-darkblue);
+    background-color: #fff;
+}
+
+.site-footer section {
+    padding: 46px 39px 34px;
+    width: 25%;
+    border: var(--grey-border);
+    display: inline;
+    line-height: 2em;
+}
+
+.site-footer h3 {
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 23px;
+    letter-spacing: 2.21px;
+    padding-left: 50px;
+    position: relative;
+}
+
+.site-footer ul,
+.site-footer ol {
+    list-style-type: none;
+    font-size: 18px;
+}
+
+.site-footer li {
+    margin-bottom: 2px;
+}
+
+.site-footer a {
+    color: var(--bcit-index-blue);
+}
+
+.site-footer a:hover {
+    color: var(--bcit-index-darkblue);
+    transition: 0.3s ease-in-out;
+}
+
+.site-footer .bar:before {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    left: 0;
+    width: 32px;
+    margin-top: 15px;  
+    background-color: var(--bcit-index-darkblue);
+    position: absolute;
+}
+
+#contact,
+#visit,
+#news {
+    border-right: 0;
+}
+
+.site-footer .tel {
+    margin-top: 23px;
+}
+
+.site-footer .info {
+    margin-bottom: 50px;
+    font-size: 14px;
+}
+
+.site-footer .socialmedia {
+    display: flex;
+    gap: 20px;
+    font-size: 28px;
+}
+
+.site-footer .socialmedia a {
+    color: var(--bcit-index-darkblue);
+}
+
+.site-footer .socialmedia a:hover {
+    color: var(--bcit-index-blue);
+}
+
+.site-footer .campuses {
+    margin-bottom: 60px;   
+}
+
+.site-footer #contact .legal {
+    display: none;
+}
+
+.site-footer .legal {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 13px;
+}
+
+/* Responsive screen sizing */
+@media screen and (max-width: 1000px) {
+   
+    /* Footer */
+    .site-footer .legal {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    :root {
+        --margin: 5vw;
+        --header-height: 18vh;
+        --sitenav-padding-y: 2vh;
+    }
+
+    /* Header */
+    .portalnav ul {
+        width: 100%;
+        justify-content: center;
+        right: 0;
+    }
+
+    .sitenav {
+        padding: var(--sitenav-padding-y) var(--margin);
+    }
+
+    /* Responsive menu for sitenav */
+    
+    .sitenav ul {
+        flex-direction: column;
+        position: absolute;
+        top: calc(var(--header-height));
+        height: 100vh;
+        margin-top: 0;
+        background-color: #fff;
+        border-left: var(--grey-border);
+    }
+
+    @keyframes open-options {
+        from {
+            right: -35vw;
+        }
+
+        to {
+            opacity: 1;
+            right: 0;
+        }
+    }
+
+    @keyframes close-options {
+        from {
+            right: 0;
+        }
+
+        to {
+            right: -40vw;
+        }
+    }
+
+    .open {
+        animation: open-options 1s ease;
+        right: 0;
+    }
+
+    .closed {
+        animation: close-options 1s ease;
+        right: -40vw;
+    }
+
+    .sitenav li {
+        font-size: 1.2rem;
+    }
+
+    .sitenav li:hover a {
+        border-bottom-color: transparent;
+    }
+
+    .hamburger {
+        cursor: pointer;
+        height: 10vh;
+        width: auto;
+        display: block;
+        position: absolute;
+        right: 5vw;
+        top: 50%;
+        transform: translateY(-25%);
+    }
+
+    /* Footer */
+    .site-footer {
+        flex-direction: column-reverse;
+    }
+
+    .site-footer .legal {
+        gap: 10px;
+    }
+
+    .site-footer section {
+        min-width: 100%;
+    }
+
+    #visit,
+    #news {
+        display: none;
+    }
+
+    #contact {
+        border: var(--grey-border);
+        border-top: 0;
+    }
+
+    .site-footer #campusinfo .legal {
+        display: none;
+    }
+
+    .site-footer #contact .legal {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    :root {
+        --sitenav-padding-y: 1vh;
+        --header-height: 16vh;
+    }
+
+    /* Header */
+
+    .default {
+        height: var(--header-height);
+    }
+
+    .sitenav {
+        padding: var(--sitenav-padding-y) 5vw;
+    }
+
+    svg.logo {
+        height: 8vh;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    /* Header */
+
+    .portalnav li {
+        text-wrap: nowrap;
+        font-size: 12px;
+    }
+
+    .closed {
+        right: -80vw;
+    }
+
+}

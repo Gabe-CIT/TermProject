@@ -1,0 +1,232 @@
+body {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+}
+
+main {
+    min-height: calc(100vh - 114px);
+    text-align: left;
+    flex-direction: column;
+    padding: 20px 0 0 150px;
+}
+
+.upcoming {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+h2 {
+    color: var(--bcit-blue);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.info {
+    display: inline-block;
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    min-width: 30%;
+    border: 2px solid black;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-right: 20px;
+    box-shadow: 10px 5px 5px gray;
+}
+
+.user-info {
+    width: 100%;
+    font-size: 1.0rem;
+    padding: 0 5px;
+    margin: 5px 0;
+}
+
+.user-info p {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.all-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+textarea {
+    resize: both;
+    min-width: 100%;
+    min-height: 60px;
+    box-sizing: border-box;
+    padding: 5px;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.button-choices {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    width: fit-content;
+    margin: 10px 0 10px 0;
+    padding: 8px 10px 8px 10px;
+    background-color: var(--bcit-blue);
+    border: 1px solid var(--bcit-blue);
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.button-choices:hover {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+    color: #fff;
+}
+
+/* Modal Style */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+}
+.close-button {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+button {
+    justify-content: center;
+    width: fit-content;
+    background-color: var(--bcit-blue);
+    border: 1px solid var(--bcit-blue);
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+button:hover {
+    border: 1px solid var(--link-color);
+    background-color: var(--link-color);
+}
+
+.bookAppt {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.button-group {
+    margin-top: 10px;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    min-width: 400px;
+}
+
+.close {
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: white;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+    color: #fff;
+    transition: all 0.1s ease-in-out;
+}
+
+h3 {
+    text-align: center;
+}
+
+strong {
+    font-size: 30px;
+}
+
+.main-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 660px) {
+    body {
+        min-width: 450px;   
+    }
+
+    main {
+        padding: 20px;
+        margin: 0;
+    }
+
+    .prof-cont h1 {
+        display: none;
+    }
+}

@@ -25,7 +25,7 @@ Your terminal should now look like this:
 (venv) C:<project-folder-path>
 ```
 
-### To deactivate python vitual environment:
+### To deactivate python virtual environment:
 Run the following command
 ```
 deactivate
@@ -35,3 +35,5 @@ deactivate
 ```py
 py app.py
 ```
+writing new lines for CI demo
+hello this is new push

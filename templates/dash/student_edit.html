@@ -1,0 +1,33 @@
+{% extends "base_dashboard.html" %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="info">
+        <div class="user-info">
+            <h2>Edit Appointment Details:</h2>
+            <p><strong>Date:</strong>
+                <br>{{ appt.date }}</p>
+                <p><strong>Time:</strong>
+                    <br>{{ appt.start_time }} - {{ appt.end_time }}</p>
+                    <p><strong>Advisor:</strong>
+                        <br>{{ appt.advisor.name }} {{ appt.advisor.surname }} </p>
+                        <p><strong>Meeting Type:</strong>
+                            <br>{{ appt.meeting_type}}</p>
+                            <p><strong>Details:</strong>
+                                <br>
+                                <form method="post">
+                                <textarea name="comment" id="details">{{ appt.comment }}</textarea>
+                                <button>Save Changes</button>
+                            </form>
+                        </p>
+                        <a href="{{ url_for('dashboard.student_dashboard', email=current_user.id) }}"><button>Go Back</button></a>
+                    </main>
+{% endblock %}

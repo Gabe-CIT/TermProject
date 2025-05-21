@@ -1,0 +1,144 @@
+:root {
+    --bcit-blue: #003c71;
+    --bcit-yellow: #fff400;
+    --link-color: #296cf6;
+    --grey-border: 1px solid#f2f2f2;
+    --divider: 1px solid #d6d6d6;
+    --header-height: 140px;
+    --margin: 150px;
+    --cont-top: calc(var(--header-height) + 25px);
+}
+
+@font-face {
+    font-family: "jpAlva";
+    src: url("../fonts/jpalva/jpalva-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("../fonts/nunito-sans/nunito-sans-latin-400-normal.woff") format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("../fonts/nunito-sans/nunito-sans-latin-700-normal.woff") format("woff");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("../fonts/dm-sans/DMSans-VariableFont_opsz\,wght.ttf");
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("../fonts/dm-sans/DMSans-Italic-VariableFont_opsz\,wght.ttf");
+    font-style: italic;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+#logout-button {
+    margin-left: 5px;
+    position: relative;
+}
+
+.prof-cont {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    background-color: var(--bcit-blue);
+    border-bottom: var(--grey-border);
+    color: white;
+}
+
+.prof-cont h1 {
+    margin-left: 40px;
+    align-self: center;
+}
+
+.prof-cont ul {
+    display: flex;
+    list-style: none;
+    position: absolute;
+    right: var(--margin);
+    height: 100%;
+    align-items: center;
+}
+
+.prof-cont li {
+    padding: 0 8px;
+    height: 100%;
+    font-size: 35px;
+    font-family: "jpAlva", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    transition: all .1s ease-in-out;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.prof-cont a {
+    color: #fff;
+}
+
+.prof-cont li:hover {
+    background-color: var(--bcit-yellow);
+}
+
+.prof-cont li:hover a {
+    color: var(--bcit-blue);
+}
+
+.advisorlogin-text a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+#header_title {
+    margin-left: 10px;
+    padding-bottom: 8px;
+    color: white;
+    font-size: 40px;
+}
+
+#logout {
+    margin-top: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+#profile {
+    cursor: pointer;
+}
+
+.topButton {
+    padding: 10px 20px 10px 20px;
+    width: fit-content;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.topBar {
+    font-size: 20px;
+    cursor: pointer;
+}
+
