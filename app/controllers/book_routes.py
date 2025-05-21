@@ -46,8 +46,19 @@ def confirm_booking():
             )
         ).scalar()
 
+        repeat_appt = db.session.execute(
+            db.select(Appointments).where(
+                (Appointments.date == appt_date) &
+                (Appointments.start_time == appt_start_time)
+            )
+        ).scalar()
+
         if existing_appt:
             flash("This advisor already has an appointment at the selected time. Please choose a different time.")
+            return redirect(url_for("booking.create_booking", advisor_id=advisor_id))
+        
+        if repeat_appt:
+            flash("You already have another booking in the same time.")
             return redirect(url_for("booking.create_booking", advisor_id=advisor_id))
 
         appt_end_time = Appointments.create_end_time(request.form["appt_time"])
@@ -82,6 +93,8 @@ def confirm_booking():
         print("\n" * 15 + Fore.GREEN + "Appointment created successfully!")
         print(f"Email Info: {email}") # prints email id of resend email
         print(Fore.GREEN + "Sending appointment confirmation email..." + "\n" * 15)
+
+        flash("A confirmation email will be sent to you")
         
         return redirect(url_for('dashboard.dashboard_redirect'))
 
