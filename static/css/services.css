@@ -172,6 +172,7 @@ html {
 
     .services-container {
         margin-top: 50px;
+        border: none;
     }
 
     .blurb {
@@ -193,6 +194,14 @@ html {
         right: 5px;
     }
 
+    .services-container {
+        margin-top: 20px;
+    }
+
+    .blurb {
+        padding-top: 100px;
+    }
+
     .cat-list-container {
         display: none;
     }  
@@ -207,8 +216,26 @@ html {
         min-width: 345px;
     }
     
-    .closed {
-        right: -60vw;
+}
+
+/* 2k screens to 4k screens */
+@media screen and (min-height: 1200px) {
+    .services-container {
+       margin-top: 200px; 
+    }
+
+    .cat-list {
+        padding-top: 80px;
+    }
+}
+
+@media screen and (min-height: 2000px) {
+    .services-container {
+        margin-top: 250px;
+    }
+
+    .cat-list {
+        padding-top: 100px;
     }
 }
 

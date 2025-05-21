@@ -418,10 +418,11 @@ svg.logo {
 
     .portalnav li {
         text-wrap: nowrap;
+        font-size: 12px;
     }
 
     .closed {
-        right: -50vw;
+        right: -80vw;
     }
 
 }
