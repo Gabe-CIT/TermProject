@@ -24,7 +24,6 @@ def login_dashboard():
     
     return redirect(url_for('auth.student_login'))
         
-
 # LOGIN ROUTE > 127.0.0.1:8888/auth/login
 @auth_bp.route("/login", methods=["GET", "POST"])
 def student_login():
