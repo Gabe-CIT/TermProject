@@ -10,24 +10,18 @@ Mental Health Services - BCIT
 
 {% block content %}
 <main>
-    <div class="to-top">
-        <a href="#top">
-            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M160-760v-80h640v80H160Zm280 640v-408L336-424l-56-56 200-200 200 200-56 56-104-104v408h-80Z"/></svg>
-            <p>Back to Top</p>
-        </a>
-    </div>
+        <svg onclick="toTop()" class="to-top" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M160-760v-80h640v80H160Zm280 640v-408L336-424l-56-56 200-200 200 200-56 56-104-104v408h-80Z"/></svg>
     <div class="services-container">
         <div class="cat-list-container">
         <ul class="cat-list">
             <a href="{{url_for('main.homepage')}}"><button class="go-back">Go Back</button></a>
             {% for nav in navs %}
-            <a href="#{{ nav.name | lower | replace(' ', '-') }}">
-                <li class="cat"><span>{{ nav.name }}</span></li>
-            </a>
+            <li class="cat">
+                <a href="#{{ nav.name | lower | replace(' ', '-') }}"><span>{{ nav.name }}</span></a>
+            </li>
             {% endfor %}
-            <a href="#specialized"><li class="cat">Specialized Services<span></span></li></a>
-            <a href="#helplines"><li class="cat"><span>Helplines</span></li></a>
-
+            <li class="cat"><a href="#specialized"><span>Specialized Services</span></a></li>
+            <li class="cat"><a href="#helplines"><span>Helplines</span></a></li>
         </ul>
     </div>
         <div class="service-cat">
@@ -112,4 +106,7 @@ Mental Health Services - BCIT
         </div>
     </div>
 </main>
+<script>
+    const toTop = () => {window.scrollTo(0,0)}
+</script>
 {% endblock %}
