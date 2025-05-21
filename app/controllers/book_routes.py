@@ -79,19 +79,19 @@ def confirm_booking():
 
         advisor = db.session.execute(db.select(Users).where(Users.id == advisor_id)).scalar()
 
-        # params: resend.Emails.SendParams = {
-        #     "from": "Acme <onboarding@resend.dev>",
-        #     "to": ["delivered@resend.dev"],
-        #     "subject": "Appointment Booked",
-        #     "html": f"<p>Hello {user.name} {user.surname}, <br> This is a confimation email regarding your appointment. <br> You have booked an appointment with {advisor.name} {advisor.surname}. <br> Your appointment is on {appt_date} at {appt_start_time} - {appt_end_time}.</p>"
-        # }
+        params: resend.Emails.SendParams = {
+            "from": "Acme <onboarding@resend.dev>",
+            "to": ["delivered@resend.dev"],
+            "subject": "Appointment Booked",
+            "html": f"<p>Hello {user.name} {user.surname}, <br> This is a confimation email regarding your appointment. <br> You have booked an appointment with {advisor.name} {advisor.surname}. <br> Your appointment is on {appt_date} at {appt_start_time} - {appt_end_time}.</p>"
+        }
 
-        # email = resend.Emails.send(params)
+        email = resend.Emails.send(params)
 
         db.session.add(new_appt)
         db.session.commit()
         print("\n" * 15 + Fore.GREEN + "Appointment created successfully!")
-        # print(f"Email Info: {email}") # prints email id of resend email
+        print(f"Email Info: {email}") # prints email id of resend email
         print(Fore.GREEN + "Sending appointment confirmation email..." + "\n" * 15)
 
         flash("A confirmation email will be sent to you")
