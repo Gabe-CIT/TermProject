@@ -1,9 +1,7 @@
 {% extends "base_dashboard.html" %}
 
 {% block links %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/basedashboard.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
 {% endblock %}
 
 {% block title %}
@@ -21,17 +19,17 @@ Dashboard
             {% if appt_length|length > 0 %}
         <h2>Upcoming Appointments</h2>
         
-        <a href="{{ url_for('main.services') }}"><button style="margin-bottom: 30px;">Book an Appointment</button></a>
+        <a href="{{ url_for('main.services') }}"><button class="bookAppt" style="margin-bottom: 30px;">Book an Appointment</button></a>
         {% else %}
         <h2>No Appointments</h2>
         
-        <a href="{{ url_for('main.services') }}"><button style="margin-bottom: 30px;">Book an Appointment</button></a>
+        <a href="{{ url_for('main.services') }}"><button class="bookAppt" style="margin-bottom: 30px;">Book an Appointment</button></a>
         {% endif %}
         
         {% with messages = get_flashed_messages()%}
             {% if messages%}
                 {% for message in messages%}
-                    <p style="background-color: lightgreen; padding: 20px; font-size: 25px; margin-bottom: 20px; border-radius: 5px;">{{message}}</p>
+                    <p style="background-color: lightgreen; padding: 20px; font-size: 25px; margin-bottom: 20px; border-radius: 5px; width: fit-content;">{{message}}</p>
                 {%endfor%}
             {%endif%}
         {%endwith%}
@@ -61,9 +59,9 @@ Dashboard
                         <span class="close" onclick="closeModal()">&times;</span>
                         <h3>Are you sure you want to cancel the appointment?</h3>
                         <a href="{{ url_for('dashboard.cancel_appt', appt_id=appt.id)}}">
-                        <button onclick="confirmCancel()">Yes</button>
+                        <button class="topButton" onclick="confirmCancel()">Yes</button>
                         </a>
-                        <button onclick="closeModal()">No</button>
+                        <button class="topButton" onclick="closeModal()">No</button>
                     </div>
                 </div>
             </div>

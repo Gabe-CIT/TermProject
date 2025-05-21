@@ -205,6 +205,10 @@ svg.logo {
     background-color: #296cf6;
 }
 
+.forgotPassword a{
+    color: var(--link-color);
+}
+
 .advisorlogin-text  {
     margin-top: 20px;
     font-size: 14px;
@@ -217,6 +221,11 @@ svg.logo {
 .advisorlogin-text a {
     color: var(--link-color);
     text-decoration: underline;
+}
+
+.advisorlogin-text a:hover,
+.forgotPassword a:hover {
+    color: var(--bcit-blue);
 }
 
 .error-msg {

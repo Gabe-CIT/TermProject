@@ -48,104 +48,11 @@ html {
 }
 
 body {
-    font-family: "DM Sans", Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
-}
-
-.default {
-    position: fixed;
-    width: 100%;
-    border-bottom: var(--grey-border);
-    z-index: 1;
-    cursor: default;
-}
-
-.default li {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.portalnav {
-    position: relative;
-    height: 40px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: var(--bcit-blue);
-    border-bottom: var(--grey-border);
-}
-
-.portalnav ul {
-    display: flex;
-    list-style: none;
-    position: absolute;
-    right: var(--margin);
-    height: 100%;
-}
-
-.portalnav li {
-    padding: 0 8px;
-    font-family: "jpAlva", Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    text-transform: uppercase;
-    transition: all .1s ease-in-out;
-}
-
-.portalnav a {
-    color: #fff;
-}
-
-.portalnav li:hover {
-    background-color: var(--bcit-yellow);
-}
-
-.portalnav li:hover a {
-    color: var(--bcit-blue);
-}
-
-div.logo {
-    margin-right: 28px;
-}
-
-.sitenav {
-    display: flex;
-    padding: 10px 97px 10px var(--margin);
-    background-color: #fff;
-}
-
-svg.logo {
-    height: 74px;
-    max-height: 78px;
-    width: 78px;
-}
-
-.sitenav ul {
-    display: flex;
-    list-style: none;
-    margin-top: 15px;
-}
-
-.sitenav li {
-    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    margin: 5px;
-    padding: 0 10px;
-    height: 35px;
-}
-
-.sitenav a {
-    color: var(--bcit-blue);
-    border-bottom: 2px solid transparent;
-}
-
-.sitenav li:hover a {
-    border-bottom: 2px solid var(--bcit-yellow);
-    color: var(--link-color);
 }
 
 #logout-button {
@@ -155,17 +62,17 @@ svg.logo {
 
 .prof-cont {
     position: relative;
-    height: 50%;
+    height: 50px;
     width: 100%;
     display: flex;
-    align-items: center;
     background-color: var(--bcit-blue);
     border-bottom: var(--grey-border);
-    color: white;    
+    color: white;
 }
 
 .prof-cont h1 {
     margin-left: 40px;
+    align-self: center;
 }
 
 .prof-cont ul {
@@ -174,15 +81,20 @@ svg.logo {
     position: absolute;
     right: var(--margin);
     height: 100%;
+    align-items: center;
 }
 
 .prof-cont li {
     padding: 0 8px;
-    font-family: "jpAlva", Arial, Helvetica, sans-serif;
+    height: 100%;
     font-size: 35px;
+    font-family: "jpAlva", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     transition: all .1s ease-in-out;
     border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .prof-cont a {
@@ -211,4 +123,22 @@ svg.logo {
 
 #logout {
     margin-top: 0;
+    transition: all 0.2s ease-in-out;
 }
+
+#profile {
+    cursor: pointer;
+}
+
+.topButton {
+    padding: 10px 20px 10px 20px;
+    width: fit-content;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.topBar {
+    font-size: 20px;
+    cursor: pointer;
+}
+

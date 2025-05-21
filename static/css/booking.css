@@ -44,6 +44,10 @@ h2, .name h3, .purpose h3, .type h3 {
 
 #purpose-field {
     width: 100%;
+    min-width: 280px;
+    max-width: 900px;
+    max-height: 400px;
+    min-height: 200px;
 }
 
 .type-option {
@@ -66,6 +70,7 @@ h2, .name h3, .purpose h3, .type h3 {
 label {
     margin-right: .8rem;
 }
+
 .go-back {
     margin-top: 200px;
     width: fit-content;
@@ -123,10 +128,11 @@ textarea, #calendar, #time {
 
 .appt-type {
     padding: 5px;
-    width: 65%;
+    width: 250px;
     height: auto;
     overflow: hidden;
     font-size: 14px;
+    max-width: 250px;
 }
 
 .appt-type option {

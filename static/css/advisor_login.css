@@ -69,23 +69,22 @@ footer,
     font-size: 14px;
 }
 
-.advisorlogin-text b {
+.advisorlogin-text a {
     color: var(--bcit-blue);
 }
 
-.advisorlogin-text a {
+.advisorlogin-text b {
     color: var(--link-color);
     text-decoration: underline;
 }
 /* --- End of Advisor Text Styling --- */
 
 /* Forgot Password Text Styling  */
-.forgotPassword :visited {
-    color: var(--bcit-blue);
-    text-decoration: underline;
+
+.forgotPassword a {
+    color: var(--link-color);
 }
 
-.forgotPassword :hover {
-    color: var(--link-color);
-    text-decoration: underline;
+.forgotPassword a:hover {
+    color: var(--bcit-blue);
 }
