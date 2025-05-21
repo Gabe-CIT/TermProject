@@ -1,61 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../static/css/dashboard.css">
-    <link rel="stylesheet" href="../static/css/profile.css">
-    <script src="../script/advisor.js" defer></script>
-</head>
-<body>
-    <header class="prof-field">
-        <nav class="prof-cont">
-            <ul>
-                <li id="profile" onclick="profileLogout()">👤</li>
-                <li id="logout" style="display: none;">
-                    <button onclick="buttonLogout()">Logout</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+{% extends "base_dashboard.html" %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/basedashboard.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+{% endblock %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/student.js')}}"></script>
+{% endblock %}
+
+{% block content %}
     <main> 
+        <h1>Welcome, {{ user.name }} {{ user.surname }}</h1>
         <div class="upcoming">
-            <h2>Appointments</h2>
+            {% if appt_length|length > 0 %}
+        <h2>Upcoming Appointments</h2>
+        {% else %}
+        <h2>No Appointments</h2>
+        {% endif %}
+        
+        {% with messages = get_flashed_messages()%}
+            {% if messages%}
+                {% for message in messages%}
+                    <p style="background-color: lightgreen; padding: 20px; font-size: 25px; margin-bottom: 20px; border-radius: 5px;">{{message}}</p>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
         </div>
+        <div class="main-display">
+        {% for appt in appts %}
         <div class="info">
             <div class="user-info">
-                <p><strong>Date:</strong></p>
-                <p><strong>Time:</strong></p>
-                <p><strong>Name:</strong></p>
-                <p><strong>Details:</strong></p>
-                <textarea id="comment-field" name="comment" rows="5" placeholder="State your comment here..."></textarea>
+                <h2>Appointment Details:</h2>
+                <p><strong>Date:</strong>
+                    <br>{{ appt.date }}</p>
+                <p><strong>Time:</strong>
+                    <br>{{ appt.start_time }} - {{ appt.end_time }}</p>
+                <p><strong>Advisor:</strong>
+                    <br>{{ appt.advisor.name }} {{ appt.advisor.surname }} </p>
+                <p><strong>Meeting Type:</strong>
+                    <br>{{ appt.meeting_type}}</p>
+                <p><strong>Details:</strong>
+                    <br>{{ appt.comment }}</p>
                 <div class="button-group">
-                    <button class="button-choices" onclick="cancelAppointment()">Cancel</button>
-                    <button class="button-choices">Send</button>
+                    <button class="button-choices" onclick="cancelAppointment()">Cancel Appointment</button>
                 </div>
             </div> 
-            <div id="cancelModal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <h3>Are you sure you want to cancel the appointment?</h3>
-                    <button onclick="confirmCancel()">Yes</button>
-                    <button onclick="closeModal()">No</button>
+                <div id="cancelModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <h3>Are you sure you want to cancel the appointment?</h3>
+                        <a href="{{ url_for('dashboard.cancel_appt', appt_id=appt.id)}}">
+                        <button onclick="confirmCancel()">Yes</button>
+                        </a>
+                        <button onclick="closeModal()">No</button>
+                    </div>
                 </div>
             </div>
-            <div id="cancel-message" style="display:none; padding: 10px; background-color: #f2d7d5; margin-top: 10px; text-align: center;">
-                This appointment has been cancelled.
-            </div>
-        </div> 
-    </main>
-    <div id="logoutModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeLogoutModal()">&times;</span>
-            <h3>Are you sure you want to logout?</h3>
-            <button onclick="confirmLogout()">Yes</button>
-            <button onclick="closeLogoutModal()">No</button>
+        {% endfor %}
         </div>
-    </div>
-</body>
-<script src="{{ url_for('static', filename='js/advisor.js') }}"></script>
-</html>
+    </main>
+{% endblock %}

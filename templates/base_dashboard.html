@@ -22,7 +22,11 @@
     <!-- Header -->
     <header class="prof-field">
         <nav class="prof-cont">
+            {% if user.role == "student" %}
             <h1>Student Dashboard</h1>
+            {% else %}
+            <h1>Advisor Dashboard</h1>
+            {% endif %}
             <ul>
                 <li id="profile" onclick="profileLogout()">👤</li>
                 <li id="logout" style="display: none;">
@@ -47,7 +51,7 @@
     </div>
      <div id="homeModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeHometModal()">&times;</span>
+            <span class="close" onclick="closeHomeModal()">&times;</span>
             <h3>Are you sure you want to go homepage?</h3>
             <a href="{{ url_for('main.homepage') }}"><button onclick="confirmLogout()">Yes</button></a>
             <button onclick="closeHomeModal()">No</button>
