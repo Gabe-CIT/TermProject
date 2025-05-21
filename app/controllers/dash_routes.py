@@ -36,7 +36,7 @@ def student_dashboard(email):
     
     # Searches for appointments with same user email
     user_appointments = db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars()
-    len_appts = list(user_appointments)
+    len_appts = list(db.session.execute(db.select(Appointments).where(Appointments.user_email == email)).scalars())
     return render_template("dash/student_dashboard.html", user=user, appts=user_appointments, appt_length=len_appts)
 
 @dash_bp.route("/advisor/<string:email>")
@@ -64,9 +64,17 @@ def cancel_appt(appt_id):
     flash(f"Appointment #{ appt.id } has been canceled")
     return redirect(url_for('dashboard.dashboard_redirect'))
 
-@dash_bp.route("/edit/<int:appt_id>")
+@dash_bp.route("/edit/<int:appt_id>", methods=["GET", "POST"])
 @login_required
-def edit_details(appt_id):
+def edit_comment(appt_id):
+    user = db.session.execute(db.select(Users).where(Users.email == current_user.id))
+    appt = db.session.execute(db.select(Appointments).where(Appointments.id == appt_id)).scalar()
 
-    appt = db.session.execute()
-    pass
+    if request.method == "POST":
+        new_comment = request.form.get("comment")
+        appt.comment = new_comment
+        db.session.commit()
+        flash("Appointment details updated.")
+        return redirect(url_for("dashboard.dashboard_redirect"))
+
+    return render_template("dash/student_edit.html", appt=appt, user=user)

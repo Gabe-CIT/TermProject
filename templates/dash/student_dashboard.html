@@ -53,6 +53,7 @@ Dashboard
                     <br>{{ appt.comment }}</p>
                 <div class="button-group">
                     <button class="button-choices" onclick="cancelAppointment()">Cancel Appointment</button>
+                    <a href="{{ url_for('dashboard.edit_comment', appt_id=appt.id) }}"><button class="button-choices">Edit Details</button></a>
                 </div>
             </div> 
                 <div id="cancelModal" class="modal">
