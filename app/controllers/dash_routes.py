@@ -22,7 +22,8 @@ def dashboard_redirect():
         return redirect(url_for('dashboard.student_dashboard', email=user_email))
 
     if is_advisor(user_email):
-        return redirect(url_for('dashboard.advisor_dashboard', email=user_email))        
+        advisor = db.session.execute(db.select(Users).where(Users.email == current_user.id))
+        return redirect(url_for('dashboard.advisor_dashboard', advisor_id=advisor.id))        
 
 
 @dash_bp.route("/student/<string:email>")
@@ -48,7 +49,7 @@ def advisor_dashboard(email):
     """
     user = db.session.execute(db.select(Users).where(Users.email == email)).scalar()
     user_appts = db.session.execute(db.select(Appointments).where(Appointments.advisor_id == user.id)).scalars()
-    len_appts = list(user_appts)
+    len_appts = list(db.session.execute(db.select(Appointments).where(Appointments.advisor_id == user.id)).scalars())
     return render_template("dash/advisor_dashboard.html", user=user, appts=user_appts, appt_length=len_appts)
 
 
